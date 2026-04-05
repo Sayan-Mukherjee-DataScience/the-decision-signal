@@ -7,14 +7,15 @@
 <meta name="description" content="Practical insights on machine learning, enterprise AI, and the craft of turning data into decisions that matter.">
 <link rel="stylesheet" href="style.css">
 <style>
+/* ── HERO ──────────────────────────────────────────────────── */
 .hero{background:var(--sl3);border-bottom:3px solid var(--sl);padding:3rem 5% 2.5rem;display:grid;grid-template-columns:3fr 2fr;gap:3rem;align-items:center}
-.hero-eyebrow{font-size:10.5px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--sl2);margin-bottom:10px}
+.hero-eyebrow{font-size:10.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--sl2);margin-bottom:10px}
 .hero-title{font-size:clamp(26px,3.5vw,42px);color:var(--sl);line-height:1.1;margin-bottom:12px}
 .hero-title em{font-style:italic;color:var(--acc)}
 .hero-desc{font-size:14.5px;color:var(--inkm);line-height:1.8;margin-bottom:1.5rem;max-width:480px}
 .hero-actions{display:flex;gap:10px;flex-wrap:wrap}
 .subscribe-box{background:#fff;border:0.5px solid var(--rule);padding:1.5rem}
-.subscribe-box h3{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink);margin-bottom:5px}
+.subscribe-box h3{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-bottom:5px}
 .subscribe-box p{font-size:12.5px;color:var(--inkl);line-height:1.6;margin-bottom:14px}
 .subscribe-row{display:flex;gap:6px}
 .subscribe-row input{flex:1;border:0.5px solid var(--rule);padding:9px 11px;font-size:12.5px;font-family:'DM Sans',sans-serif;color:var(--ink);outline:none}
@@ -22,46 +23,185 @@
 .subscribe-row button{background:var(--sl);color:#fff;border:none;padding:9px 14px;font-size:12px;font-weight:500;cursor:pointer;white-space:nowrap;transition:background .2s}
 .subscribe-row button:hover{background:var(--sl2)}
 .subscribe-note{font-size:10.5px;color:var(--inkl);margin-top:7px}
-.featured-wrap{display:grid;grid-template-columns:5fr 4fr;border-bottom:0.5px solid var(--rule);background:#fff}
+
+/* ── FEATURED VIDEO ────────────────────────────────────────── */
+.featured-wrap{display:grid;grid-template-columns:3fr 2fr;border-bottom:0.5px solid var(--rule);background:#fff}
 .featured-body{padding:1.75rem 2rem;border-right:0.5px solid var(--rule)}
-.featured-badge{font-size:10px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--acc);margin-bottom:10px}
-.featured-title{font-size:clamp(18px,2.5vw,26px);color:var(--ink);line-height:1.2;margin-bottom:10px}
+.featured-badge{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);margin-bottom:10px}
+.featured-title{font-size:clamp(18px,2.2vw,24px);color:var(--ink);line-height:1.25;margin-bottom:10px}
 .featured-title a{color:inherit;transition:color .2s}
 .featured-title a:hover{color:var(--sl2)}
-.featured-exc{font-size:14px;color:var(--inkm);line-height:1.8;margin-bottom:14px}
-.featured-meta{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--inkl);flex-wrap:wrap}
-.meta-dot{width:3px;height:3px;border-radius:50%;background:var(--inkl);display:inline-block}
-.featured-embed{background:#000;min-height:220px}
-.featured-embed iframe{width:100%;height:220px;border:none;display:block}
-.video-grid{display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border-bottom:0.5px solid var(--rule);max-width:100%}
-.video-card{border-right:0.5px solid var(--rule);display:flex;flex-direction:column}
+.featured-exc{font-size:13.5px;color:var(--inkm);line-height:1.8;margin-bottom:14px}
+.featured-meta{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--inkl);flex-wrap:wrap}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:var(--inkl);display:inline-block;flex-shrink:0}
+.featured-embed{background:#000;position:relative;overflow:hidden}
+.featured-embed iframe{width:100%;aspect-ratio:16/9;border:none;display:block}
+
+/* ── VIDEO GRID — 5 compact equal cards ───────────────────── */
+.video-grid{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  background:#fff;
+  border-bottom:0.5px solid var(--rule);
+}
+.video-card{
+  border-right:0.5px solid var(--rule);
+  display:flex;flex-direction:column;
+  overflow:hidden;
+}
 .video-card:last-child{border-right:none}
-.video-embed{background:#000;width:100%;aspect-ratio:16/9;max-height:160px;overflow:hidden}
-.video-embed iframe{width:100%;height:100%;border:none;display:block}
-.video-body{padding:10px 14px;flex:1;display:flex;flex-direction:column}
-.video-cat{font-size:9.5px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--acc);margin-bottom:5px}
-.video-title{font-family:'Playfair Display',serif;font-size:13px;color:var(--ink);line-height:1.3;margin-bottom:6px;flex:1}
-.video-foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:8px;border-top:0.5px solid var(--rule)}
-.video-meta{font-size:11px;color:var(--inkl)}
-.video-link{font-size:12px;font-weight:500;color:var(--sl2)}
-.article-row{display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border-bottom:0.5px solid var(--rule)}
-.article-row .article-card:nth-child(3){border-right:none}
+
+/* Thumbnail: fixed 120 px height, consistent across all cards */
+.v-thumb{
+  width:100%;height:120px;
+  background:#111;
+  position:relative;flex-shrink:0;overflow:hidden;
+}
+.v-thumb iframe{
+  /* iframe slightly oversized & centred so no black bars on most videos */
+  position:absolute;top:50%;left:50%;
+  width:130%;height:130%;
+  transform:translate(-50%,-50%);
+  border:none;pointer-events:none;
+}
+/* Clickable overlay — sends user to YouTube */
+.v-thumb-link{
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(0,0,0,.15);
+  transition:background .2s;text-decoration:none;
+}
+.v-thumb-link:hover{background:rgba(0,0,0,.05)}
+.v-play{
+  width:30px;height:30px;background:rgba(220,0,0,.88);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.v-play::after{
+  content:'';display:block;
+  width:0;height:0;
+  border-top:7px solid transparent;
+  border-bottom:7px solid transparent;
+  border-left:12px solid #fff;
+  margin-left:3px;
+}
+
+/* Placeholder thumb (coming soon) */
+.v-thumb-placeholder{
+  width:100%;height:120px;
+  background:var(--warmd);flex-shrink:0;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:5px;
+}
+
+.v-body{padding:9px 11px;flex:1;display:flex;flex-direction:column;min-height:0}
+.v-cat{font-size:9px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin-bottom:4px}
+.v-title{font-size:12px;color:var(--ink);line-height:1.35;flex:1;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.v-foot{display:flex;align-items:center;justify-content:space-between;
+  padding-top:7px;border-top:0.5px solid var(--rule);margin-top:8px;gap:4px;flex-wrap:wrap}
+.v-meta{font-size:9.5px;color:var(--inkl)}
+.v-link{font-size:10px;font-weight:500;color:var(--sl2);text-decoration:none;white-space:nowrap}
+.v-link:hover{color:var(--sl)}
+
+/* ── PAGINATION ────────────────────────────────────────────── */
+.pagination{
+  display:flex;align-items:center;justify-content:center;
+  gap:6px;padding:.9rem;
+  background:var(--warm);border-bottom:0.5px solid var(--rule);
+}
+.pg-btn{
+  font-family:'DM Sans',sans-serif;font-size:12px;
+  padding:5px 14px;border:0.5px solid var(--rule);
+  color:var(--inkm);cursor:pointer;background:#fff;transition:all .2s;
+}
+.pg-btn:hover{background:var(--sl);color:#fff;border-color:var(--sl)}
+.pg-btn:disabled{opacity:.3;cursor:default;pointer-events:none}
+.pg-info{font-size:12px;color:var(--inkl);padding:0 10px;min-width:90px;text-align:center;font-family:'DM Sans',sans-serif}
+
+/* ── ARTICLES — clean editorial list, no images ────────────── */
+.articles-list{
+  background:#fff;
+  border-bottom:0.5px solid var(--rule);
+  display:flex;flex-direction:column;
+}
+.art-item{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:start;
+  gap:0 1.25rem;
+  padding:1.1rem 5%;
+  border-bottom:0.5px solid var(--rule);
+  transition:background .15s;
+  text-decoration:none;
+  color:inherit;
+}
+.art-item:last-child{border-bottom:none}
+.art-item:hover{background:var(--warm)}
+
+/* Left accent line */
+.art-item::before{
+  content:'';display:block;
+  width:3px;height:100%;min-height:48px;
+  background:var(--rule);border-radius:2px;
+  transition:background .2s;flex-shrink:0;
+}
+.art-item:hover::before{background:var(--acc)}
+
+.art-main{display:flex;flex-direction:column;gap:4px;min-width:0}
+.art-source{
+  display:inline-block;
+  font-family:'DM Sans',sans-serif;font-size:9px;font-weight:500;
+  letter-spacing:.12em;text-transform:uppercase;
+  padding:2px 7px;border-radius:10px;
+  margin-bottom:4px;width:fit-content;
+}
+.src-medium{background:var(--sl3);color:var(--sl2)}
+.src-forbes{background:#e8edf5;color:#003366}
+.src-linkedin{background:#e8f0fb;color:#0a66c2}
+.src-external{background:var(--warmd);color:var(--inkm)}
+.src-placeholder{background:var(--warmd);color:var(--inkl)}
+
+.art-cat{font-family:'DM Sans',sans-serif;font-size:10px;font-weight:500;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin-bottom:3px}
+.art-title{font-family:'Playfair Display',serif;font-size:16px;color:var(--ink);
+  line-height:1.3;margin-bottom:5px}
+.art-exc{font-family:'DM Sans',sans-serif;font-size:12.5px;color:var(--inkm);
+  line-height:1.65;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.art-meta{font-family:'DM Sans',sans-serif;font-size:11px;color:var(--inkl);margin-top:6px}
+
+.art-cta{
+  font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;
+  color:var(--sl2);white-space:nowrap;flex-shrink:0;
+  display:flex;align-items:center;gap:3px;text-decoration:none;
+  transition:gap .2s;
+}
+.art-cta:hover{gap:7px;color:var(--sl)}
+
+/* ── PROMO ─────────────────────────────────────────────────── */
 .promo-strip{display:grid;grid-template-columns:1fr 1fr;background:var(--sl)}
 .promo-half{padding:2rem;border-right:1px solid rgba(255,255,255,.07)}
 .promo-half:last-child{border-right:none}
-.promo-badge{font-size:9.5px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:8px}
+.promo-badge{font-size:9.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:8px}
 .promo-title{font-family:'Playfair Display',serif;font-size:18px;color:#fff;margin-bottom:8px}
 .promo-desc{font-size:12.5px;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:1rem}
 
-.pagination{display:flex;align-items:center;justify-content:center;gap:6px;padding:1.25rem;background:#fff;border-bottom:0.5px solid var(--rule)}
-.page-btn{font-family:sans-serif;font-size:12px;padding:6px 12px;border:0.5px solid var(--rule);color:var(--inkm);cursor:pointer;background:#fff;transition:all .2s}
-.page-btn:hover,.page-btn.active{background:var(--sl);color:#fff;border-color:var(--sl)}
-.page-btn:disabled{opacity:0.35;cursor:default;background:#fff;color:var(--inkl)}
-@media(max-width:900px){.hero{grid-template-columns:1fr}.featured-wrap{grid-template-columns:1fr}.video-grid{grid-template-columns:1fr}.article-row{grid-template-columns:1fr}.promo-strip{grid-template-columns:1fr}}
+/* ── RESPONSIVE ────────────────────────────────────────────── */
+@media(max-width:1100px){.video-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .featured-wrap{grid-template-columns:1fr}
+  .video-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .promo-strip{grid-template-columns:1fr}
+  .art-item{grid-template-columns:auto 1fr}
+  .art-cta{display:none}
+}
+@media(max-width:500px){.video-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav class="site-nav">
   <a href="index.html" class="nav-brand">
     <div class="nav-brand-name">The Decision Signal</div>
@@ -73,32 +213,45 @@
     <li><a href="learn.html">Learn</a></li>
   </ul>
   <div class="nav-actions">
-    
     <button class="btn-subscribe" onclick="scrollToSubscribe()">Subscribe</button>
   </div>
-  <button class="nav-hamburger" onclick="toggleMobile()" aria-label="Menu"><span></span><span></span><span></span></button>
+  <button class="nav-hamburger" onclick="toggleMobile()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a><a href="articles.html">Articles</a><a href="learn.html">Learn</a>
-  
+  <a href="index.html">Home</a>
+  <a href="articles.html">Articles</a>
+  <a href="learn.html">Learn</a>
 </div>
 
+<!-- TICKER -->
 <div class="ticker">
   <span class="ticker-label">Latest</span>
   <div class="ticker-track">
     <a href="https://youtu.be/LJyyJOzxlcA" target="_blank">New Video: A Complete Understanding of Data Science in 1 Hour</a>
-    <span>·</span><a href="https://youtu.be/eV4UzdER5d4" target="_blank">Why Trust Insights from Data Science Models?</a>
-    <span>·</span><a href="https://youtu.be/uuearKdgG-A" target="_blank">Roadmap To Become A Data Science Professional</a>
-    <span>·</span><a href="learn.html#masterclasses">Free Masterclass: From Data to Decisions — Register Now</a>
-    <span>·</span><a href="learn.html#coaching">Free 1:1 Coaching Now Open — Book a Slot</a>
-    <span>·</span><a href="https://youtu.be/LJyyJOzxlcA" target="_blank">New Video: A Complete Understanding of Data Science in 1 Hour</a>
-    <span>·</span><a href="https://youtu.be/eV4UzdER5d4" target="_blank">Why Trust Insights from Data Science Models?</a>
-    <span>·</span><a href="https://youtu.be/uuearKdgG-A" target="_blank">Roadmap To Become A Data Science Professional</a>
-    <span>·</span><a href="learn.html#masterclasses">Free Masterclass: From Data to Decisions — Register Now</a>
-    <span>·</span><a href="learn.html#coaching">Free 1:1 Coaching Now Open — Book a Slot</a>
+    <span>·</span>
+    <a href="https://youtu.be/eV4UzdER5d4" target="_blank">Why Trust Insights from Data Science Models?</a>
+    <span>·</span>
+    <a href="https://youtu.be/uuearKdgG-A" target="_blank">Roadmap To Become A Data Science Professional</a>
+    <span>·</span>
+    <a href="learn.html#masterclasses">Free Masterclass: From Data to Decisions — Register Now</a>
+    <span>·</span>
+    <a href="learn.html#coaching">Free 1:1 Coaching Now Open — Book a Slot</a>
+    <span>·</span>
+    <a href="https://youtu.be/LJyyJOzxlcA" target="_blank">New Video: A Complete Understanding of Data Science in 1 Hour</a>
+    <span>·</span>
+    <a href="https://youtu.be/eV4UzdER5d4" target="_blank">Why Trust Insights from Data Science Models?</a>
+    <span>·</span>
+    <a href="https://youtu.be/uuearKdgG-A" target="_blank">Roadmap To Become A Data Science Professional</a>
+    <span>·</span>
+    <a href="learn.html#masterclasses">Free Masterclass: From Data to Decisions — Register Now</a>
+    <span>·</span>
+    <a href="learn.html#coaching">Free 1:1 Coaching Now Open — Book a Slot</a>
   </div>
 </div>
 
+<!-- HERO -->
 <section class="hero">
   <div>
     <div class="hero-eyebrow">Decision Science · AI · Machine Learning</div>
@@ -124,15 +277,20 @@
   </div>
 </section>
 
-<div class="section-label">Featured Video</div>
+<!-- FEATURED VIDEO -->
+<div class="section-label">Featured</div>
 <div class="featured-wrap">
   <div class="featured-body">
     <div class="featured-badge">ML &amp; AI · Free Video</div>
-    <h2 class="featured-title"><a href="https://youtu.be/LJyyJOzxlcA" target="_blank">A Complete Understanding of Data Science in 1 Hour</a></h2>
+    <h2 class="featured-title">
+      <a href="https://youtu.be/LJyyJOzxlcA" target="_blank">A Complete Understanding of Data Science in 1 Hour</a>
+    </h2>
     <p class="featured-exc">A comprehensive, no-fluff session covering the full landscape of data science — what it is, how the field is structured, the tools and techniques that matter. Whether you're just starting out or sharpening your mental model, this is your foundation.</p>
     <div class="featured-meta">
-      <span class="meta-dot"></span><span>1 hour · Free</span>
-      <span class="meta-dot"></span><span>Knowledge Sharing Group</span>
+      <span class="meta-dot"></span>
+      <span>1 hour · Free</span>
+      <span class="meta-dot"></span>
+      <span>Knowledge Sharing Group</span>
       <span class="meta-dot"></span>
       <a href="https://youtu.be/LJyyJOzxlcA" target="_blank" style="color:var(--sl2);font-weight:500">Watch on YouTube ↗</a>
     </div>
@@ -145,8 +303,9 @@
   </div>
 </div>
 
+<!-- TOPIC FILTER -->
 <div class="filter-bar" id="homeFilter">
-  <span style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--inkl);margin-right:4px">Topics:</span>
+  <span style="font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--inkl);margin-right:4px">Topics:</span>
   <button class="filter-chip active" data-filter="all">All</button>
   <button class="filter-chip" data-filter="ml">ML &amp; AI</button>
   <button class="filter-chip" data-filter="genai">Generative AI</button>
@@ -155,101 +314,199 @@
   <button class="filter-chip" data-filter="experimentation">Experimentation</button>
 </div>
 
+<!-- ══════════════════════════════════════════════════════
+     VIDEO SECTION — 5 compact cards, fixed 120px thumbnails
+     ══════════════════════════════════════════════════════ -->
 <div class="section-label">Videos</div>
 <div class="video-grid" id="videoGrid">
+
   <div class="video-card" data-cat="ml">
-    <div class="video-embed">
-      <iframe src="https://www.youtube.com/embed/LJyyJOzxlcA" title="A Complete Understanding of Data Science in 1 Hour" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    <div class="v-thumb">
+      <iframe src="https://www.youtube.com/embed/LJyyJOzxlcA"
+              title="A Complete Understanding of Data Science in 1 Hour"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+      <a href="https://youtu.be/LJyyJOzxlcA" target="_blank" class="v-thumb-link">
+        <div class="v-play"></div>
+      </a>
     </div>
-    <div class="video-body">
-      <div class="video-cat">ML &amp; AI</div>
-      <div class="video-title">A Complete Understanding of Data Science in 1 Hour</div>
-      <div class="video-foot"><span class="video-meta">1 hr · Free</span><a href="https://youtu.be/LJyyJOzxlcA" target="_blank" class="video-link">Watch on YouTube →</a></div>
+    <div class="v-body">
+      <div class="v-cat">ML &amp; AI</div>
+      <div class="v-title">A Complete Understanding of Data Science in 1 Hour</div>
+      <div class="v-foot">
+        <span class="v-meta">1 hr · Free</span>
+        <a href="https://youtu.be/LJyyJOzxlcA" target="_blank" class="v-link">Watch →</a>
+      </div>
     </div>
   </div>
+
   <div class="video-card" data-cat="ml">
-    <div class="video-embed">
-      <iframe src="https://www.youtube.com/embed/eV4UzdER5d4" title="Why Trust Insights from Data Science Models?" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    <div class="v-thumb">
+      <iframe src="https://www.youtube.com/embed/eV4UzdER5d4"
+              title="Why Trust Insights from Data Science Models?"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+      <a href="https://youtu.be/eV4UzdER5d4" target="_blank" class="v-thumb-link">
+        <div class="v-play"></div>
+      </a>
     </div>
-    <div class="video-body">
-      <div class="video-cat">ML &amp; AI</div>
-      <div class="video-title">Why Trust Insights from Data Science Models?</div>
-      <div class="video-foot"><span class="video-meta">Free</span><a href="https://youtu.be/eV4UzdER5d4" target="_blank" class="video-link">Watch on YouTube →</a></div>
+    <div class="v-body">
+      <div class="v-cat">ML &amp; AI</div>
+      <div class="v-title">Why Trust Insights from Data Science Models?</div>
+      <div class="v-foot">
+        <span class="v-meta">Free</span>
+        <a href="https://youtu.be/eV4UzdER5d4" target="_blank" class="v-link">Watch →</a>
+      </div>
     </div>
   </div>
+
   <div class="video-card" data-cat="career">
-    <div class="video-embed">
-      <iframe src="https://www.youtube.com/embed/uuearKdgG-A" title="Roadmap To Become A Data Science Professional" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    <div class="v-thumb">
+      <iframe src="https://www.youtube.com/embed/uuearKdgG-A"
+              title="Roadmap To Become A Data Science Professional"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+      <a href="https://youtu.be/uuearKdgG-A" target="_blank" class="v-thumb-link">
+        <div class="v-play"></div>
+      </a>
     </div>
-    <div class="video-body">
-      <div class="video-cat">Career</div>
-      <div class="video-title">Roadmap To Become A Data Science Professional</div>
-      <div class="video-foot"><span class="video-meta">Career guidance · Free</span><a href="https://youtu.be/uuearKdgG-A" target="_blank" class="video-link">Watch on YouTube →</a></div>
-    </div>
-  </div>
-  <div class="video-card" data-cat="career">
-  <div class="video-embed">
-    <iframe src="https://www.youtube.com/embed/JkUO-jaNdF4" title="Data Science vs. Data Mining vs. Analytics | Multiple Confusing Terms | What Is Then It?"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen loading="lazy"></iframe>
-  </div>
-  <div class="video-body">
-    <div class="video-cat">Career</div>
-    <div class="video-title">Data Science vs. Data Mining vs. Analytics | Multiple Confusing Terms | What Is Then It?</div>
-    <div class="video-foot">
-      <span class="video-meta">13 · Free</span>
-      <a href="https://youtu.be/JkUO-jaNdF4" target="_blank" class="video-link">Watch on YouTube →</a>
+    <div class="v-body">
+      <div class="v-cat">Career</div>
+      <div class="v-title">Roadmap To Become A Data Science Professional</div>
+      <div class="v-foot">
+        <span class="v-meta">Career · Free</span>
+        <a href="https://youtu.be/uuearKdgG-A" target="_blank" class="v-link">Watch →</a>
+      </div>
     </div>
   </div>
+
+  <div class="video-card" data-cat="ml">
+    <div class="v-thumb">
+      <iframe src="https://www.youtube.com/embed/JkUO-jaNdF4"
+              title="Data Science vs. Data Mining vs. Analytics"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+      <a href="https://youtu.be/JkUO-jaNdF4" target="_blank" class="v-thumb-link">
+        <div class="v-play"></div>
+      </a>
+    </div>
+    <div class="v-body">
+      <div class="v-cat">ML &amp; AI</div>
+      <div class="v-title">Data Science vs. Data Mining vs. Analytics</div>
+      <div class="v-foot">
+        <span class="v-meta">13 min · Free</span>
+        <a href="https://youtu.be/JkUO-jaNdF4" target="_blank" class="v-link">Watch →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-card" data-cat="genai" style="border:1.5px dashed var(--rule);background:var(--warm)">
+    <div class="v-thumb-placeholder">
+      <span style="font-size:1.5rem">🎬</span>
+      <span style="font-family:'DM Sans',sans-serif;font-size:9px;color:var(--inkl);letter-spacing:.1em;text-transform:uppercase">Coming soon</span>
+    </div>
+    <div class="v-body">
+      <div class="v-cat">Generative AI</div>
+      <div class="v-title">Building with LLMs: From Prompt to Production</div>
+      <div class="v-foot">
+        <span class="v-meta">Coming soon</span>
+        <a href="https://www.youtube.com/@knowledgesharinggroup4001" target="_blank" class="v-link">Subscribe →</a>
+      </div>
+    </div>
+  </div>
+
 </div>
 
+<!-- VIDEO PAGINATION -->
 <div class="pagination" id="videoPager">
-  <button class="page-btn" id="vPrev" onclick="changePage('v',-1)" disabled>← Prev</button>
-  <span id="vPageInfo" style="font-family:sans-serif;font-size:12px;color:var(--inkl);padding:0 8px"></span>
-  <button class="page-btn" id="vNext" onclick="changePage('v',1)">Next →</button>
-</div>
-<div class="section-label">Latest Articles</div>
-<div class="article-row">
-  <div class="article-card" data-cat="leadership">
-    <div style="font-family:sans-serif;font-size:9px;color:rgba(255,255,255,.5);letter-spacing:.1em;text-transform:uppercase">Medium</div>
-    </div>
-    <div class="article-card-cat">Leadership · Project Management</div>
-    <h3 class="article-card-title">What Project Managers Need To Know About Pre-Mortems</h3>
-    <p class="article-card-exc">Post-mortems analyse what went wrong. Pre-mortems ask what could go wrong — before it does. A forward-looking framework every PM should build into their practice.</p>
-    <div class="article-card-foot">
-      <span class="article-card-meta">Dec 2020 · 4 min</span>
-      <a href="https://smukherjee04.medium.com/what-project-managers-need-to-know-about-pre-mortems-bcb35c04848e" target="_blank" class="article-card-link">Read on Medium →</a>
-    </div>
-  </div>
-  <div class="article-card" data-cat="ml">
-    <div style="font-family:sans-serif;font-size:9px;color:rgba(255,255,255,.5);letter-spacing:.1em;text-transform:uppercase">External Article</div>
-    </div>
-    <div class="article-card-cat">ML &amp; AI · Science</div>
-    <h3 class="article-card-title">Chaos Theory, the Butterfly Effect and the Computer Glitch That Started It All</h3>
-    <p class="article-card-exc">How a rounding error in a 1961 weather simulation gave birth to chaos theory — and why small inputs can have enormous consequences in complex systems.</p>
-    <div class="article-card-foot">
-      <span class="article-card-meta">Forbes · Feb 2018</span>
-      <a href="https://www.forbes.com/sites/startswithabang/2018/02/13/chaos-theory-the-butterfly-effect-and-the-computer-glitch-that-started-it-all/" target="_blank" class="article-card-link">Read on Forbes →</a>
-    </div>
-  </div>
-  <div class="article-card" data-cat="genai" style="border:1.5px dashed var(--rule);background:var(--warm)">
-    <div style="font-family:sans-serif;font-size:9.5px;color:var(--inkl);text-transform:uppercase;letter-spacing:.1em">Coming soon</div>
-    </div>
-    <div class="article-card-cat">Your next article</div>
-    <h3 class="article-card-title">Add your next article in articles.html on GitHub</h3>
-    <p class="article-card-exc">Takes 2 minutes — paste a block, fill 5 fields, commit. No coding required. It appears here automatically.</p>
-    <div class="article-card-foot"><span class="article-card-meta">Placeholder</span><a href="articles.html" class="article-card-link">View all →</a></div>
-  </div>
-</div>
-<div class="pagination" id="articlePager">
-  <button class="page-btn" id="aPrev" onclick="changePage('a',-1)" disabled>← Prev</button>
-  <span id="aPageInfo" style="font-family:sans-serif;font-size:12px;color:var(--inkl);padding:0 8px"></span>
-  <button class="page-btn" id="aNext" onclick="changePage('a',1)">Next →</button>
-</div>
-<div style="text-align:center;padding:1.5rem;background:#fff;border-bottom:0.5px solid var(--rule)">
-  <a href="articles.html" class="btn-ghost">View All Articles &amp; Videos →</a>
+  <button class="pg-btn" id="vPrev" onclick="vChangePage(-1)" disabled>← Prev</button>
+  <span class="pg-info" id="vInfo"></span>
+  <button class="pg-btn" id="vNext" onclick="vChangePage(1)">Next →</button>
 </div>
 
+<!-- ══════════════════════════════════════════════════════
+     ARTICLES SECTION — clean editorial list, no images
+     ══════════════════════════════════════════════════════ -->
+<div class="section-label">Latest Articles</div>
+<div class="articles-list" id="articlesList">
+
+  <a class="art-item" href="https://smukherjee04.medium.com/what-project-managers-need-to-know-about-pre-mortems-bcb35c04848e" target="_blank" data-cat="leadership">
+    <div><!-- accent line via ::before --></div>
+    <div class="art-main">
+      <span class="art-source src-medium">Medium</span>
+      <div class="art-cat">Leadership · Project Management</div>
+      <div class="art-title">What Project Managers Need To Know About Pre-Mortems</div>
+      <div class="art-exc">Post-mortems analyse what went wrong. Pre-mortems ask what could go wrong — before it does. A forward-looking framework every PM should build into their practice.</div>
+      <div class="art-meta">Dec 2020 · 4 min read</div>
+    </div>
+    <span class="art-cta">Read <span>→</span></span>
+  </a>
+
+  <a class="art-item" href="https://www.forbes.com/sites/startswithabang/2018/02/13/chaos-theory-the-butterfly-effect-and-the-computer-glitch-that-started-it-all/" target="_blank" data-cat="ml">
+    <div><!-- accent line via ::before --></div>
+    <div class="art-main">
+      <span class="art-source src-forbes">Forbes</span>
+      <div class="art-cat">ML &amp; AI · Science</div>
+      <div class="art-title">Chaos Theory, the Butterfly Effect and the Computer Glitch That Started It All</div>
+      <div class="art-exc">How a rounding error in a 1961 weather simulation gave birth to chaos theory — and why small inputs can have enormous, unpredictable consequences in complex systems.</div>
+      <div class="art-meta">Forbes · Feb 2018</div>
+    </div>
+    <span class="art-cta">Read <span>→</span></span>
+  </a>
+
+  <!-- PLACEHOLDER 3 — replace with your next real article -->
+  <a class="art-item" href="articles.html" data-cat="ml" style="opacity:.55">
+    <div></div>
+    <div class="art-main">
+      <span class="art-source src-placeholder">Coming soon</span>
+      <div class="art-cat">ML &amp; AI</div>
+      <div class="art-title">Your Next Article Goes Here</div>
+      <div class="art-exc">Add new articles via the admin panel locally — generates the code block automatically. Paste into GitHub and it appears here in 60 seconds.</div>
+      <div class="art-meta">Use admin.html to add</div>
+    </div>
+    <span class="art-cta">View all <span>→</span></span>
+  </a>
+
+  <!-- PLACEHOLDER 4 -->
+  <a class="art-item" href="articles.html" data-cat="genai" style="opacity:.55">
+    <div></div>
+    <div class="art-main">
+      <span class="art-source src-placeholder">Coming soon</span>
+      <div class="art-cat">Generative AI</div>
+      <div class="art-title">Article on Generative AI — Placeholder</div>
+      <div class="art-exc">This slot will be filled as soon as you publish your next article on LLMs, RAG, or enterprise AI. It takes 2 minutes to add via the admin panel.</div>
+      <div class="art-meta">Use admin.html to add</div>
+    </div>
+    <span class="art-cta">View all <span>→</span></span>
+  </a>
+
+  <!-- PLACEHOLDER 5 -->
+  <a class="art-item" href="articles.html" data-cat="leadership" style="opacity:.55">
+    <div></div>
+    <div class="art-main">
+      <span class="art-source src-placeholder">Coming soon</span>
+      <div class="art-cat">Leadership</div>
+      <div class="art-title">Article on Data Science Leadership — Placeholder</div>
+      <div class="art-exc">Your thoughts on building high-performing data science teams, executive communication, or strategic roadmaps — add it here when ready.</div>
+      <div class="art-meta">Use admin.html to add</div>
+    </div>
+    <span class="art-cta">View all <span>→</span></span>
+  </a>
+
+</div>
+
+<!-- ARTICLE PAGINATION -->
+<div class="pagination" id="articlePager">
+  <button class="pg-btn" id="aPrev" onclick="aChangePage(-1)" disabled>← Prev</button>
+  <span class="pg-info" id="aInfo"></span>
+  <button class="pg-btn" id="aNext" onclick="aChangePage(1)">Next →</button>
+</div>
+
+<div style="text-align:center;padding:1.25rem;background:#fff;border-bottom:0.5px solid var(--rule)">
+  <a href="articles.html" class="btn-ghost">View All Articles →</a>
+</div>
+
+<!-- PROMO -->
 <div class="promo-strip">
   <div class="promo-half">
     <div class="promo-badge">Coming Soon · Byte Learning</div>
@@ -260,11 +517,12 @@
   <div class="promo-half">
     <div class="promo-badge">Free · Coaching &amp; Mentorship</div>
     <h3 class="promo-title">1-to-1 Coaching Sessions</h3>
-    <p class="promo-desc">Career mentorship, technical deep-dives, and AI strategy advisory. Book a free slot — let's work on your real problems together.</p>
+    <p class="promo-desc">Career mentorship, technical deep-dives, and AI strategy advisory. Book a free slot and get focused, practical guidance.</p>
     <a href="learn.html#coaching" class="btn-outline-white">Book a Session →</a>
   </div>
 </div>
 
+<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-top">
     <div>
@@ -272,83 +530,131 @@
       <div class="footer-brand-tag">Data · AI · Decision Intelligence</div>
       <p class="footer-brand-desc">Practical insights on machine learning, enterprise AI, and the craft of turning data into decisions that matter.</p>
     </div>
-    <div class="footer-col"><h4>Content</h4><ul><li><a href="articles.html">All Articles</a></li><li><a href="articles.html?filter=genai">Generative AI</a></li><li><a href="articles.html?filter=ml">ML &amp; AI</a></li><li><a href="articles.html?filter=leadership">Leadership</a></li></ul></div>
-    <div class="footer-col"><h4>Learn</h4><ul><li><a href="learn.html">Courses</a></li><li><a href="learn.html#masterclasses">Masterclasses</a></li><li><a href="learn.html#coaching">Coaching</a></li><li><a href="https://www.youtube.com/@knowledgesharinggroup4001" target="_blank">YouTube ↗</a></li></ul></div>
-    <div class="footer-col"><h4>Connect</h4><ul><li></li><li><a href="mailto:mukherjee.sayan17@gmail.com">Email</a></li></ul></div>
+    <div class="footer-col">
+      <h4>Content</h4>
+      <ul>
+        <li><a href="articles.html">All Articles</a></li>
+        <li><a href="articles.html?filter=genai">Generative AI</a></li>
+        <li><a href="articles.html?filter=ml">ML &amp; AI</a></li>
+        <li><a href="articles.html?filter=leadership">Leadership</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Learn</h4>
+      <ul>
+        <li><a href="learn.html">Courses</a></li>
+        <li><a href="learn.html#masterclasses">Masterclasses</a></li>
+        <li><a href="learn.html#coaching">Coaching</a></li>
+        <li><a href="https://www.youtube.com/@knowledgesharinggroup4001" target="_blank">YouTube ↗</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="mailto:mukherjee.sayan17@gmail.com">Email</a></li>
+        <li><a href="https://www.youtube.com/@knowledgesharinggroup4001" target="_blank">YouTube ↗</a></li>
+      </ul>
+    </div>
   </div>
-  <div class="footer-bottom"><span class="footer-copy">© 2026 The Decision Signal · Built on GitHub Pages</span></div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 The Decision Signal · Built on GitHub Pages</span>
+  </div>
 </footer>
 <div class="toast" id="toast"></div>
 
 <script>
+/* ── UTILS ───────────────────────────────────────────────── */
 function toggleMobile(){document.getElementById('mobileMenu').classList.toggle('open')}
-function scrollToSubscribe(){document.getElementById('subscribeBox').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('subEmail').focus()}
-function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),4000)}
+function scrollToSubscribe(){
+  document.getElementById('subscribeBox').scrollIntoView({behavior:'smooth',block:'center'});
+  document.getElementById('subEmail').focus();
+}
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),4000);
+}
 
+/* ── SUBSCRIBE ───────────────────────────────────────────── */
 document.getElementById('subscribeForm').addEventListener('submit',function(e){
   e.preventDefault();
-  const form=this;
-  if(form.action.includes('YOUR_FORMSPREE_ID')){
+  if(this.action.includes('YOUR_FORMSPREE_ID')){
     const email=document.getElementById('subEmail').value;
     window.location.href=`mailto:mukherjee.sayan17@gmail.com?subject=New Subscriber — The Decision Signal&body=New subscriber: ${email}`;
     showToast('✓ Opening your email client...');
   } else {
-    fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
-      .then(r=>{if(r.ok){showToast('✓ Subscribed! You\'ll hear from us soon.');form.reset();}else{showToast('Something went wrong — please try again.');}})
-      .catch(()=>showToast('Something went wrong — please try again.'));
+    fetch(this.action,{method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}})
+      .then(r=>{if(r.ok){showToast("✓ Subscribed!");this.reset();}
+                else showToast('Something went wrong — try again.');})
+      .catch(()=>showToast('Something went wrong — try again.'));
   }
 });
 
+/* ── TOPIC FILTER ────────────────────────────────────────── */
 document.querySelectorAll('#homeFilter .filter-chip').forEach(chip=>{
   chip.addEventListener('click',()=>{
     document.querySelectorAll('#homeFilter .filter-chip').forEach(c=>c.classList.remove('active'));
     chip.classList.add('active');
     const f=chip.dataset.filter;
-    document.querySelectorAll('#videoGrid .video-card,.article-row .article-card').forEach(card=>{
-      card.style.display=(f==='all'||card.dataset.cat===f)?'flex':'none';
+    vPage=0; aPage=0;
+    document.querySelectorAll('#videoGrid .video-card').forEach(c=>{
+      c.dataset.hidden = (f!=='all' && c.dataset.cat!==f) ? '1' : '0';
     });
+    document.querySelectorAll('#articlesList .art-item').forEach(c=>{
+      c.dataset.hidden = (f!=='all' && c.dataset.cat!==f) ? '1' : '0';
+    });
+    renderAll();
   });
 });
 
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});},{threshold:0.06});
-document.querySelectorAll('.video-card,.article-card,.promo-half').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(14px)';el.style.transition='opacity 0.4s ease,transform 0.4s ease';obs.observe(el);});
+/* ── PAGINATION ──────────────────────────────────────────── */
+const PER = 5;
+let vPage=0, aPage=0;
 
-// Pagination
-const PER_PAGE = 5;
-let vPage = 0, aPage = 0;
-function paginate(items, page, perPage) {
-  const start = page * perPage;
-  items.forEach((el, i) => { el.style.display = (i >= start && i < start + perPage) ? '' : 'none'; });
+function renderAll(){
+  renderSection('videoGrid','vPrev','vNext','vInfo','#videoGrid .video-card',vPage,'flex');
+  renderSection('articlesList','aPrev','aNext','aInfo','#articlesList .art-item',aPage,'grid');
 }
-function updatePager(id, prevId, nextId, infoId, page, total, perPage) {
-  const pages = Math.ceil(total / perPage);
-  document.getElementById(prevId).disabled = page === 0;
-  document.getElementById(nextId).disabled = page >= pages - 1;
-  document.getElementById(infoId).textContent = `Page ${page+1} of ${Math.max(1,pages)}`;
+
+function renderSection(containerId, prevId, nextId, infoId, selector, page, displayVal){
+  const all = [...document.querySelectorAll(selector)];
+  const vis = all.filter(c=>c.dataset.hidden!=='1');
+  all.forEach(c=>{ c.style.display='none'; });
+  vis.slice(page*PER, (page+1)*PER).forEach(c=>{ c.style.display=displayVal; });
+  const pages = Math.max(1, Math.ceil(vis.length/PER));
+  document.getElementById(prevId).disabled = page===0;
+  document.getElementById(nextId).disabled = page>=pages-1;
+  document.getElementById(infoId).textContent = `Page ${page+1} of ${pages}`;
 }
-function changePage(type, dir) {
-  if (type === 'v') {
-    const items = [...document.querySelectorAll('#videoGrid .video-card')].filter(el => el.style.display !== 'none' || true);
-    const all = [...document.querySelectorAll('#videoGrid .video-card')];
-    vPage = Math.max(0, vPage + dir);
-    paginate(all, vPage, PER_PAGE);
-    updatePager('videoPager','vPrev','vNext','vPageInfo', vPage, all.length, PER_PAGE);
-  } else {
-    const all = [...document.querySelectorAll('.article-row .article-card')];
-    aPage = Math.max(0, aPage + dir);
-    paginate(all, aPage, PER_PAGE);
-    updatePager('articlePager','aPrev','aNext','aPageInfo', aPage, all.length, PER_PAGE);
-  }
+
+function vChangePage(dir){
+  vPage=Math.max(0,vPage+dir);
+  renderSection('videoGrid','vPrev','vNext','vInfo','#videoGrid .video-card',vPage,'flex');
+  document.querySelector('.section-label+.video-grid')?.scrollIntoView({behavior:'smooth',block:'start'});
 }
-// Init pagination
-(function(){
-  const vItems = [...document.querySelectorAll('#videoGrid .video-card')];
-  paginate(vItems, 0, PER_PAGE);
-  updatePager('videoPager','vPrev','vNext','vPageInfo', 0, vItems.length, PER_PAGE);
-  const aItems = [...document.querySelectorAll('.article-row .article-card')];
-  paginate(aItems, 0, PER_PAGE);
-  updatePager('articlePager','aPrev','aNext','aPageInfo', 0, aItems.length, PER_PAGE);
-})();
+function aChangePage(dir){
+  aPage=Math.max(0,aPage+dir);
+  renderSection('articlesList','aPrev','aNext','aInfo','#articlesList .art-item',aPage,'grid');
+  document.getElementById('articlesList')?.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+/* ── FADE IN ─────────────────────────────────────────────── */
+const fadeObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}
+  });
+},{threshold:0.06});
+document.querySelectorAll('.promo-half').forEach(el=>{
+  el.style.opacity='0';el.style.transform='translateY(14px)';
+  el.style.transition='opacity 0.4s ease,transform 0.4s ease';
+  fadeObs.observe(el);
+});
+
+/* ── INIT ────────────────────────────────────────────────── */
+document.querySelectorAll('#videoGrid .video-card, #articlesList .art-item').forEach(c=>{
+  c.dataset.hidden='0';
+});
+renderAll();
 </script>
 </body>
 </html>
