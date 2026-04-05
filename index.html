@@ -4,59 +4,59 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Decision Signal — Data · AI · Decision Intelligence</title>
-<meta name="description" content="Practical insights on machine learning, enterprise AI, and the craft of turning messy data into decisions that matter. By Sayan Mukherjee.">
+<meta name="description" content="Practical insights on machine learning, enterprise AI, and the craft of turning data into decisions that matter.">
 <link rel="stylesheet" href="style.css">
 <style>
-/* HOME-SPECIFIC */
-.hero { background: var(--sl3); border-bottom: 3px solid var(--sl); padding: 3rem 5% 2.5rem; display: grid; grid-template-columns: 3fr 2fr; gap: 3rem; align-items: center; }
-.hero-eyebrow { font-size: 10.5px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sl2); margin-bottom: 10px; }
-.hero-title { font-size: clamp(28px,3.5vw,42px); color: var(--sl); line-height: 1.1; margin-bottom: 12px; }
-.hero-title em { font-style: italic; color: var(--acc); }
-.hero-desc { font-size: 14.5px; color: var(--inkm); line-height: 1.8; margin-bottom: 1.5rem; max-width: 480px; }
-.hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
-.subscribe-box { background: #fff; border: 0.5px solid var(--rule); padding: 1.5rem; }
-.subscribe-box h3 { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); margin-bottom: 5px; }
-.subscribe-box p { font-size: 12.5px; color: var(--inkl); line-height: 1.6; margin-bottom: 14px; }
-.subscribe-row { display: flex; gap: 6px; }
-.subscribe-row input { flex: 1; border: 0.5px solid var(--rule); padding: 9px 11px; font-size: 12.5px; font-family: 'DM Sans', sans-serif; color: var(--ink); outline: none; }
-.subscribe-row input:focus { border-color: var(--sl2); }
-.subscribe-row button { background: var(--sl); color: #fff; border: none; padding: 9px 14px; font-size: 12px; font-weight: 500; cursor: pointer; white-space: nowrap; }
-.subscribe-row button:hover { background: var(--sl2); }
-.subscribe-note { font-size: 10.5px; color: var(--inkl); margin-top: 7px; }
-
-/* FEATURED */
-.featured-wrap { display: grid; grid-template-columns: 5fr 3fr; border-bottom: 0.5px solid var(--rule); background: #fff; }
-.featured-body { padding: 1.75rem 2rem; border-right: 0.5px solid var(--rule); }
-.featured-badge { font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--acc); margin-bottom: 10px; }
-.featured-title { font-size: clamp(20px,2.5vw,28px); color: var(--ink); line-height: 1.2; margin-bottom: 10px; }
-.featured-title a { color: inherit; }
-.featured-title a:hover { color: var(--sl2); }
-.featured-exc { font-size: 14px; color: var(--inkm); line-height: 1.8; margin-bottom: 14px; }
-.featured-meta { display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--inkl); flex-wrap: wrap; }
-.featured-author { color: var(--sl2); font-weight: 500; }
-.meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--inkl); display: inline-block; }
-.featured-img { background: var(--sl3); display: flex; align-items: center; justify-content: center; min-height: 200px; }
-.featured-img-inner { text-align: center; color: var(--sl2); font-size: 12px; }
-
-/* RECENT GRID */
-.recent-grid { display: grid; grid-template-columns: repeat(3,1fr); background: #fff; }
-.recent-grid .article-card:nth-child(3) { border-right: none; }
-
-/* PROMO */
-.promo-strip { display: grid; grid-template-columns: 1fr 1fr; background: var(--sl); }
-.promo-half { padding: 2rem; border-right: 1px solid rgba(255,255,255,0.07); }
-.promo-half:last-child { border-right: none; }
-.promo-badge { font-size: 9.5px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 8px; }
-.promo-title { font-family: 'Playfair Display', serif; font-size: 18px; color: #fff; margin-bottom: 8px; }
-.promo-desc { font-size: 12.5px; color: rgba(255,255,255,0.5); line-height: 1.7; margin-bottom: 1rem; }
-
-@media(max-width:900px) { .hero { grid-template-columns: 1fr; } .featured-wrap { grid-template-columns: 1fr; } .recent-grid { grid-template-columns: 1fr; } .promo-strip { grid-template-columns: 1fr; } .featured-img { min-height: 140px; } }
-@media(max-width:600px) { .featured-body { padding: 1.25rem; } }
+.hero{background:var(--sl3);border-bottom:3px solid var(--sl);padding:3rem 5% 2.5rem;display:grid;grid-template-columns:3fr 2fr;gap:3rem;align-items:center}
+.hero-eyebrow{font-size:10.5px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--sl2);margin-bottom:10px}
+.hero-title{font-size:clamp(26px,3.5vw,42px);color:var(--sl);line-height:1.1;margin-bottom:12px}
+.hero-title em{font-style:italic;color:var(--acc)}
+.hero-desc{font-size:14.5px;color:var(--inkm);line-height:1.8;margin-bottom:1.5rem;max-width:480px}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+.subscribe-box{background:#fff;border:0.5px solid var(--rule);padding:1.5rem}
+.subscribe-box h3{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink);margin-bottom:5px}
+.subscribe-box p{font-size:12.5px;color:var(--inkl);line-height:1.6;margin-bottom:14px}
+.subscribe-row{display:flex;gap:6px}
+.subscribe-row input{flex:1;border:0.5px solid var(--rule);padding:9px 11px;font-size:12.5px;font-family:'DM Sans',sans-serif;color:var(--ink);outline:none}
+.subscribe-row input:focus{border-color:var(--sl2)}
+.subscribe-row button{background:var(--sl);color:#fff;border:none;padding:9px 14px;font-size:12px;font-weight:500;cursor:pointer;white-space:nowrap;transition:background .2s}
+.subscribe-row button:hover{background:var(--sl2)}
+.subscribe-note{font-size:10.5px;color:var(--inkl);margin-top:7px}
+.featured-wrap{display:grid;grid-template-columns:5fr 4fr;border-bottom:0.5px solid var(--rule);background:#fff}
+.featured-body{padding:1.75rem 2rem;border-right:0.5px solid var(--rule)}
+.featured-badge{font-size:10px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--acc);margin-bottom:10px}
+.featured-title{font-size:clamp(18px,2.5vw,26px);color:var(--ink);line-height:1.2;margin-bottom:10px}
+.featured-title a{color:inherit;transition:color .2s}
+.featured-title a:hover{color:var(--sl2)}
+.featured-exc{font-size:14px;color:var(--inkm);line-height:1.8;margin-bottom:14px}
+.featured-meta{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--inkl);flex-wrap:wrap}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:var(--inkl);display:inline-block}
+.featured-embed{background:#000;min-height:220px}
+.featured-embed iframe{width:100%;height:220px;border:none;display:block}
+.video-grid{display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border-bottom:0.5px solid var(--rule)}
+.video-card{border-right:0.5px solid var(--rule);display:flex;flex-direction:column}
+.video-card:last-child{border-right:none}
+.video-embed{background:#000;width:100%;aspect-ratio:16/9}
+.video-embed iframe{width:100%;height:100%;border:none;display:block}
+.video-body{padding:14px 16px;flex:1;display:flex;flex-direction:column}
+.video-cat{font-size:9.5px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--acc);margin-bottom:5px}
+.video-title{font-family:'Playfair Display',serif;font-size:14.5px;color:var(--ink);line-height:1.3;margin-bottom:8px;flex:1}
+.video-foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:8px;border-top:0.5px solid var(--rule)}
+.video-meta{font-size:11px;color:var(--inkl)}
+.video-link{font-size:12px;font-weight:500;color:var(--sl2)}
+.article-row{display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border-bottom:0.5px solid var(--rule)}
+.article-row .article-card:nth-child(3){border-right:none}
+.promo-strip{display:grid;grid-template-columns:1fr 1fr;background:var(--sl)}
+.promo-half{padding:2rem;border-right:1px solid rgba(255,255,255,.07)}
+.promo-half:last-child{border-right:none}
+.promo-badge{font-size:9.5px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:8px}
+.promo-title{font-family:'Playfair Display',serif;font-size:18px;color:#fff;margin-bottom:8px}
+.promo-desc{font-size:12.5px;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:1rem}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.featured-wrap{grid-template-columns:1fr}.video-grid{grid-template-columns:1fr}.article-row{grid-template-columns:1fr}.promo-strip{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="site-nav">
   <a href="index.html" class="nav-brand">
     <div class="nav-brand-name">The Decision Signal</div>
@@ -66,56 +66,39 @@
     <li><a href="index.html" class="active">Home</a></li>
     <li><a href="articles.html">Articles</a></li>
     <li><a href="learn.html">Learn</a></li>
-    <li><a href="about.html">About</a></li>
   </ul>
   <div class="nav-actions">
-    <a href="https://linkedin.com/in/sayan-mukherjee-bb513b22/" target="_blank" class="btn-li">LinkedIn ↗</a>
+    
     <button class="btn-subscribe" onclick="scrollToSubscribe()">Subscribe</button>
   </div>
-  <button class="nav-hamburger" onclick="toggleMobile()" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="nav-hamburger" onclick="toggleMobile()" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a>
-  <a href="articles.html">Articles</a>
-  <a href="learn.html">Learn</a>
-  <a href="about.html">About</a>
-  <a href="https://linkedin.com/in/sayan-mukherjee-bb513b22/" target="_blank">LinkedIn ↗</a>
+  <a href="index.html">Home</a><a href="articles.html">Articles</a><a href="learn.html">Learn</a>
+  
 </div>
 
-<!-- TICKER -->
 <div class="ticker">
   <span class="ticker-label">Latest</span>
-  <div class="ticker-track" id="tickerTrack">
-    <a href="articles.html">Why Most DS Teams Never Get to the Interesting Problems</a>
-    <span>·</span>
-    <a href="articles.html">Building an LLM Agent for Internal Audit</a>
-    <span>·</span>
-    <a href="articles.html">A/B Testing at Scale in Retail: 50+ Store Trials</a>
-    <span>·</span>
-    <a href="articles.html">What ABM Taught Me About AI Ethics</a>
-    <span>·</span>
-    <a href="learn.html">Free Masterclass: LLMs in the Enterprise — Register Now</a>
-    <span>·</span>
-    <a href="articles.html">Why Most DS Teams Never Get to the Interesting Problems</a>
-    <span>·</span>
-    <a href="articles.html">Building an LLM Agent for Internal Audit</a>
-    <span>·</span>
-    <a href="articles.html">A/B Testing at Scale in Retail: 50+ Store Trials</a>
-    <span>·</span>
-    <a href="articles.html">What ABM Taught Me About AI Ethics</a>
-    <span>·</span>
-    <a href="learn.html">Free Masterclass: LLMs in the Enterprise — Register Now</a>
+  <div class="ticker-track">
+    <a href="https://youtu.be/LJyyJOzxlcA" target="_blank">New Video: A Complete Understanding of Data Science in 1 Hour</a>
+    <span>·</span><a href="https://youtu.be/eV4UzdER5d4" target="_blank">Why Trust Insights from Data Science Models?</a>
+    <span>·</span><a href="https://youtu.be/uuearKdgG-A" target="_blank">Roadmap To Become A Data Science Professional</a>
+    <span>·</span><a href="learn.html#masterclasses">Free Masterclass: From Data to Decisions — Register Now</a>
+    <span>·</span><a href="learn.html#coaching">Free 1:1 Coaching Now Open — Book a Slot</a>
+    <span>·</span><a href="https://youtu.be/LJyyJOzxlcA" target="_blank">New Video: A Complete Understanding of Data Science in 1 Hour</a>
+    <span>·</span><a href="https://youtu.be/eV4UzdER5d4" target="_blank">Why Trust Insights from Data Science Models?</a>
+    <span>·</span><a href="https://youtu.be/uuearKdgG-A" target="_blank">Roadmap To Become A Data Science Professional</a>
+    <span>·</span><a href="learn.html#masterclasses">Free Masterclass: From Data to Decisions — Register Now</a>
+    <span>·</span><a href="learn.html#coaching">Free 1:1 Coaching Now Open — Book a Slot</a>
   </div>
 </div>
 
-<!-- HERO -->
 <section class="hero">
-  <div class="hero-left">
-    <div class="hero-eyebrow">A publication by Sayan Mukherjee</div>
+  <div>
+    <div class="hero-eyebrow">Decision Science · AI · Machine Learning</div>
     <h1 class="hero-title">Where <em>data meets</em><br>strategic decisions</h1>
-    <p class="hero-desc">Practical insights on machine learning, enterprise AI, and the craft of turning messy data into decisions that matter — written for leaders, practitioners, and the endlessly curious.</p>
+    <p class="hero-desc">Practical insights on machine learning, enterprise AI, and the craft of turning messy data into decisions that matter — for leaders, practitioners, and the endlessly curious.</p>
     <div class="hero-actions">
       <a href="articles.html" class="btn-primary">Read Articles</a>
       <a href="learn.html" class="btn-ghost">Explore Courses</a>
@@ -123,10 +106,12 @@
   </div>
   <div class="subscribe-box" id="subscribeBox">
     <h3>Join the Signal</h3>
-    <p>New articles on AI, ML &amp; decision science — straight to your inbox. No noise, no spam.</p>
-    <form id="subscribeForm" onsubmit="handleSubscribe(event)">
+    <p>New articles on AI, ML &amp; decision science — straight to your inbox. No noise.</p>
+    <form id="subscribeForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+      <input type="hidden" name="_subject" value="New Subscriber — The Decision Signal">
+      <input type="hidden" name="_next" value="">
       <div class="subscribe-row">
-        <input type="email" id="subEmail" placeholder="your@email.com" required>
+        <input type="email" name="email" id="subEmail" placeholder="your@email.com" required>
         <button type="submit">Subscribe →</button>
       </div>
     </form>
@@ -134,198 +119,176 @@
   </div>
 </section>
 
-<!-- FEATURED -->
-<div class="section-label">Featured Article</div>
+<div class="section-label">Featured Video</div>
 <div class="featured-wrap">
   <div class="featured-body">
-    <div class="featured-badge">Data Science Leadership</div>
-    <h2 class="featured-title">
-      <a href="https://linkedin.com/in/sayan-mukherjee-bb513b22/" target="_blank">Why Most Data Science Teams Never Get to the Interesting Problems</a>
-    </h2>
-    <p class="featured-exc">After 13 years building analytics teams across retail and financial services, I've noticed a pattern that holds everywhere. Most teams spend the majority of their time on data wrangling, stakeholder alignment, and re-explaining what a p-value is. Very little time is spent on the work that actually moves the needle. Here's what I've learned about fixing that — and why the solution is almost never technical.</p>
+    <div class="featured-badge">ML &amp; AI · Free Video</div>
+    <h2 class="featured-title"><a href="https://youtu.be/LJyyJOzxlcA" target="_blank">A Complete Understanding of Data Science in 1 Hour</a></h2>
+    <p class="featured-exc">A comprehensive, no-fluff session covering the full landscape of data science — what it is, how the field is structured, the tools and techniques that matter. Whether you're just starting out or sharpening your mental model, this is your foundation.</p>
     <div class="featured-meta">
-      <span class="featured-author">Sayan Mukherjee</span>
+      <span class="meta-dot"></span><span>1 hour · Free</span>
+      <span class="meta-dot"></span><span>Knowledge Sharing Group</span>
       <span class="meta-dot"></span>
-      <span>March 2026</span>
-      <span class="meta-dot"></span>
-      <span>8 min read</span>
-      <span class="meta-dot"></span>
-      <a href="https://linkedin.com/in/sayan-mukherjee-bb513b22/" target="_blank" style="color:var(--sl2);font-weight:500">Read on LinkedIn ↗</a>
+      <a href="https://youtu.be/LJyyJOzxlcA" target="_blank" style="color:var(--sl2);font-weight:500">Watch on YouTube ↗</a>
     </div>
   </div>
-  <div class="featured-img">
-    <div class="featured-img-inner">
-      <div style="font-size:36px;margin-bottom:8px">📊</div>
-      <div>Cover image</div>
-      <div style="font-size:10px;color:var(--inkl);margin-top:4px">Replace in HTML</div>
-    </div>
+  <div class="featured-embed">
+    <iframe src="https://www.youtube.com/embed/LJyyJOzxlcA"
+            title="A Complete Understanding of Data Science in 1 Hour"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen loading="lazy"></iframe>
   </div>
 </div>
 
-<!-- TOPIC FILTER -->
 <div class="filter-bar" id="homeFilter">
   <span style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--inkl);margin-right:4px">Topics:</span>
   <button class="filter-chip active" data-filter="all">All</button>
   <button class="filter-chip" data-filter="ml">ML &amp; AI</button>
   <button class="filter-chip" data-filter="genai">Generative AI</button>
   <button class="filter-chip" data-filter="leadership">Leadership</button>
-  <button class="filter-chip" data-filter="experimentation">Experimentation</button>
-  <button class="filter-chip" data-filter="retail">Retail Analytics</button>
   <button class="filter-chip" data-filter="career">Career</button>
+  <button class="filter-chip" data-filter="experimentation">Experimentation</button>
 </div>
 
-<!-- RECENT ARTICLES -->
-<div class="section-label">Recent Articles</div>
-<div class="recent-grid" id="recentGrid">
-
-  <!-- ARTICLE CARD — duplicate and edit the 6 fields marked ✏️ to add more -->
-  <div class="article-card" data-cat="genai">
-    <div class="article-card-img">🤖</div>
-    <div class="article-card-cat">Generative AI</div><!-- ✏️ Category -->
-    <h3 class="article-card-title">Building an LLM Agent for Internal Audit: What Actually Worked</h3><!-- ✏️ Title -->
-    <p class="article-card-exc">RAG pipelines sound simple. Building one that audit leadership actually trusts requires unglamorous work around chunking strategy and retrieval evaluation.</p><!-- ✏️ Excerpt -->
-    <div class="article-card-foot">
-      <span class="article-card-meta">Feb 2026 · 6 min</span><!-- ✏️ Date & read time -->
-      <a href="https://linkedin.com/in/sayan-mukherjee-bb513b22/" target="_blank" class="article-card-link">Read on LinkedIn →</a><!-- ✏️ LinkedIn URL -->
+<div class="section-label">Videos</div>
+<div class="video-grid" id="videoGrid">
+  <div class="video-card" data-cat="ml">
+    <div class="video-embed">
+      <iframe src="https://www.youtube.com/embed/LJyyJOzxlcA" title="A Complete Understanding of Data Science in 1 Hour" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <div class="video-body">
+      <div class="video-cat">ML &amp; AI</div>
+      <div class="video-title">A Complete Understanding of Data Science in 1 Hour</div>
+      <div class="video-foot"><span class="video-meta">1 hr · Free</span><a href="https://youtu.be/LJyyJOzxlcA" target="_blank" class="video-link">Watch on YouTube →</a></div>
     </div>
   </div>
-
-  <div class="article-card" data-cat="experimentation">
-    <div class="article-card-img">🧪</div>
-    <div class="article-card-cat">Experimentation</div>
-    <h3 class="article-card-title">A/B Testing at Scale in Retail: Lessons from 50+ Store Trials</h3>
-    <p class="article-card-exc">Running store trials sounds straightforward until you realise how many ways the data can mislead you. A look at rigorous retail experimentation methodology.</p>
-    <div class="article-card-foot">
-      <span class="article-card-meta">Jan 2026 · 5 min</span>
-      <a href="https://linkedin.com/in/sayan-mukherjee-bb513b22/" target="_blank" class="article-card-link">Read on LinkedIn →</a>
+  <div class="video-card" data-cat="ml">
+    <div class="video-embed">
+      <iframe src="https://www.youtube.com/embed/eV4UzdER5d4" title="Why Trust Insights from Data Science Models?" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <div class="video-body">
+      <div class="video-cat">ML &amp; AI</div>
+      <div class="video-title">Why Trust Insights from Data Science Models?</div>
+      <div class="video-foot"><span class="video-meta">Free</span><a href="https://youtu.be/eV4UzdER5d4" target="_blank" class="video-link">Watch on YouTube →</a></div>
     </div>
   </div>
+  <div class="video-card" data-cat="career">
+    <div class="video-embed">
+      <iframe src="https://www.youtube.com/embed/uuearKdgG-A" title="Roadmap To Become A Data Science Professional" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <div class="video-body">
+      <div class="video-cat">Career</div>
+      <div class="video-title">Roadmap To Become A Data Science Professional</div>
+      <div class="video-foot"><span class="video-meta">Career guidance · Free</span><a href="https://youtu.be/uuearKdgG-A" target="_blank" class="video-link">Watch on YouTube →</a></div>
+    </div>
+  </div>
+</div>
 
+<div class="section-label">Latest Articles</div>
+<div class="article-row">
+  <div class="article-card" data-cat="leadership">
+    <div class="article-card-img" style="background:var(--sl);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px">
+      <div style="font-size:22px;font-weight:700;color:rgba(255,255,255,.85);font-family:sans-serif">M</div>
+      <div style="font-family:sans-serif;font-size:9px;color:rgba(255,255,255,.5);letter-spacing:.1em;text-transform:uppercase">Medium</div>
+    </div>
+    <div class="article-card-cat">Leadership · Project Management</div>
+    <h3 class="article-card-title">What Project Managers Need To Know About Pre-Mortems</h3>
+    <p class="article-card-exc">Post-mortems analyse what went wrong. Pre-mortems ask what could go wrong — before it does. A forward-looking framework every PM should build into their practice.</p>
+    <div class="article-card-foot">
+      <span class="article-card-meta">Dec 2020 · 4 min</span>
+      <a href="https://smukherjee04.medium.com/what-project-managers-need-to-know-about-pre-mortems-bcb35c04848e" target="_blank" class="article-card-link">Read on Medium →</a>
+    </div>
+  </div>
   <div class="article-card" data-cat="ml">
-    <div class="article-card-img">🧠</div>
-    <div class="article-card-cat">ML &amp; AI</div>
-    <h3 class="article-card-title">What Agent-Based Modelling Taught Me About AI Ethics</h3>
-    <p class="article-card-exc">My published research on AI and happiness used simulation to understand emergent societal behaviour. The findings are relevant to anyone deploying AI at scale.</p>
+    <div class="article-card-img" style="background:#003366;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px">
+      <div style="font-size:13px;font-weight:700;color:rgba(255,255,255,.85);font-family:sans-serif;letter-spacing:.05em">FORBES</div>
+      <div style="font-family:sans-serif;font-size:9px;color:rgba(255,255,255,.5);letter-spacing:.1em;text-transform:uppercase">External Article</div>
+    </div>
+    <div class="article-card-cat">ML &amp; AI · Science</div>
+    <h3 class="article-card-title">Chaos Theory, the Butterfly Effect and the Computer Glitch That Started It All</h3>
+    <p class="article-card-exc">How a rounding error in a 1961 weather simulation gave birth to chaos theory — and why small inputs can have enormous consequences in complex systems.</p>
     <div class="article-card-foot">
-      <span class="article-card-meta">Dec 2025 · 7 min</span>
-      <a href="https://linkedin.com/in/sayan-mukherjee-bb513b22/" target="_blank" class="article-card-link">Read on LinkedIn →</a>
+      <span class="article-card-meta">Forbes · Feb 2018</span>
+      <a href="https://www.forbes.com/sites/startswithabang/2018/02/13/chaos-theory-the-butterfly-effect-and-the-computer-glitch-that-started-it-all/" target="_blank" class="article-card-link">Read on Forbes →</a>
     </div>
   </div>
-
+  <div class="article-card" data-cat="genai" style="border:1.5px dashed var(--rule);background:var(--warm)">
+    <div class="article-card-img" style="background:var(--warmd);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px">
+      <div style="font-size:1.8rem">✍️</div>
+      <div style="font-family:sans-serif;font-size:9.5px;color:var(--inkl);text-transform:uppercase;letter-spacing:.1em">Coming soon</div>
+    </div>
+    <div class="article-card-cat">Your next article</div>
+    <h3 class="article-card-title">Add your next article in articles.html on GitHub</h3>
+    <p class="article-card-exc">Takes 2 minutes — paste a block, fill 5 fields, commit. No coding required. It appears here automatically.</p>
+    <div class="article-card-foot"><span class="article-card-meta">Placeholder</span><a href="articles.html" class="article-card-link">View all →</a></div>
+  </div>
 </div>
 <div style="text-align:center;padding:1.5rem;background:#fff;border-bottom:0.5px solid var(--rule)">
-  <a href="articles.html" class="btn-ghost">View All Articles →</a>
+  <a href="articles.html" class="btn-ghost">View All Articles &amp; Videos →</a>
 </div>
 
-<!-- PROMO STRIP -->
 <div class="promo-strip">
   <div class="promo-half">
     <div class="promo-badge">Coming Soon · Byte Learning</div>
     <h3 class="promo-title">Short Courses on Decision Science</h3>
-    <p class="promo-desc">Practical, bite-sized courses on ML, AI and data strategy — designed for busy professionals. YouTube + downloadable resources. All free.</p>
+    <p class="promo-desc">Practical, bite-sized courses on ML, AI and data strategy — for busy professionals. YouTube + downloadable resources. All free.</p>
     <a href="learn.html" class="btn-outline-white">Explore Courses →</a>
   </div>
   <div class="promo-half">
     <div class="promo-badge">Free · Coaching &amp; Mentorship</div>
-    <h3 class="promo-title">Work Directly with Sayan</h3>
-    <p class="promo-desc">Career mentorship, technical deep-dives, and AI strategy advisory sessions. Book a free slot and let's work on your real problems together.</p>
+    <h3 class="promo-title">1-to-1 Coaching Sessions</h3>
+    <p class="promo-desc">Career mentorship, technical deep-dives, and AI strategy advisory. Book a free slot — let's work on your real problems together.</p>
     <a href="learn.html#coaching" class="btn-outline-white">Book a Session →</a>
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-top">
     <div>
       <div class="footer-brand-name">The Decision Signal</div>
       <div class="footer-brand-tag">Data · AI · Decision Intelligence</div>
-      <p class="footer-brand-desc">Practical insights on machine learning, enterprise AI, and the craft of turning data into decisions that matter. By Sayan Mukherjee.</p>
+      <p class="footer-brand-desc">Practical insights on machine learning, enterprise AI, and the craft of turning data into decisions that matter.</p>
     </div>
-    <div class="footer-col">
-      <h4>Content</h4>
-      <ul>
-        <li><a href="articles.html">All Articles</a></li>
-        <li><a href="articles.html?filter=genai">Generative AI</a></li>
-        <li><a href="articles.html?filter=ml">ML &amp; AI</a></li>
-        <li><a href="articles.html?filter=leadership">Leadership</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Learn</h4>
-      <ul>
-        <li><a href="learn.html">Courses</a></li>
-        <li><a href="learn.html#masterclasses">Masterclasses</a></li>
-        <li><a href="learn.html#coaching">Coaching</a></li>
-        <li><a href="https://www.youtube.com/@knowledgesharinggroup4001" target="_blank">YouTube ↗</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Connect</h4>
-      <ul>
-        <li><a href="about.html">About Sayan</a></li>
-        <li><a href="https://linkedin.com/in/sayan-mukherjee-bb513b22/" target="_blank">LinkedIn ↗</a></li>
-        <li><a href="mailto:mukherjee.sayan17@gmail.com">Email</a></li>
-      </ul>
-    </div>
+    <div class="footer-col"><h4>Content</h4><ul><li><a href="articles.html">All Articles</a></li><li><a href="articles.html?filter=genai">Generative AI</a></li><li><a href="articles.html?filter=ml">ML &amp; AI</a></li><li><a href="articles.html?filter=leadership">Leadership</a></li></ul></div>
+    <div class="footer-col"><h4>Learn</h4><ul><li><a href="learn.html">Courses</a></li><li><a href="learn.html#masterclasses">Masterclasses</a></li><li><a href="learn.html#coaching">Coaching</a></li><li><a href="https://www.youtube.com/@knowledgesharinggroup4001" target="_blank">YouTube ↗</a></li></ul></div>
+    <div class="footer-col"><h4>Connect</h4><ul><li></li><li><a href="mailto:mukherjee.sayan17@gmail.com">Email</a></li></ul></div>
   </div>
-  <div class="footer-bottom">
-    <span class="footer-copy">© 2026 The Decision Signal · A publication by Sayan Mukherjee · Built on GitHub Pages</span>
-    <div class="footer-legal">
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-    </div>
-  </div>
+  <div class="footer-bottom"><span class="footer-copy">© 2026 The Decision Signal · Built on GitHub Pages</span></div>
 </footer>
-
 <div class="toast" id="toast"></div>
 
 <script>
-function toggleMobile() {
-  document.getElementById('mobileMenu').classList.toggle('open');
-}
-function scrollToSubscribe() {
-  document.getElementById('subscribeBox').scrollIntoView({ behavior: 'smooth', block: 'center' });
-  document.getElementById('subEmail').focus();
-}
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 3500);
-}
-function handleSubscribe(e) {
-  e.preventDefault();
-  const email = document.getElementById('subEmail').value;
-  if (!email) return;
-  // Route to mailto — replace with Mailchimp action URL when ready
-  window.location.href = `mailto:mukherjee.sayan17@gmail.com?subject=Newsletter Subscription&body=Please subscribe me: ${email}`;
-  showToast('✓ Thank you! You\'ll hear from us soon.');
-  document.getElementById('subEmail').value = '';
-}
+function toggleMobile(){document.getElementById('mobileMenu').classList.toggle('open')}
+function scrollToSubscribe(){document.getElementById('subscribeBox').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('subEmail').focus()}
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),4000)}
 
-// Topic filter chips
-document.querySelectorAll('#homeFilter .filter-chip').forEach(chip => {
-  chip.addEventListener('click', () => {
-    document.querySelectorAll('#homeFilter .filter-chip').forEach(c => c.classList.remove('active'));
+document.getElementById('subscribeForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const form=this;
+  if(form.action.includes('YOUR_FORMSPREE_ID')){
+    const email=document.getElementById('subEmail').value;
+    window.location.href=`mailto:mukherjee.sayan17@gmail.com?subject=New Subscriber — The Decision Signal&body=New subscriber: ${email}`;
+    showToast('✓ Opening your email client...');
+  } else {
+    fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+      .then(r=>{if(r.ok){showToast('✓ Subscribed! You\'ll hear from us soon.');form.reset();}else{showToast('Something went wrong — please try again.');}})
+      .catch(()=>showToast('Something went wrong — please try again.'));
+  }
+});
+
+document.querySelectorAll('#homeFilter .filter-chip').forEach(chip=>{
+  chip.addEventListener('click',()=>{
+    document.querySelectorAll('#homeFilter .filter-chip').forEach(c=>c.classList.remove('active'));
     chip.classList.add('active');
-    const f = chip.dataset.filter;
-    document.querySelectorAll('#recentGrid .article-card').forEach(card => {
-      card.style.display = (f === 'all' || card.dataset.cat === f) ? 'block' : 'none';
+    const f=chip.dataset.filter;
+    document.querySelectorAll('#videoGrid .video-card,.article-row .article-card').forEach(card=>{
+      card.style.display=(f==='all'||card.dataset.cat===f)?'flex':'none';
     });
   });
 });
 
-// Fade-in on scroll
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; }
-  });
-}, { threshold: 0.08 });
-document.querySelectorAll('.article-card, .promo-half').forEach(el => {
-  el.style.opacity = '0'; el.style.transform = 'translateY(16px)';
-  el.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-  obs.observe(el);
-});
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});},{threshold:0.06});
+document.querySelectorAll('.video-card,.article-card,.promo-half').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(14px)';el.style.transition='opacity 0.4s ease,transform 0.4s ease';obs.observe(el);});
 </script>
 </body>
 </html>
