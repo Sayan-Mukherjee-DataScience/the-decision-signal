@@ -3,36 +3,87 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Articles — The Decision Signal</title>
+<title>Articles &amp; Insights — The Decision Signal</title>
 <meta name="description" content="Articles on data science, machine learning, enterprise AI and decision intelligence.">
 <link rel="stylesheet" href="style.css">
 <style>
-
+/* PAGE HERO */
 .page-hero{background:var(--sl);padding:2.5rem 5%;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;border-bottom:3px solid var(--acc)}
 .page-hero h1{font-size:clamp(26px,4vw,38px);color:#fff;margin-bottom:5px;font-weight:400}
 .page-hero p{font-size:13.5px;color:rgba(255,255,255,.5)}
-.page-hero-meta{font-size:12px;color:rgba(255,255,255,.35);text-align:right}
-.art-full-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));background:#fff;border-bottom:0.5px solid var(--rule)}
-.af-card{border-right:0.5px solid var(--rule);display:flex;flex-direction:column;overflow:hidden;transition:background .15s}
-.af-card:last-child{border-right:none}
-.af-card:hover{background:var(--warm)}
-.af-card-hdr{width:100%;height:110px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;flex-shrink:0;padding:10px}
-.af-card-icon{font-size:1.6rem;line-height:1}
-.af-card-src{font-size:9px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.8);background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px}
-.af-card-body{padding:11px 13px;flex:1;display:flex;flex-direction:column}
-.af-card-cat{font-size:9px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin-bottom:5px}
-.af-card-title{font-size:13px;color:var(--ink);line-height:1.35;flex:1;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:8px}
-.af-card-foot{display:flex;align-items:center;justify-content:space-between;padding-top:8px;border-top:0.5px solid var(--rule);margin-top:auto;gap:4px;flex-wrap:wrap}
-.af-card-meta{font-size:9.5px;color:var(--inkl)}
-.af-card-link{font-size:10px;font-weight:500;color:var(--sl2);white-space:nowrap}
-.af-card-link:hover{color:var(--sl)}
-@media(max-width:1100px){.art-full-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:700px){.art-full-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:420px){.art-full-grid{grid-template-columns:1fr}}
 
+/* STICKY CATEGORY NAV */
+.cat-nav{position:sticky;top:58px;z-index:150;background:#fff;border-bottom:2px solid var(--rule);display:flex;align-items:center;overflow-x:auto;padding:0 5%;gap:0;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-tab{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--inkl);padding:13px 18px;white-space:nowrap;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;background:none;border-top:none;border-left:none;border-right:none;transition:all .2s}
+.cat-tab:hover{color:var(--sl)}
+.cat-tab.active{color:var(--sl);border-bottom-color:var(--acc)}
+
+/* CATEGORY SECTION */
+.cat-section{padding:2.5rem 5% 0;border-bottom:0.5px solid var(--rule)}
+.cat-section-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem}
+.cat-section-title{font-family:'Playfair Display',serif;font-size:22px;color:var(--sl);font-weight:400;display:flex;align-items:center;gap:10px}
+.cat-section-title::before{content:'';display:block;width:4px;height:22px;background:var(--acc);border-radius:2px;flex-shrink:0}
+.view-all-btn{display:inline-flex;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;color:var(--sl2);letter-spacing:.04em;text-decoration:none;padding:7px 16px;border:1.5px solid var(--sl2);border-radius:2px;transition:all .2s;white-space:nowrap}
+.view-all-btn:hover{background:var(--sl);color:#fff;border-color:var(--sl)}
+.view-all-btn svg{transition:transform .2s}
+.view-all-btn:hover svg{transform:translateX(4px)}
+
+/* FEATURED + SLIDER LAYOUT */
+.cat-body{display:grid;grid-template-columns:340px 1fr;gap:1px;background:var(--rule);margin:0 -5%;padding:0 0 2rem}
+
+/* FEATURED CARD */
+.feat-card{background:#fff;padding:1.75rem 2rem;display:flex;flex-direction:column;gap:.75rem}
+.feat-hdr{height:160px;border-radius:4px;overflow:hidden;margin-bottom:.75rem;position:relative;flex-shrink:0}
+.feat-hdr-inner{width:100%;height:100%;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:1rem}
+.feat-badge{font-family:'DM Sans',sans-serif;font-size:9px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;background:rgba(255,255,255,.18);color:#fff;padding:3px 9px;border-radius:10px;margin-bottom:6px;width:fit-content}
+.feat-hdr-title{font-family:'Playfair Display',serif;font-size:16px;color:#fff;line-height:1.3;font-weight:400}
+.feat-source{font-family:'DM Sans',sans-serif;font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--acc)}
+.feat-title{font-family:'Playfair Display',serif;font-size:19px;color:var(--ink);line-height:1.3;font-weight:400}
+.feat-title a{color:inherit;transition:color .2s}
+.feat-title a:hover{color:var(--sl2)}
+.feat-exc{font-family:'DM Sans',sans-serif;font-size:13px;color:var(--inkm);line-height:1.75;flex:1}
+.feat-foot{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:0.5px solid var(--rule);margin-top:auto}
+.feat-meta{font-family:'DM Sans',sans-serif;font-size:11px;color:var(--inkl)}
+.feat-link{display:inline-flex;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;color:var(--sl2);text-decoration:none;transition:gap .2s}
+.feat-link:hover{gap:10px;color:var(--sl)}
+
+/* SLIDER */
+.slider-wrap{background:#fff;overflow:hidden;position:relative;padding:1.75rem 0 1.75rem 1.5rem}
+.slider-inner{display:flex;gap:1px;transition:transform .45s cubic-bezier(.4,0,.2,1);will-change:transform}
+.art-card{min-width:220px;max-width:220px;background:#fff;border:0.5px solid var(--rule);display:flex;flex-direction:column;flex-shrink:0;transition:box-shadow .2s}
+.art-card:hover{box-shadow:0 4px 20px rgba(27,47,78,.1)}
+.art-card-hdr{height:110px;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:10px 12px;flex-shrink:0;position:relative}
+.art-card-src{font-family:'DM Sans',sans-serif;font-size:9px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.75);background:rgba(255,255,255,.15);padding:2px 7px;border-radius:8px;margin-bottom:4px;width:fit-content}
+.art-card-hdr-title{font-family:'Playfair Display',serif;font-size:12.5px;color:#fff;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.art-card-body{padding:11px 13px;flex:1;display:flex;flex-direction:column}
+.art-card-cat{font-family:'DM Sans',sans-serif;font-size:9px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin-bottom:5px}
+.art-card-title{font-family:'Playfair Display',serif;font-size:13px;color:var(--ink);line-height:1.35;flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:8px}
+.art-card-foot{display:flex;align-items:center;justify-content:space-between;padding-top:8px;border-top:0.5px solid var(--rule);margin-top:auto}
+.art-card-meta{font-family:'DM Sans',sans-serif;font-size:9.5px;color:var(--inkl)}
+.art-card-link{font-family:'DM Sans',sans-serif;font-size:10px;font-weight:500;color:var(--sl2);text-decoration:none;white-space:nowrap}
+.art-card-link:hover{color:var(--sl)}
+
+/* SLIDER CONTROLS */
+.slider-controls{display:flex;align-items:center;gap:8px;margin-top:1.25rem;padding-right:1.5rem}
+.sl-btn{width:30px;height:30px;border:1.5px solid var(--rule);background:#fff;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--inkm);transition:all .2s;flex-shrink:0}
+.sl-btn:hover:not(:disabled){background:var(--sl);color:#fff;border-color:var(--sl)}
+.sl-btn:disabled{opacity:.3;cursor:default}
+.sl-dots{display:flex;gap:5px;align-items:center}
+.sl-dot{width:6px;height:6px;border-radius:50%;background:rgba(27,47,78,.15);border:none;cursor:pointer;padding:0;transition:all .22s}
+.sl-dot.on{background:var(--acc);width:18px;border-radius:3px}
+
+/* Responsive */
+@media(max-width:900px){
+  .cat-body{grid-template-columns:1fr}
+  .cat-body{margin:0;padding:0 0 1.5rem}
+  .slider-wrap{padding:1.25rem 0 1.25rem 1rem}
+}
+@media(max-width:600px){.art-card{min-width:180px;max-width:180px}}
 </style>
 </head>
 <body>
+
 <nav class="site-nav">
   <a href="index.html" class="nav-brand">
     <svg width="36" height="36" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;display:block">
@@ -45,363 +96,566 @@
       <rect x="70" y="28" width="3.5" height="26" rx="1" fill="#C17B2F"/>
       <circle cx="71.75" cy="28" r="2.5" fill="#fff"/>
     </svg>
-    <div>
+    <div style="display:flex;flex-direction:column;gap:1px">
       <div class="nav-brand-name">The Decision Signal</div>
       <div class="nav-brand-tag">Data · AI · Decision Intelligence</div>
     </div>
   </a>
-  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="articles.html" class="active">Articles</a></li><li><a href="learn.html">Learn</a></li></ul>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="articles.html" class="active">Articles</a></li>
+    <li><a href="learn.html">Learn</a></li>
+  </ul>
   <div class="nav-actions">
-    <button class="btn-subscribe" onclick="scrollToSubscribe()">Subscribe</button>
+    <button class="btn-subscribe" onclick="window.location='index.html#subscribeBox'">Subscribe</button>
   </div>
   <button class="nav-hamburger" onclick="toggleMobile()" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a>
-  <a href="articles.html">Articles</a>
-  <a href="learn.html">Learn</a>
+  <a href="index.html">Home</a><a href="articles.html">Articles</a><a href="learn.html">Learn</a>
 </div>
+
 <div class="ticker">
   <span class="ticker-label">Latest</span>
   <div class="ticker-overflow">
     <div class="ticker-track">
       <a href="https://youtu.be/LJyyJOzxlcA" target="_blank">A Complete Understanding of Data Science in 1 Hour</a>
       <span>·</span><a href="https://youtu.be/eV4UzdER5d4" target="_blank">Why Trust Insights from Data Science Models?</a>
-      <span>·</span><a href="https://youtu.be/uuearKdgG-A" target="_blank">Roadmap To Become A Data Science Professional</a>
       <span>·</span><a href="learn.html#masterclasses">Free Masterclass: From Data to Decisions — Register Now</a>
+      <span>·</span><a href="https://smukherjee04.medium.com/what-project-managers-need-to-know-about-pre-mortems-bcb35c04848e" target="_blank">New Article: What PMs Need To Know About Pre-Mortems</a>
       <span>·</span><a href="learn.html#coaching">Free 1:1 Coaching — Book a Slot</a>
       <span>·</span><a href="https://youtu.be/LJyyJOzxlcA" target="_blank">A Complete Understanding of Data Science in 1 Hour</a>
-      <span>·</span><a href="https://youtu.be/eV4UzdER5d4" target="_blank">Why Trust Insights from Data Science Models?</a>
-      <span>·</span><a href="https://youtu.be/uuearKdgG-A" target="_blank">Roadmap To Become A Data Science Professional</a>
       <span>·</span><a href="learn.html#masterclasses">Free Masterclass: From Data to Decisions — Register Now</a>
+      <span>·</span><a href="https://youtu.be/eV4UzdER5d4" target="_blank">Why Trust Insights from Data Science Models?</a>
       <span>·</span><a href="learn.html#coaching">Free 1:1 Coaching — Book a Slot</a>
+      <span>·</span><a href="https://smukherjee04.medium.com/what-project-managers-need-to-know-about-pre-mortems-bcb35c04848e" target="_blank">New Article: What PMs Need To Know About Pre-Mortems</a>
     </div>
   </div>
 </div>
+
 <div class="page-hero">
   <div>
     <h1>Articles &amp; Insights</h1>
-    <p>Machine learning, enterprise AI, and decision intelligence</p>
-  </div>
-  <div class="page-hero-meta">
-    <div id="articleCount">10 articles</div>
-    <div>Updated regularly</div>
+    <p>Curated reads on machine learning, enterprise AI, leadership and decision intelligence</p>
   </div>
 </div>
-<div class="filter-bar" id="artFilter">
-  <button class="filter-chip active" data-filter="all">All</button>
-  <button class="filter-chip" data-filter="ml">ML &amp; AI</button>
-  <button class="filter-chip" data-filter="genai">Generative AI</button>
-  <button class="filter-chip" data-filter="leadership">Leadership</button>
-  <button class="filter-chip" data-filter="experimentation">Experimentation</button>
-  <button class="filter-chip" data-filter="career">Career</button>
-</div>
-<div class="section-label">All Articles</div>
-<div class="art-full-grid" id="artGrid">
-  <div class="af-card" data-cat="leadership">
-    <div class="af-card-hdr" style="background:linear-gradient(135deg,#1B2F4E,#24426B)"><div class="af-card-icon">✍️</div><span class="af-card-src">Medium</span></div>
-    <div class="af-card-body">
-      <div class="af-card-cat">Leadership</div>
-      <div class="af-card-title">What Project Managers Need To Know About Pre-Mortems</div>
-      <div class="af-card-foot"><span class="af-card-meta">Dec 2020 · 4 min</span><a href="https://smukherjee04.medium.com/what-project-managers-need-to-know-about-pre-mortems-bcb35c04848e" target="_blank" class="af-card-link">Read →</a></div>
+
+<!-- STICKY CATEGORY TABS -->
+<nav class="cat-nav" id="catNav">
+  <button class="cat-tab active" data-cat="ml">ML &amp; AI</button>
+  <button class="cat-tab" data-cat="genai">Generative AI</button>
+  <button class="cat-tab" data-cat="leadership">Leadership</button>
+  <button class="cat-tab" data-cat="experimentation">Experimentation</button>
+  <button class="cat-tab" data-cat="career">Career</button>
+</nav>
+
+<!-- ════════════════════════════════════════════
+     ML & AI SECTION
+════════════════════════════════════════════ -->
+<section class="cat-section" id="sec-ml">
+  <div class="cat-section-hdr">
+    <div class="cat-section-title">ML &amp; AI</div>
+    <a href="https://towardsdatascience.com" target="_blank" class="view-all-btn">
+      View All
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+  <div class="cat-body">
+
+    <!-- Featured -->
+    <div class="feat-card">
+      <div class="feat-hdr">
+        <div class="feat-hdr-inner" style="background:linear-gradient(145deg,#0F2A4A,#24426B)">
+          <span class="feat-badge">Featured · ML &amp; AI</span>
+          <div class="feat-hdr-title">Chaos Theory, the Butterfly Effect and the Computer Glitch That Started It All</div>
+        </div>
+      </div>
+      <div class="feat-source">Forbes</div>
+      <h3 class="feat-title"><a href="https://www.forbes.com/sites/startswithabang/2018/02/13/chaos-theory-the-butterfly-effect-and-the-computer-glitch-that-started-it-all/" target="_blank">Chaos Theory, the Butterfly Effect and the Computer Glitch That Started It All</a></h3>
+      <p class="feat-exc">How a rounding error in a 1961 weather simulation gave birth to chaos theory — and why small inputs can have enormous, unpredictable consequences in complex systems and ML models.</p>
+      <div class="feat-foot">
+        <span class="feat-meta">Forbes · Feb 2018</span>
+        <a href="https://www.forbes.com/sites/startswithabang/2018/02/13/chaos-theory-the-butterfly-effect-and-the-computer-glitch-that-started-it-all/" target="_blank" class="feat-link">Read Article <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+
+    <!-- Slider -->
+    <div class="slider-wrap">
+      <div class="slider-inner" id="sl-ml">
+        <div class="art-card">
+          <div class="art-card-hdr" style="background:linear-gradient(145deg,#0F6E56,#1D9E75)">
+            <span class="art-card-src">Towards Data Science</span>
+            <div class="art-card-hdr-title">The Economics of Machine Learning in Production</div>
+          </div>
+          <div class="art-card-body">
+            <div class="art-card-cat">ML &amp; AI · Strategy</div>
+            <div class="art-card-title">The Economics of Machine Learning in Production</div>
+            <div class="art-card-foot"><span class="art-card-meta">TDS</span><a href="https://towardsdatascience.com/the-economics-of-machine-learning-in-production-dc0b8d03c28a" target="_blank" class="art-card-link">Read →</a></div>
+          </div>
+        </div>
+        <div class="art-card">
+          <div class="art-card-hdr" style="background:linear-gradient(145deg,#1a1a2e,#534AB7)">
+            <span class="art-card-src">McKinsey</span>
+            <div class="art-card-hdr-title">The Data-Driven Enterprise: What It Actually Takes</div>
+          </div>
+          <div class="art-card-body">
+            <div class="art-card-cat">ML &amp; AI · Enterprise</div>
+            <div class="art-card-title">The Data-Driven Enterprise: What It Actually Takes</div>
+            <div class="art-card-foot"><span class="art-card-meta">McKinsey</span><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-data-driven-enterprise-of-2025" target="_blank" class="art-card-link">Read →</a></div>
+          </div>
+        </div>
+        <div class="art-card">
+          <div class="art-card-hdr" style="background:linear-gradient(145deg,#1B2F4E,#378ADD)">
+            <span class="art-card-src">Google AI Blog</span>
+            <div class="art-card-hdr-title">Anomaly Detection at Scale: Lessons from Production</div>
+          </div>
+          <div class="art-card-body">
+            <div class="art-card-cat">ML &amp; AI · Engineering</div>
+            <div class="art-card-title">Anomaly Detection at Scale: Lessons from Production</div>
+            <div class="art-card-foot"><span class="art-card-meta">Google AI</span><a href="https://ai.googleblog.com/" target="_blank" class="art-card-link">Read →</a></div>
+          </div>
+        </div>
+        <div class="art-card">
+          <div class="art-card-hdr" style="background:linear-gradient(145deg,#2d1b69,#7F77DD)">
+            <span class="art-card-src">MIT Tech Review</span>
+            <div class="art-card-hdr-title">The Real Risk of AI Is Not What You Think</div>
+          </div>
+          <div class="art-card-body">
+            <div class="art-card-cat">ML &amp; AI · Risk</div>
+            <div class="art-card-title">The Real Risk of AI Is Not What You Think</div>
+            <div class="art-card-foot"><span class="art-card-meta">MIT Tech Review</span><a href="https://www.technologyreview.com/2023/06/06/1074001/the-real-risks-of-artificial-intelligence/" target="_blank" class="art-card-link">Read →</a></div>
+          </div>
+        </div>
+        <div class="art-card">
+          <div class="art-card-hdr" style="background:linear-gradient(145deg,#14532d,#166534)">
+            <span class="art-card-src">Harvard Business Review</span>
+            <div class="art-card-hdr-title">How to Use Data to Make Better Decisions Faster</div>
+          </div>
+          <div class="art-card-body">
+            <div class="art-card-cat">ML &amp; AI · Decision Making</div>
+            <div class="art-card-title">How to Use Data to Make Better Decisions Faster</div>
+            <div class="art-card-foot"><span class="art-card-meta">HBR</span><a href="https://hbr.org/2019/02/how-to-use-data-to-make-better-decisions" target="_blank" class="art-card-link">Read →</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="slider-controls">
+        <button class="sl-btn" onclick="slide('ml',-1)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg></button>
+        <div class="sl-dots" id="dots-ml"></div>
+        <button class="sl-btn" onclick="slide('ml',1)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      </div>
     </div>
   </div>
-  <div class="af-card" data-cat="ml">
-    <div class="af-card-hdr" style="background:linear-gradient(135deg,#003366,#185FA5)"><div class="af-card-icon">🦋</div><span class="af-card-src">Forbes</span></div>
-    <div class="af-card-body">
-      <div class="af-card-cat">ML &amp; AI · Science</div>
-      <div class="af-card-title">Chaos Theory, the Butterfly Effect and the Computer Glitch That Started It All</div>
-      <div class="af-card-foot"><span class="af-card-meta">Forbes · Feb 2018</span><a href="https://www.forbes.com/sites/startswithabang/2018/02/13/chaos-theory-the-butterfly-effect-and-the-computer-glitch-that-started-it-all/" target="_blank" class="af-card-link">Read →</a></div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     GENERATIVE AI SECTION
+════════════════════════════════════════════ -->
+<section class="cat-section" id="sec-genai">
+  <div class="cat-section-hdr">
+    <div class="cat-section-title">Generative AI</div>
+    <a href="https://www.technologyreview.com" target="_blank" class="view-all-btn">
+      View All
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+  <div class="cat-body">
+    <div class="feat-card">
+      <div class="feat-hdr">
+        <div class="feat-hdr-inner" style="background:linear-gradient(145deg,#2d1b69,#534AB7)">
+          <span class="feat-badge">Featured · Generative AI</span>
+          <div class="feat-hdr-title">The Real Risk of AI Is Not What You Think</div>
+        </div>
+      </div>
+      <div class="feat-source">MIT Technology Review</div>
+      <h3 class="feat-title"><a href="https://www.technologyreview.com/2023/06/06/1074001/the-real-risks-of-artificial-intelligence/" target="_blank">The Real Risk of AI Is Not What You Think</a></h3>
+      <p class="feat-exc">The biggest dangers from AI aren't killer robots or superintelligence — they're mundane risks like bias, misuse, and misplaced trust in systems that seem authoritative but aren't.</p>
+      <div class="feat-foot">
+        <span class="feat-meta">MIT Technology Review · 2023</span>
+        <a href="https://www.technologyreview.com/2023/06/06/1074001/the-real-risks-of-artificial-intelligence/" target="_blank" class="feat-link">Read Article <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+    <div class="slider-wrap">
+      <div class="slider-inner" id="sl-genai">
+        <div class="art-card">
+          <div class="art-card-hdr" style="background:linear-gradient(145deg,#1a1a2e,#7F77DD)">
+            <span class="art-card-src">OpenAI Blog</span>
+            <div class="art-card-hdr-title">Introducing GPT-4 and What It Means for Enterprise AI</div>
+          </div>
+          <div class="art-card-body">
+            <div class="art-card-cat">Generative AI · LLMs</div>
+            <div class="art-card-title">What GPT-4 Means for Enterprise AI Strategy</div>
+            <div class="art-card-foot"><span class="art-card-meta">OpenAI</span><a href="https://openai.com/research/gpt-4" target="_blank" class="art-card-link">Read →</a></div>
+          </div>
+        </div>
+        <div class="art-card">
+          <div class="art-card-hdr" style="background:linear-gradient(145deg,#3d1a6e,#9B59B6)">
+            <span class="art-card-src">Harvard Business Review</span>
+            <div class="art-card-hdr-title">How to Actually Use Generative AI in Your Business</div>
+          </div>
+          <div class="art-card-body">
+            <div class="art-card-cat">Generative AI · Strategy</div>
+            <div class="art-card-title">How to Actually Use Generative AI in Your Business</div>
+            <div class="art-card-foot"><span class="art-card-meta">HBR</span><a href="https://hbr.org/2023/07/how-to-use-generative-ai-as-a-thought-partner" target="_blank" class="art-card-link">Read →</a></div>
+          </div>
+        </div>
+        <div class="art-card">
+          <div class="art-card-hdr" style="background:linear-gradient(145deg,#1e3a5f,#2E86C1)">
+            <span class="art-card-src">DeepMind Blog</span>
+            <div class="art-card-hdr-title">From Research to Reality: Deploying Foundation Models</div>
+          </div>
+          <div class="art-card-body">
+            <div class="art-card-cat">Generative AI · Deployment</div>
+            <div class="art-card-title">From Research to Reality: Deploying Foundation Models</div>
+            <div class="art-card-foot"><span class="art-card-meta">DeepMind</span><a href="https://deepmind.google/research/" target="_blank" class="art-card-link">Read →</a></div>
+          </div>
+        </div>
+        <div class="art-card">
+          <div class="art-card-hdr" style="background:linear-gradient(145deg,#2d1b69,#C17B2F)">
+            <span class="art-card-src">Towards Data Science</span>
+            <div class="art-card-hdr-title">Building RAG Pipelines That Actually Work in Production</div>
+          </div>
+          <div class="art-card-body">
+            <div class="art-card-cat">Generative AI · RAG</div>
+            <div class="art-card-title">Building RAG Pipelines That Actually Work in Production</div>
+            <div class="art-card-foot"><span class="art-card-meta">TDS</span><a href="https://towardsdatascience.com" target="_blank" class="art-card-link">Read →</a></div>
+          </div>
+        </div>
+        <div class="art-card">
+          <div class="art-card-hdr" style="background:linear-gradient(145deg,#0d2137,#1B4F72)">
+            <span class="art-card-src">McKinsey</span>
+            <div class="art-card-hdr-title">The State of Generative AI in the Enterprise</div>
+          </div>
+          <div class="art-card-body">
+            <div class="art-card-cat">Generative AI · Enterprise</div>
+            <div class="art-card-title">The State of Generative AI in the Enterprise</div>
+            <div class="art-card-foot"><span class="art-card-meta">McKinsey</span><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" target="_blank" class="art-card-link">Read →</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="slider-controls">
+        <button class="sl-btn" onclick="slide('genai',-1)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg></button>
+        <div class="sl-dots" id="dots-genai"></div>
+        <button class="sl-btn" onclick="slide('genai',1)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      </div>
     </div>
   </div>
-  <div class="af-card" data-cat="ml">
-    <div class="af-card-hdr" style="background:linear-gradient(135deg,#0F6E56,#1D9E75)"><div class="af-card-icon">📊</div><span class="af-card-src">TDS</span></div>
-    <div class="af-card-body">
-      <div class="af-card-cat">ML &amp; AI</div>
-      <div class="af-card-title">The Economics of Machine Learning in Production</div>
-      <div class="af-card-foot"><span class="af-card-meta">Towards Data Science</span><a href="https://towardsdatascience.com/the-economics-of-machine-learning-in-production-dc0b8d03c28a" target="_blank" class="af-card-link">Read →</a></div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     LEADERSHIP SECTION
+════════════════════════════════════════════ -->
+<section class="cat-section" id="sec-leadership">
+  <div class="cat-section-hdr">
+    <div class="cat-section-title">Leadership</div>
+    <a href="https://hbr.org" target="_blank" class="view-all-btn">
+      View All
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+  <div class="cat-body">
+    <div class="feat-card">
+      <div class="feat-hdr">
+        <div class="feat-hdr-inner" style="background:linear-gradient(145deg,#1B2F4E,#24426B)">
+          <span class="feat-badge">Featured · Leadership</span>
+          <div class="feat-hdr-title">What Project Managers Need To Know About Pre-Mortems</div>
+        </div>
+      </div>
+      <div class="feat-source">Medium</div>
+      <h3 class="feat-title"><a href="https://smukherjee04.medium.com/what-project-managers-need-to-know-about-pre-mortems-bcb35c04848e" target="_blank">What Project Managers Need To Know About Pre-Mortems</a></h3>
+      <p class="feat-exc">Post-mortems analyse what went wrong. Pre-mortems ask what could go wrong — before it does. A forward-looking framework every PM should build into their practice from day one.</p>
+      <div class="feat-foot">
+        <span class="feat-meta">Medium · Dec 2020 · 4 min</span>
+        <a href="https://smukherjee04.medium.com/what-project-managers-need-to-know-about-pre-mortems-bcb35c04848e" target="_blank" class="feat-link">Read Article <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+    <div class="slider-wrap">
+      <div class="slider-inner" id="sl-leadership">
+        <div class="art-card">
+          <div class="art-card-hdr" style="background:linear-gradient(145deg,#7a3b1e,#C17B2F)">
+            <span class="art-card-src">Harvard Business Review</span>
+            <div class="art-card-hdr-title">What Great Data Science Leaders Actually Do</div>
+          </div>
+          <div class="art-card-body">
+            <div class="art-card-cat">Leadership · Management</div>
+            <div class="art-card-title">What Great Data Science Leaders Actually Do</div>
+            <div class="art-card-foot"><span class="art-card-meta">HBR</span><a href="https://hbr.org/2022/11/the-best-managers-are-boring-managers" target="_blank" class="art-card-link">Read →</a></div>
+          </div>
+        </div>
+        <div class="art-card">
+          <div class="art-card-hdr" style="background:linear-gradient(145deg,#2C2C2A,#5F5E5A)">
+            <span class="art-card-src">Harvard Business Review</span>
+            <div class="art-card-hdr-title">When Your Data Says One Thing and Your Gut Says Another</div>
+          </div>
+          <div class="art-card-body">
+            <div class="art-card-cat">Leadership · Strategy</div>
+            <div class="art-card-title">When Your Data Says One Thing and Your Gut Says Another</div>
+            <div class="art-card-foot"><span class="art-card-meta">HBR</span><a href="https://hbr.org" target="_blank" class="art-card-link">Read →</a></div>
+          </div>
+        </div>
+        <div class="art-card">
+          <div class="art-card-hdr" style="background:linear-gradient(145deg,#1B2F4E,#3d6b9e)">
+            <span class="art-card-src">McKinsey</span>
+            <div class="art-card-hdr-title">How to Build a Data-First Culture in Large Organisations</div>
+          </div>
+          <div class="art-card-body">
+            <div class="art-card-cat">Leadership · Culture</div>
+            <div class="art-card-title">How to Build a Data-First Culture in Large Organisations</div>
+            <div class="art-card-foot"><span class="art-card-meta">McKinsey</span><a href="https://www.mckinsey.com" target="_blank" class="art-card-link">Read →</a></div>
+          </div>
+        </div>
+        <div class="art-card">
+          <div class="art-card-hdr" style="background:linear-gradient(145deg,#4a1942,#8B2FC9)">
+            <span class="art-card-src">MIT Sloan</span>
+            <div class="art-card-hdr-title">The New Analytics Leader: Bridging Strategy and Execution</div>
+          </div>
+          <div class="art-card-body">
+            <div class="art-card-cat">Leadership · AI Strategy</div>
+            <div class="art-card-title">The New Analytics Leader: Bridging Strategy and Execution</div>
+            <div class="art-card-foot"><span class="art-card-meta">MIT Sloan</span><a href="https://sloanreview.mit.edu" target="_blank" class="art-card-link">Read →</a></div>
+          </div>
+        </div>
+        <div class="art-card">
+          <div class="art-card-hdr" style="background:linear-gradient(145deg,#0a3d20,#1a7a40)">
+            <span class="art-card-src">Harvard Business Review</span>
+            <div class="art-card-hdr-title">Why Diverse Data Teams Make Better Decisions</div>
+          </div>
+          <div class="art-card-body">
+            <div class="art-card-cat">Leadership · Teams</div>
+            <div class="art-card-title">Why Diverse Data Teams Make Better Decisions</div>
+            <div class="art-card-foot"><span class="art-card-meta">HBR</span><a href="https://hbr.org" target="_blank" class="art-card-link">Read →</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="slider-controls">
+        <button class="sl-btn" onclick="slide('leadership',-1)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg></button>
+        <div class="sl-dots" id="dots-leadership"></div>
+        <button class="sl-btn" onclick="slide('leadership',1)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      </div>
     </div>
   </div>
-  <div class="af-card" data-cat="leadership">
-    <div class="af-card-hdr" style="background:linear-gradient(135deg,#7a3b1e,#C17B2F)"><div class="af-card-icon">🎯</div><span class="af-card-src">HBR</span></div>
-    <div class="af-card-body">
-      <div class="af-card-cat">Leadership</div>
-      <div class="af-card-title">What Great Data Science Leaders Actually Do</div>
-      <div class="af-card-foot"><span class="af-card-meta">Harvard Business Review</span><a href="https://hbr.org/2022/11/the-best-managers-are-boring-managers" target="_blank" class="af-card-link">Read →</a></div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     EXPERIMENTATION SECTION
+════════════════════════════════════════════ -->
+<section class="cat-section" id="sec-experimentation">
+  <div class="cat-section-hdr">
+    <div class="cat-section-title">Experimentation</div>
+    <a href="https://towardsdatascience.com" target="_blank" class="view-all-btn">
+      View All
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+  <div class="cat-body">
+    <div class="feat-card">
+      <div class="feat-hdr">
+        <div class="feat-hdr-inner" style="background:linear-gradient(145deg,#166534,#3B6D11)">
+          <span class="feat-badge">Featured · Experimentation</span>
+          <div class="feat-hdr-title">A/B Testing: The Most Misunderstood Tool in Data Science</div>
+        </div>
+      </div>
+      <div class="feat-source">Towards Data Science</div>
+      <h3 class="feat-title"><a href="https://towardsdatascience.com/a-b-testing-is-there-a-better-way-an-exploration-of-multi-armed-bandits-98ca927b357d" target="_blank">A/B Testing: The Most Misunderstood Tool in Data Science</a></h3>
+      <p class="feat-exc">Most teams run A/B tests wrong — wrong sample sizes, wrong stopping rules, wrong interpretation. This piece cuts through the confusion and explains what rigorous experimentation actually looks like.</p>
+      <div class="feat-foot">
+        <span class="feat-meta">Towards Data Science</span>
+        <a href="https://towardsdatascience.com/a-b-testing-is-there-a-better-way-an-exploration-of-multi-armed-bandits-98ca927b357d" target="_blank" class="feat-link">Read Article <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+    <div class="slider-wrap">
+      <div class="slider-inner" id="sl-experimentation">
+        <div class="art-card">
+          <div class="art-card-hdr" style="background:linear-gradient(145deg,#0d4d2e,#166534)">
+            <span class="art-card-src">Netflix Tech Blog</span>
+            <div class="art-card-hdr-title">How Netflix Runs Thousands of A/B Tests Every Year</div>
+          </div>
+          <div class="art-card-body">
+            <div class="art-card-cat">Experimentation · Scale</div>
+            <div class="art-card-title">How Netflix Runs Thousands of A/B Tests Every Year</div>
+            <div class="art-card-foot"><span class="art-card-meta">Netflix Tech</span><a href="https://netflixtechblog.com/experimentation-is-a-major-focus-of-data-science-across-netflix-f67923f8e985" target="_blank" class="art-card-link">Read →</a></div>
+          </div>
+        </div>
+        <div class="art-card">
+          <div class="art-card-hdr" style="background:linear-gradient(145deg,#1a3a1a,#2d6e2d)">
+            <span class="art-card-src">Towards Data Science</span>
+            <div class="art-card-hdr-title">Causal Inference vs Correlation: Why It Matters in DS</div>
+          </div>
+          <div class="art-card-body">
+            <div class="art-card-cat">Experimentation · Causal</div>
+            <div class="art-card-title">Causal Inference vs Correlation: Why It Matters in Data Science</div>
+            <div class="art-card-foot"><span class="art-card-meta">TDS</span><a href="https://towardsdatascience.com" target="_blank" class="art-card-link">Read →</a></div>
+          </div>
+        </div>
+        <div class="art-card">
+          <div class="art-card-hdr" style="background:linear-gradient(145deg,#2a4a0a,#4a7a12)">
+            <span class="art-card-src">Microsoft Research</span>
+            <div class="art-card-hdr-title">Online Controlled Experiments at Scale</div>
+          </div>
+          <div class="art-card-body">
+            <div class="art-card-cat">Experimentation · Methods</div>
+            <div class="art-card-title">Online Controlled Experiments at Scale</div>
+            <div class="art-card-foot"><span class="art-card-meta">Microsoft Research</span><a href="https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/" target="_blank" class="art-card-link">Read →</a></div>
+          </div>
+        </div>
+        <div class="art-card">
+          <div class="art-card-hdr" style="background:linear-gradient(145deg,#1e4d1e,#C17B2F)">
+            <span class="art-card-src">Harvard Business Review</span>
+            <div class="art-card-hdr-title">Building an Experimentation Culture at Your Company</div>
+          </div>
+          <div class="art-card-body">
+            <div class="art-card-cat">Experimentation · Culture</div>
+            <div class="art-card-title">Building an Experimentation Culture at Your Company</div>
+            <div class="art-card-foot"><span class="art-card-meta">HBR</span><a href="https://hbr.org/2020/03/building-a-culture-of-experimentation" target="_blank" class="art-card-link">Read →</a></div>
+          </div>
+        </div>
+        <div class="art-card">
+          <div class="art-card-hdr" style="background:linear-gradient(145deg,#0a3d0a,#155015)">
+            <span class="art-card-src">Airbnb Tech Blog</span>
+            <div class="art-card-hdr-title">Experimentation at Airbnb: How We Make Decisions</div>
+          </div>
+          <div class="art-card-body">
+            <div class="art-card-cat">Experimentation · Case Study</div>
+            <div class="art-card-title">Experimentation at Airbnb: How We Make Data Decisions</div>
+            <div class="art-card-foot"><span class="art-card-meta">Airbnb Tech</span><a href="https://medium.com/airbnb-engineering/experimentation-measurement-for-search-engine-optimization-b64136629760" target="_blank" class="art-card-link">Read →</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="slider-controls">
+        <button class="sl-btn" onclick="slide('experimentation',-1)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg></button>
+        <div class="sl-dots" id="dots-experimentation"></div>
+        <button class="sl-btn" onclick="slide('experimentation',1)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      </div>
     </div>
   </div>
-  <div class="af-card" data-cat="ml">
-    <div class="af-card-hdr" style="background:linear-gradient(135deg,#1a1a2e,#534AB7)"><div class="af-card-icon">🏢</div><span class="af-card-src">McKinsey</span></div>
-    <div class="af-card-body">
-      <div class="af-card-cat">ML &amp; AI</div>
-      <div class="af-card-title">The Data-Driven Enterprise: What It Actually Takes</div>
-      <div class="af-card-foot"><span class="af-card-meta">McKinsey</span><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-data-driven-enterprise-of-2025" target="_blank" class="af-card-link">Read →</a></div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     CAREER SECTION
+════════════════════════════════════════════ -->
+<section class="cat-section" id="sec-career">
+  <div class="cat-section-hdr">
+    <div class="cat-section-title">Career</div>
+    <a href="https://www.kdnuggets.com" target="_blank" class="view-all-btn">
+      View All
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+  <div class="cat-body">
+    <div class="feat-card">
+      <div class="feat-hdr">
+        <div class="feat-hdr-inner" style="background:linear-gradient(145deg,#854F0B,#C17B2F)">
+          <span class="feat-badge">Featured · Career</span>
+          <div class="feat-hdr-title">How to Stand Out as a Data Scientist in 2025</div>
+        </div>
+      </div>
+      <div class="feat-source">KDNuggets</div>
+      <h3 class="feat-title"><a href="https://www.kdnuggets.com/how-to-stand-out-as-a-data-scientist" target="_blank">How to Stand Out as a Data Scientist in 2025</a></h3>
+      <p class="feat-exc">The data science job market has changed dramatically. Here's what actually differentiates candidates who get hired at top companies — and it's not the certifications you'd expect.</p>
+      <div class="feat-foot">
+        <span class="feat-meta">KDNuggets</span>
+        <a href="https://www.kdnuggets.com/how-to-stand-out-as-a-data-scientist" target="_blank" class="feat-link">Read Article <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+    <div class="slider-wrap">
+      <div class="slider-inner" id="sl-career">
+        <div class="art-card">
+          <div class="art-card-hdr" style="background:linear-gradient(145deg,#6b3a0a,#a85f1a)">
+            <span class="art-card-src">Towards Data Science</span>
+            <div class="art-card-hdr-title">The Data Science Skills That Actually Get You Hired</div>
+          </div>
+          <div class="art-card-body">
+            <div class="art-card-cat">Career · Skills</div>
+            <div class="art-card-title">The Data Science Skills That Actually Get You Hired</div>
+            <div class="art-card-foot"><span class="art-card-meta">TDS</span><a href="https://towardsdatascience.com" target="_blank" class="art-card-link">Read →</a></div>
+          </div>
+        </div>
+        <div class="art-card">
+          <div class="art-card-hdr" style="background:linear-gradient(145deg,#5a2d0c,#C17B2F)">
+            <span class="art-card-src">Harvard Business Review</span>
+            <div class="art-card-hdr-title">How to Transition Into Data Science from Another Field</div>
+          </div>
+          <div class="art-card-body">
+            <div class="art-card-cat">Career · Transition</div>
+            <div class="art-card-title">How to Transition Into Data Science from Another Field</div>
+            <div class="art-card-foot"><span class="art-card-meta">HBR</span><a href="https://hbr.org" target="_blank" class="art-card-link">Read →</a></div>
+          </div>
+        </div>
+        <div class="art-card">
+          <div class="art-card-hdr" style="background:linear-gradient(145deg,#3d1e00,#8B4513)">
+            <span class="art-card-src">MIT Technology Review</span>
+            <div class="art-card-hdr-title">Will AI Replace Data Scientists? The Honest Answer</div>
+          </div>
+          <div class="art-card-body">
+            <div class="art-card-cat">Career · Future of Work</div>
+            <div class="art-card-title">Will AI Replace Data Scientists? The Honest Answer</div>
+            <div class="art-card-foot"><span class="art-card-meta">MIT Tech Review</span><a href="https://www.technologyreview.com" target="_blank" class="art-card-link">Read →</a></div>
+          </div>
+        </div>
+        <div class="art-card">
+          <div class="art-card-hdr" style="background:linear-gradient(145deg,#7a3b1e,#d4875a)">
+            <span class="art-card-src">KDNuggets</span>
+            <div class="art-card-hdr-title">Building Your Data Science Portfolio That Gets Noticed</div>
+          </div>
+          <div class="art-card-body">
+            <div class="art-card-cat">Career · Portfolio</div>
+            <div class="art-card-title">Building a Data Science Portfolio That Gets Noticed</div>
+            <div class="art-card-foot"><span class="art-card-meta">KDNuggets</span><a href="https://www.kdnuggets.com" target="_blank" class="art-card-link">Read →</a></div>
+          </div>
+        </div>
+        <div class="art-card">
+          <div class="art-card-hdr" style="background:linear-gradient(145deg,#4d2600,#9a5200)">
+            <span class="art-card-src">Towards Data Science</span>
+            <div class="art-card-hdr-title">From Data Analyst to Data Scientist: The Real Difference</div>
+          </div>
+          <div class="art-card-body">
+            <div class="art-card-cat">Career · Growth</div>
+            <div class="art-card-title">From Data Analyst to Data Scientist: The Real Difference</div>
+            <div class="art-card-foot"><span class="art-card-meta">TDS</span><a href="https://towardsdatascience.com" target="_blank" class="art-card-link">Read →</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="slider-controls">
+        <button class="sl-btn" onclick="slide('career',-1)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg></button>
+        <div class="sl-dots" id="dots-career"></div>
+        <button class="sl-btn" onclick="slide('career',1)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      </div>
     </div>
   </div>
-  <div class="af-card" data-cat="genai">
-    <div class="af-card-hdr" style="background:linear-gradient(135deg,#2d1b69,#7F77DD)"><div class="af-card-icon">🤖</div><span class="af-card-src">MIT Tech Review</span></div>
-    <div class="af-card-body">
-      <div class="af-card-cat">Generative AI</div>
-      <div class="af-card-title">The Real Risk of AI Is Not What You Think</div>
-      <div class="af-card-foot"><span class="af-card-meta">MIT Technology Review</span><a href="https://www.technologyreview.com/2023/06/06/1074001/the-real-risks-of-artificial-intelligence/" target="_blank" class="af-card-link">Read →</a></div>
-    </div>
-  </div>
-  <div class="af-card" data-cat="experimentation">
-    <div class="af-card-hdr" style="background:linear-gradient(135deg,#166534,#3B6D11)"><div class="af-card-icon">🧪</div><span class="af-card-src">TDS</span></div>
-    <div class="af-card-body">
-      <div class="af-card-cat">Experimentation</div>
-      <div class="af-card-title">A/B Testing: The Most Misunderstood Tool in Data Science</div>
-      <div class="af-card-foot"><span class="af-card-meta">Towards Data Science</span><a href="https://towardsdatascience.com/a-b-testing-is-there-a-better-way-an-exploration-of-multi-armed-bandits-98ca927b357d" target="_blank" class="af-card-link">Read →</a></div>
-    </div>
-  </div>
-  <div class="af-card" data-cat="career">
-    <div class="af-card-hdr" style="background:linear-gradient(135deg,#854F0B,#C17B2F)"><div class="af-card-icon">🚀</div><span class="af-card-src">KDNuggets</span></div>
-    <div class="af-card-body">
-      <div class="af-card-cat">Career</div>
-      <div class="af-card-title">How to Stand Out as a Data Scientist in 2025</div>
-      <div class="af-card-foot"><span class="af-card-meta">KDNuggets</span><a href="https://www.kdnuggets.com/how-to-stand-out-as-a-data-scientist" target="_blank" class="af-card-link">Read →</a></div>
-    </div>
-  </div>
-  <div class="af-card" data-cat="ml">
-    <div class="af-card-hdr" style="background:linear-gradient(135deg,#1B2F4E,#378ADD)"><div class="af-card-icon">🧠</div><span class="af-card-src">Google AI</span></div>
-    <div class="af-card-body">
-      <div class="af-card-cat">ML &amp; AI</div>
-      <div class="af-card-title">Anomaly Detection at Scale: Lessons from Production Systems</div>
-      <div class="af-card-foot"><span class="af-card-meta">Google AI Blog</span><a href="https://ai.googleblog.com/" target="_blank" class="af-card-link">Read →</a></div>
-    </div>
-  </div>
-  <div class="af-card" data-cat="leadership">
-    <div class="af-card-hdr" style="background:linear-gradient(135deg,#2C2C2A,#5F5E5A)"><div class="af-card-icon">📈</div><span class="af-card-src">HBR</span></div>
-    <div class="af-card-body">
-      <div class="af-card-cat">Leadership · Strategy</div>
-      <div class="af-card-title">When Your Data Says One Thing and Your Gut Says Another</div>
-      <div class="af-card-foot"><span class="af-card-meta">Harvard Business Review</span><a href="https://hbr.org/2016/04/why-you-should-create-a-shadow-board-of-younger-employees" target="_blank" class="af-card-link">Read →</a></div>
-    </div>
-  </div>
-</div>
-<div class="pagination" id="artPager">
-  <button class="pg-btn" id="aPrev" onclick="aPage--; renderA()" disabled>← Prev</button>
-  <span class="pg-info" id="aInfo"></span>
-  <button class="pg-btn" id="aNext" onclick="aPage++; renderA()">Next →</button>
-</div>
-<!-- ═══ CTA SLIDER ════════════════════════════════════════════════════════ -->
+</section>
+
+<!-- CTA SLIDER -->
 <div class="cta-slider-wrap">
   <div class="cta-track" id="ctaTrack">
-
     <div class="cta-slide">
       <div class="cta-slide-left">
-        <div class="cta-slide-icon">
-          <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
-            <rect x="2" y="6" width="28" height="20" rx="3" fill="none" stroke="#1B2F4E" stroke-width="1.8"/>
-            <polyline points="10,20 14,14 18,18 22,11" stroke="#C17B2F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            <circle cx="22" cy="11" r="2.5" fill="#C17B2F"/>
-            <line x1="2" y1="11" x2="30" y2="11" stroke="rgba(27,47,78,.2)" stroke-width="1"/>
-          </svg>
-        </div>
-        <div class="cta-slide-eyebrow">Free · Byte Learning</div>
-        <h3 class="cta-slide-title">Short Courses on Decision Science</h3>
-        <p class="cta-slide-desc">Practical ML, AI &amp; data strategy for busy professionals — free on YouTube, no sign-up required.</p>
+        <div class="cta-slide-icon"><svg width="26" height="26" viewBox="0 0 32 32" fill="none"><rect x="2" y="6" width="28" height="20" rx="3" fill="none" stroke="#1B2F4E" stroke-width="1.8"/><polyline points="10,20 14,14 18,18 22,11" stroke="#C17B2F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="22" cy="11" r="2.5" fill="#C17B2F"/><line x1="2" y1="11" x2="30" y2="11" stroke="rgba(27,47,78,.2)" stroke-width="1"/></svg></div>
+        <div><div class="cta-slide-eyebrow">Free · Byte Learning</div><h3 class="cta-slide-title">Short Courses on Decision Science</h3><p class="cta-slide-desc">Practical ML, AI &amp; data strategy for busy professionals — free on YouTube, no sign-up required.</p></div>
       </div>
-      <div class="cta-slide-right">
-        <a href="learn.html" class="cta-pill cta-pill-dark">
-          Explore Courses
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
+      <div class="cta-slide-right"><a href="learn.html" class="cta-pill cta-pill-dark">Explore Courses <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
     </div>
-
     <div class="cta-slide">
       <div class="cta-slide-left">
-        <div class="cta-slide-icon">
-          <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
-            <circle cx="11" cy="10" r="5" fill="none" stroke="#1B2F4E" stroke-width="1.8"/>
-            <path d="M3 26 Q3 20 11 20 Q19 20 19 26" fill="none" stroke="#1B2F4E" stroke-width="1.8" stroke-linecap="round"/>
-            <circle cx="22" cy="13" r="4" fill="none" stroke="#C17B2F" stroke-width="1.8"/>
-            <path d="M18 26 Q18 22 22 22 Q27 22 27 26" fill="none" stroke="#C17B2F" stroke-width="1.8" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="cta-slide-eyebrow">Free · Industry Experts</div>
-        <h3 class="cta-slide-title">1-to-1 Mentorship Sessions</h3>
-        <p class="cta-slide-desc">Career guidance, technical deep-dives &amp; AI strategy advisory with industry experts. Book a free slot.</p>
+        <div class="cta-slide-icon"><svg width="26" height="26" viewBox="0 0 32 32" fill="none"><circle cx="11" cy="10" r="5" fill="none" stroke="#1B2F4E" stroke-width="1.8"/><path d="M3 26 Q3 20 11 20 Q19 20 19 26" fill="none" stroke="#1B2F4E" stroke-width="1.8" stroke-linecap="round"/><circle cx="22" cy="13" r="4" fill="none" stroke="#C17B2F" stroke-width="1.8"/><path d="M18 26 Q18 22 22 22 Q27 22 27 26" fill="none" stroke="#C17B2F" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <div><div class="cta-slide-eyebrow">Free · Industry Experts</div><h3 class="cta-slide-title">1-to-1 Mentorship Sessions</h3><p class="cta-slide-desc">Career guidance, technical deep-dives &amp; AI strategy advisory with industry experts. Book a free slot.</p></div>
       </div>
-      <div class="cta-slide-right">
-        <a href="learn.html#coaching" class="cta-pill cta-pill-amber">
-          Book a Session
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
+      <div class="cta-slide-right"><a href="learn.html#coaching" class="cta-pill cta-pill-amber">Book a Session <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
     </div>
-
     <div class="cta-slide">
       <div class="cta-slide-left">
-        <div class="cta-slide-icon">
-          <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
-            <rect x="4" y="4" width="24" height="24" rx="3" fill="none" stroke="#1B2F4E" stroke-width="1.8"/>
-            <line x1="4" y1="11" x2="28" y2="11" stroke="rgba(27,47,78,.25)" stroke-width="1"/>
-            <line x1="10" y1="4" x2="10" y2="7" stroke="#C17B2F" stroke-width="2" stroke-linecap="round"/>
-            <line x1="22" y1="4" x2="22" y2="7" stroke="#C17B2F" stroke-width="2" stroke-linecap="round"/>
-            <rect x="8" y="15" width="6" height="6" rx="1" fill="#C17B2F" opacity=".8"/>
-            <rect x="18" y="15" width="6" height="6" rx="1" fill="rgba(27,47,78,.2)"/>
-            <rect x="8" y="23" width="6" height="3" rx="1" fill="rgba(27,47,78,.2)"/>
-            <rect x="18" y="23" width="6" height="3" rx="1" fill="rgba(27,47,78,.2)"/>
-          </svg>
-        </div>
-        <div class="cta-slide-eyebrow">Free · Live Sessions</div>
-        <h3 class="cta-slide-title">Upcoming Masterclasses &amp; Events</h3>
-        <p class="cta-slide-desc">Live Zoom sessions on AI strategy, ML in production, and decision intelligence. Free to attend.</p>
+        <div class="cta-slide-icon"><svg width="26" height="26" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" rx="3" fill="none" stroke="#1B2F4E" stroke-width="1.8"/><line x1="4" y1="11" x2="28" y2="11" stroke="rgba(27,47,78,.25)" stroke-width="1"/><line x1="10" y1="4" x2="10" y2="7" stroke="#C17B2F" stroke-width="2" stroke-linecap="round"/><line x1="22" y1="4" x2="22" y2="7" stroke="#C17B2F" stroke-width="2" stroke-linecap="round"/><rect x="8" y="15" width="6" height="6" rx="1" fill="#C17B2F" opacity=".8"/><rect x="18" y="15" width="6" height="6" rx="1" fill="rgba(27,47,78,.15)"/></svg></div>
+        <div><div class="cta-slide-eyebrow">Free · Live Sessions</div><h3 class="cta-slide-title">Upcoming Masterclasses &amp; Events</h3><p class="cta-slide-desc">Live Zoom sessions on AI strategy, ML in production, and decision intelligence. Free to attend.</p></div>
       </div>
-      <div class="cta-slide-right">
-        <a href="learn.html#masterclasses" class="cta-pill cta-pill-dark">
-          View Events
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
+      <div class="cta-slide-right"><a href="learn.html#masterclasses" class="cta-pill cta-pill-dark">View Events <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
     </div>
-
   </div>
-
-  <!-- dots + arrows -->
   <div class="cta-controls">
-    <button class="cta-arrow" id="ctaPrev" onclick="ctaMove(-1)" aria-label="Previous">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-    </button>
+    <button class="cta-arrow" onclick="ctaMove(-1)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg></button>
     <div class="cta-dots" id="ctaDots"></div>
-    <button class="cta-arrow" id="ctaNext" onclick="ctaMove(1)" aria-label="Next">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </button>
+    <button class="cta-arrow" onclick="ctaMove(1)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
   </div>
 </div>
 
-<style>
-/* ── CTA SLIDER ─────────────────────────────────────────────────────────── */
-.cta-slider-wrap{
-  background:#fff;
-  border-top:4px solid #C17B2F;
-  border-bottom:1px solid rgba(27,47,78,.1);
-  position:relative;
-  overflow:hidden;
-}
-.cta-track{
-  display:flex;
-  transition:transform .55s cubic-bezier(.4,0,.2,1);
-  will-change:transform;
-}
-.cta-slide{
-  min-width:100%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:2.25rem 5%;
-  gap:2rem;
-  flex-wrap:wrap;
-}
-.cta-slide-left{
-  display:flex;
-  align-items:flex-start;
-  gap:1.25rem;
-  flex:1;
-  min-width:0;
-}
-.cta-slide-icon{
-  width:48px;height:48px;flex-shrink:0;
-  background:rgba(193,123,47,.08);
-  border:1px solid rgba(193,123,47,.2);
-  border-radius:10px;
-  display:flex;align-items:center;justify-content:center;
-  margin-top:2px;
-}
-.cta-slide-eyebrow{
-  font-family:'DM Sans',sans-serif;
-  font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;
-  color:#C17B2F;margin-bottom:6px;
-}
-.cta-slide-title{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(18px,2vw,24px);
-  color:#1B2F4E;line-height:1.2;margin-bottom:8px;font-weight:400;
-}
-.cta-slide-desc{
-  font-family:'DM Sans',sans-serif;
-  font-size:13.5px;color:#6B7280;line-height:1.75;max-width:540px;
-}
-.cta-slide-text{display:flex;flex-direction:column;min-width:0}
-.cta-slide-right{flex-shrink:0;display:flex;align-items:center}
-.cta-pill{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:13px 28px;
-  font-family:'DM Sans',sans-serif;
-  font-size:13px;font-weight:500;letter-spacing:.04em;
-  text-decoration:none;border-radius:3px;
-  white-space:nowrap;transition:all .2s;
-}
-.cta-pill svg{transition:transform .2s}
-.cta-pill:hover svg{transform:translateX(5px)}
-.cta-pill-dark{background:#1B2F4E;color:#fff;border:2px solid #1B2F4E}
-.cta-pill-dark:hover{background:transparent;color:#1B2F4E}
-.cta-pill-amber{background:#C17B2F;color:#fff;border:2px solid #C17B2F}
-.cta-pill-amber:hover{background:transparent;color:#C17B2F}
-/* controls */
-.cta-controls{
-  display:flex;align-items:center;justify-content:center;gap:12px;
-  padding:.75rem;
-  border-top:0.5px solid rgba(27,47,78,.08);
-  background:#FAFAF8;
-}
-.cta-arrow{
-  width:32px;height:32px;border:1px solid rgba(27,47,78,.15);
-  background:#fff;border-radius:50%;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  color:#1B2F4E;transition:all .2s;
-}
-.cta-arrow:hover{background:#1B2F4E;color:#fff;border-color:#1B2F4E}
-.cta-dots{display:flex;gap:7px;align-items:center}
-.cta-dot{
-  width:7px;height:7px;border-radius:50%;
-  background:rgba(27,47,78,.18);border:none;cursor:pointer;
-  transition:all .25s;padding:0;
-}
-.cta-dot.active{background:#C17B2F;width:22px;border-radius:4px}
-@media(max-width:700px){
-  .cta-slide{flex-direction:column;gap:1.25rem}
-  .cta-slide-right{width:100%}
-  .cta-pill{width:100%;justify-content:center}
-}
-</style>
-
-<script>
-(function(){
-  var track=document.getElementById('ctaTrack');
-  var slides=[...track.querySelectorAll('.cta-slide')];
-  var dotsWrap=document.getElementById('ctaDots');
-  var cur=0, total=slides.length, timer;
-
-  // build dots
-  slides.forEach(function(_,i){
-    var d=document.createElement('button');
-    d.className='cta-dot'+(i===0?' active':'');
-    d.setAttribute('aria-label','Slide '+(i+1));
-    d.addEventListener('click',function(){goTo(i);resetTimer();});
-    dotsWrap.appendChild(d);
-  });
-
-  function goTo(n){
-    cur=(n+total)%total;
-    track.style.transform='translateX(-'+cur*100+'%)';
-    [...dotsWrap.querySelectorAll('.cta-dot')].forEach(function(d,i){
-      d.classList.toggle('active',i===cur);
-    });
-  }
-
-  function ctaMove(dir){goTo(cur+dir);resetTimer();}
-  window.ctaMove=ctaMove;
-
-  function resetTimer(){
-    clearInterval(timer);
-    timer=setInterval(function(){goTo(cur+1);},5000);
-  }
-  resetTimer();
-})();
-</script>
+<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-top" style="grid-template-columns:2.4fr 1fr 1fr 1fr">
     <div>
@@ -416,80 +670,132 @@
           <rect x="70" y="28" width="3.5" height="26" rx="1" fill="#C17B2F"/>
           <circle cx="71.75" cy="28" r="2.5" fill="#fff"/>
         </svg>
-        <div>
-          <div class="footer-brand-name">The Decision Signal</div>
-          <div class="footer-brand-tag">Data · AI · Decision Intelligence</div>
-        </div>
+        <div><div class="footer-brand-name">The Decision Signal</div><div class="footer-brand-tag">Data · AI · Decision Intelligence</div></div>
       </div>
       <p class="footer-brand-desc">An independent publication exploring the intersection of machine learning, enterprise AI, and strategic decision-making — written for practitioners who want to go beyond the hype.</p>
       <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px">
-        <a href="/cdn-cgi/l/email-protection#a5c8d0cecdc0d7cfc0c08bd6c4dcc4cb9492e5c2c8c4ccc98bc6cac8" style="font-size:12px;color:rgba(255,255,255,.55);display:inline-flex;align-items:center;gap:7px;transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.55)'">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
-          Contact Us
-        </a>
-        <a href="https://www.youtube.com/@knowledgesharinggroup4001" target="_blank" style="font-size:12px;color:rgba(255,255,255,.55);display:inline-flex;align-items:center;gap:7px;transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.55)'">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7s-.3-2-1.2-2.8c-1.1-1.2-2.4-1.2-3-1.3C16.3 2.7 12 2.7 12 2.7s-4.3 0-6.8.2c-.6.1-1.9.1-3 1.3C1.3 5 1 7 1 7S.7 9.1.7 11.3v2.1C.7 15.5 1 17.6 1 17.6s.3 2 1.2 2.8c1.1 1.2 2.6 1.1 3.3 1.2C7.6 21.8 12 21.8 12 21.8s4.3 0 6.8-.2c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.8 1.2-2.8s.3-2.1.3-4.2v-2.1C23.3 9.1 23 7 23 7zM9.7 15.5V8.4l8.1 3.6-8.1 3.5z"/></svg>
-          YouTube Channel
-        </a>
+        <a href="mailto:mukherjee.sayan17@gmail.com" style="font-size:12px;color:rgba(255,255,255,.55);display:inline-flex;align-items:center;gap:7px;transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.55)'"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>Contact Us</a>
+        <a href="https://www.youtube.com/@knowledgesharinggroup4001" target="_blank" style="font-size:12px;color:rgba(255,255,255,.55);display:inline-flex;align-items:center;gap:7px;transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.55)'"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7s-.3-2-1.2-2.8c-1.1-1.2-2.4-1.2-3-1.3C16.3 2.7 12 2.7 12 2.7s-4.3 0-6.8.2c-.6.1-1.9.1-3 1.3C1.3 5 1 7 1 7S.7 9.1.7 11.3v2.1C.7 15.5 1 17.6 1 17.6s.3 2 1.2 2.8c1.1 1.2 2.6 1.1 3.3 1.2C7.6 21.8 12 21.8 12 21.8s4.3 0 6.8-.2c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.8 1.2-2.8s.3-2.1.3-4.2v-2.1C23.3 9.1 23 7 23 7zM9.7 15.5V8.4l8.1 3.6-8.1 3.5z"/></svg>YouTube Channel</a>
       </div>
     </div>
-    <div class="footer-col">
-      <h4>Explore</h4>
-      <ul>
-        <li><a href="learn.html#masterclasses">Masterclasses</a></li>
-        <li><a href="articles.html?filter=ml">Industry Case Studies</a></li>
-        <li><a href="learn.html#coaching">Mentorship</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Learn</h4>
-      <ul>
-        <li><a href="learn.html">Courses</a></li>
-        <li><a href="articles.html">Blog</a></li>
-        <li><a href="learn.html#library">Library</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Follow</h4>
-      <ul>
-        <li><a href="index.html#subscribeBox">Newsletter</a></li>
-        <li><a href="learn.html#library">E-book</a></li>
-        <li><a href="learn.html#calendar">Events</a></li>
-      </ul>
-    </div>
+    <div class="footer-col"><h4>Explore</h4><ul><li><a href="learn.html#masterclasses">Masterclasses</a></li><li><a href="articles.html?filter=ml">Industry Case Studies</a></li><li><a href="learn.html#coaching">Mentorship</a></li></ul></div>
+    <div class="footer-col"><h4>Learn</h4><ul><li><a href="learn.html">Courses</a></li><li><a href="articles.html">Blog</a></li><li><a href="learn.html#library">Library</a></li></ul></div>
+    <div class="footer-col"><h4>Follow</h4><ul><li><a href="index.html#subscribeBox">Newsletter</a></li><li><a href="learn.html#library">E-book</a></li><li><a href="learn.html#calendar">Events</a></li></ul></div>
   </div>
   <div class="footer-bottom">
     <span class="footer-copy">© 2026 The Decision Signal · All rights reserved · Built on GitHub Pages</span>
-    <div style="display:flex;gap:1.25rem">
-      <a href="disclaimer.html" style="font-size:11px;color:rgba(255,255,255,.3)">Disclaimer</a>
-      <a href="privacy.html" style="font-size:11px;color:rgba(255,255,255,.3)">Privacy</a>
-      <a href="terms.html" style="font-size:11px;color:rgba(255,255,255,.3)">Terms</a>
-    </div>
+    <div style="display:flex;gap:1.25rem"><a href="disclaimer.html" style="font-size:11px;color:rgba(255,255,255,.3)">Disclaimer</a><a href="privacy.html" style="font-size:11px;color:rgba(255,255,255,.3)">Privacy</a><a href="terms.html" style="font-size:11px;color:rgba(255,255,255,.3)">Terms</a></div>
   </div>
 </footer>
-
 <div class="toast" id="toast"></div>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-function toggleMobile(){{document.getElementById('mobileMenu').classList.toggle('open')}}
-function scrollToSubscribe(){{const b=document.getElementById('subscribeBox');if(b){{b.scrollIntoView({{behavior:'smooth',block:'center'}});const i=document.getElementById('subEmail');if(i)i.focus();}}}}
-function showToast(msg){{const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),4000)}}
-document.querySelectorAll('#artFilter .filter-chip').forEach(c=>c.addEventListener('click',()=>{
-  document.querySelectorAll('#artFilter .filter-chip').forEach(x=>x.classList.remove('active'));
-  c.classList.add('active'); aPage=0;
-  const f=c.dataset.filter;
-  document.querySelectorAll('#artGrid .af-card').forEach(x=>x.dataset.h=(f!='all'&&x.dataset.cat!=f)?'1':'0');
-  renderA();
-  const pf=new URLSearchParams(window.location.search).get('filter');
-  document.getElementById('articleCount').textContent=document.querySelectorAll('#artGrid .af-card:not([style*="none"])').length+' articles';
-}));
-const PER=5; let aPage=0;
-function renderA(){
-  const all=[...document.querySelectorAll('#artGrid .af-card')];
-  const vis=all.filter(c=>c.dataset.h!='1');
-  all.forEach(c=>c.style.display='none');
-  vis.slice(aPage*PER,(aPage+1)*PER).forEach(c=>c.style.display='flex');
-  const pages=Math.max(1,Math.ceil(vis.length/PER));
-  document.getElementById('aPrev').disabled=aPage===0;
-  document.getElementById('aNext').disabled=aPage>=pages-1;
-  document.getElementById('aInfo').textContent='Page '+(aPage+1)+' of '+pages;
-  document.getElementById('articleCount').textCon
+
+<style>
+/* CTA slider (same as other pages) */
+.cta-slider-wrap{background:#fff;border-top:4px solid #C17B2F;border-bottom:1px solid rgba(27,47,78,.1);position:relative;overflow:hidden}
+.cta-track{display:flex;transition:transform .55s cubic-bezier(.4,0,.2,1)}
+.cta-slide{min-width:100%;display:flex;align-items:center;justify-content:space-between;padding:2.25rem 5%;gap:2rem;flex-wrap:wrap}
+.cta-slide-left{display:flex;align-items:flex-start;gap:1.25rem;flex:1;min-width:0}
+.cta-slide-icon{width:48px;height:48px;flex-shrink:0;background:rgba(193,123,47,.08);border:1px solid rgba(193,123,47,.2);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.cta-slide-eyebrow{font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:#C17B2F;margin-bottom:6px}
+.cta-slide-title{font-family:'Playfair Display',serif;font-size:clamp(18px,2vw,24px);color:#1B2F4E;line-height:1.2;margin-bottom:8px;font-weight:400}
+.cta-slide-desc{font-size:13.5px;color:#6B7280;line-height:1.75;max-width:540px}
+.cta-slide-right{flex-shrink:0;display:flex;align-items:center}
+.cta-pill{display:inline-flex;align-items:center;gap:10px;padding:13px 28px;font-size:13px;font-weight:500;letter-spacing:.04em;text-decoration:none;border-radius:3px;white-space:nowrap;transition:all .2s}
+.cta-pill svg{transition:transform .2s}
+.cta-pill:hover svg{transform:translateX(5px)}
+.cta-pill-dark{background:#1B2F4E;color:#fff;border:2px solid #1B2F4E}
+.cta-pill-dark:hover{background:transparent;color:#1B2F4E}
+.cta-pill-amber{background:#C17B2F;color:#fff;border:2px solid #C17B2F}
+.cta-pill-amber:hover{background:transparent;color:#C17B2F}
+.cta-controls{display:flex;align-items:center;justify-content:center;gap:12px;padding:.75rem;border-top:0.5px solid rgba(27,47,78,.08);background:#FAFAF8}
+.cta-arrow{width:32px;height:32px;border:1px solid rgba(27,47,78,.15);background:#fff;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#1B2F4E;transition:all .2s}
+.cta-arrow:hover{background:#1B2F4E;color:#fff;border-color:#1B2F4E}
+.cta-dots{display:flex;gap:7px;align-items:center}
+.cta-dot{width:7px;height:7px;border-radius:50%;background:rgba(27,47,78,.18);border:none;cursor:pointer;transition:all .25s;padding:0}
+.cta-dot.active{background:#C17B2F;width:22px;border-radius:4px}
+</style>
+
+<script>
+function toggleMobile(){document.getElementById('mobileMenu').classList.toggle('open')}
+function showToast(m){var t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),4000)}
+
+/* ── CATEGORY TABS + SCROLL SPY ─────────────────────────────────────── */
+var cats=['ml','genai','leadership','experimentation','career'];
+document.querySelectorAll('.cat-tab').forEach(function(tab){
+  tab.addEventListener('click',function(){
+    document.querySelectorAll('.cat-tab').forEach(function(t){t.classList.remove('active');});
+    tab.classList.add('active');
+    var el=document.getElementById('sec-'+tab.dataset.cat);
+    if(el){var y=el.getBoundingClientRect().top+window.scrollY-120;window.scrollTo({top:y,behavior:'smooth'});}
+  });
+});
+// Scroll spy
+window.addEventListener('scroll',function(){
+  var scrollY=window.scrollY+160;
+  cats.forEach(function(c){
+    var el=document.getElementById('sec-'+c);
+    if(el&&el.offsetTop<=scrollY&&el.offsetTop+el.offsetHeight>scrollY){
+      document.querySelectorAll('.cat-tab').forEach(function(t){t.classList.remove('active');});
+      var tab=document.querySelector('[data-cat="'+c+'"]');
+      if(tab)tab.classList.add('active');
+    }
+  });
+},{ passive:true });
+
+/* ── ARTICLE SLIDERS ─────────────────────────────────────────────────── */
+var sliders={};
+function initSlider(id){
+  var track=document.getElementById('sl-'+id);
+  if(!track)return;
+  var cards=[...track.querySelectorAll('.art-card')];
+  var dotsEl=document.getElementById('dots-'+id);
+  var visCount=Math.floor(track.parentElement.offsetWidth/221)||3;
+  var maxPage=Math.max(0,cards.length-visCount);
+  sliders[id]={track:track,cur:0,max:maxPage,cardW:221,dotsEl:dotsEl};
+  // build dots
+  dotsEl.innerHTML='';
+  var numDots=Math.min(cards.length,maxPage+1);
+  for(var i=0;i<numDots;i++){
+    var d=document.createElement('button');
+    d.className='sl-dot'+(i===0?' on':'');
+    d.dataset.i=i;
+    d.addEventListener('click',(function(idx){return function(){slideTo(id,idx);};})(i));
+    dotsEl.appendChild(d);
+  }
+}
+function slideTo(id,pos){
+  var s=sliders[id];
+  s.cur=Math.max(0,Math.min(pos,s.max));
+  s.track.style.transform='translateX(-'+(s.cur*s.cardW)+'px)';
+  [...s.dotsEl.querySelectorAll('.sl-dot')].forEach(function(d,i){d.classList.toggle('on',i===s.cur);});
+}
+function slide(id,dir){slideTo(id,sliders[id].cur+dir);}
+window.slide=slide;
+cats.forEach(function(c){initSlider(c);});
+window.addEventListener('resize',function(){cats.forEach(function(c){initSlider(c);});});
+
+/* ── CTA SLIDER ─────────────────────────────────────────────────────── */
+(function(){
+  var track=document.getElementById('ctaTrack');
+  var dotsWrap=document.getElementById('ctaDots');
+  var slides=[...track.querySelectorAll('.cta-slide')];
+  var cur=0,total=slides.length,timer;
+  slides.forEach(function(_,i){
+    var d=document.createElement('button');
+    d.className='cta-dot'+(i===0?' active':'');
+    d.addEventListener('click',function(){ctaGoTo(i);reset();});
+    dotsWrap.appendChild(d);
+  });
+  function ctaGoTo(n){
+    cur=(n+total)%total;
+    track.style.transform='translateX(-'+cur*100+'%)';
+    [...dotsWrap.querySelectorAll('.cta-dot')].forEach(function(d,i){d.classList.toggle('active',i===cur);});
+  }
+  function ctaMove(d){ctaGoTo(cur+d);reset();}
+  window.ctaMove=ctaMove;
+  function reset(){clearInterval(timer);timer=setInterval(function(){ctaGoTo(cur+1);},4500);}
+  reset();
+})();
+</script>
+</body>
+</html>
