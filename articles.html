@@ -184,39 +184,238 @@
   <span class="pg-info" id="aInfo"></span>
   <button class="pg-btn" id="aNext" onclick="aPage++; renderA()">Next →</button>
 </div>
-<!-- ═══ LEARN MORE BANNER ═══════════════════════════════════════════════ -->
-<section style="background:var(--sl);border-top:3px solid var(--acc);border-bottom:3px solid rgba(255,255,255,0.06)">
-  <div style="display:grid;grid-template-columns:1fr 1fr;max-width:1400px;margin:0 auto">
-    <div style="padding:2.5rem 5%;border-right:1px solid rgba(255,255,255,0.08)">
-      <div style="font-size:9.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);margin-bottom:10px">Byte Learning · Free</div>
-      <h3 style="font-family:'Playfair Display',serif;font-size:clamp(18px,2vw,24px);color:#fff;line-height:1.2;margin-bottom:10px">Short Courses on Decision Science</h3>
-      <p style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.75;margin-bottom:1.5rem;max-width:420px">Practical, bite-sized courses on ML, AI and data strategy designed for busy professionals. Free on YouTube.</p>
-      <a href="learn.html" style="display:inline-block;padding:10px 22px;border:1px solid rgba(255,255,255,0.35);color:rgba(255,255,255,0.85);font-size:12.5px;font-weight:400;letter-spacing:.05em;text-decoration:none;transition:all .2s" onmouseover="this.style.background='#fff';this.style.color='#1B2F4E'" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,255,0.85)'">Explore Courses →</a>
+<!-- ═══ CTA SLIDER ════════════════════════════════════════════════════════ -->
+<div class="cta-slider-wrap">
+  <div class="cta-track" id="ctaTrack">
+
+    <div class="cta-slide">
+      <div class="cta-slide-left">
+        <div class="cta-slide-icon">
+          <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
+            <rect x="2" y="6" width="28" height="20" rx="3" fill="none" stroke="#1B2F4E" stroke-width="1.8"/>
+            <polyline points="10,20 14,14 18,18 22,11" stroke="#C17B2F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle cx="22" cy="11" r="2.5" fill="#C17B2F"/>
+            <line x1="2" y1="11" x2="30" y2="11" stroke="rgba(27,47,78,.2)" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="cta-slide-eyebrow">Free · Byte Learning</div>
+        <h3 class="cta-slide-title">Short Courses on Decision Science</h3>
+        <p class="cta-slide-desc">Practical ML, AI &amp; data strategy for busy professionals — free on YouTube, no sign-up required.</p>
+      </div>
+      <div class="cta-slide-right">
+        <a href="learn.html" class="cta-pill cta-pill-dark">
+          Explore Courses
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
     </div>
-    <div style="padding:2.5rem 5%">
-      <div style="font-size:9.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);margin-bottom:10px">Free · Industry Experts</div>
-      <h3 style="font-family:'Playfair Display',serif;font-size:clamp(18px,2vw,24px);color:#fff;line-height:1.2;margin-bottom:10px">1-to-1 Mentorship Sessions</h3>
-      <p style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.75;margin-bottom:1.5rem;max-width:420px">Career guidance, technical deep-dives, and AI strategy advisory with industry experts. Book a free slot.</p>
-      <a href="learn.html#coaching" style="display:inline-block;padding:10px 22px;border:1px solid rgba(255,255,255,0.35);color:rgba(255,255,255,0.85);font-size:12.5px;font-weight:400;letter-spacing:.05em;text-decoration:none;transition:all .2s" onmouseover="this.style.background='#fff';this.style.color='#1B2F4E'" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,255,0.85)'">Book a Session →</a>
+
+    <div class="cta-slide">
+      <div class="cta-slide-left">
+        <div class="cta-slide-icon">
+          <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
+            <circle cx="11" cy="10" r="5" fill="none" stroke="#1B2F4E" stroke-width="1.8"/>
+            <path d="M3 26 Q3 20 11 20 Q19 20 19 26" fill="none" stroke="#1B2F4E" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="22" cy="13" r="4" fill="none" stroke="#C17B2F" stroke-width="1.8"/>
+            <path d="M18 26 Q18 22 22 22 Q27 22 27 26" fill="none" stroke="#C17B2F" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="cta-slide-eyebrow">Free · Industry Experts</div>
+        <h3 class="cta-slide-title">1-to-1 Mentorship Sessions</h3>
+        <p class="cta-slide-desc">Career guidance, technical deep-dives &amp; AI strategy advisory with industry experts. Book a free slot.</p>
+      </div>
+      <div class="cta-slide-right">
+        <a href="learn.html#coaching" class="cta-pill cta-pill-amber">
+          Book a Session
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
     </div>
+
+    <div class="cta-slide">
+      <div class="cta-slide-left">
+        <div class="cta-slide-icon">
+          <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
+            <rect x="4" y="4" width="24" height="24" rx="3" fill="none" stroke="#1B2F4E" stroke-width="1.8"/>
+            <line x1="4" y1="11" x2="28" y2="11" stroke="rgba(27,47,78,.25)" stroke-width="1"/>
+            <line x1="10" y1="4" x2="10" y2="7" stroke="#C17B2F" stroke-width="2" stroke-linecap="round"/>
+            <line x1="22" y1="4" x2="22" y2="7" stroke="#C17B2F" stroke-width="2" stroke-linecap="round"/>
+            <rect x="8" y="15" width="6" height="6" rx="1" fill="#C17B2F" opacity=".8"/>
+            <rect x="18" y="15" width="6" height="6" rx="1" fill="rgba(27,47,78,.2)"/>
+            <rect x="8" y="23" width="6" height="3" rx="1" fill="rgba(27,47,78,.2)"/>
+            <rect x="18" y="23" width="6" height="3" rx="1" fill="rgba(27,47,78,.2)"/>
+          </svg>
+        </div>
+        <div class="cta-slide-eyebrow">Free · Live Sessions</div>
+        <h3 class="cta-slide-title">Upcoming Masterclasses &amp; Events</h3>
+        <p class="cta-slide-desc">Live Zoom sessions on AI strategy, ML in production, and decision intelligence. Free to attend.</p>
+      </div>
+      <div class="cta-slide-right">
+        <a href="learn.html#masterclasses" class="cta-pill cta-pill-dark">
+          View Events
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+
   </div>
-</section>
+
+  <!-- dots + arrows -->
+  <div class="cta-controls">
+    <button class="cta-arrow" id="ctaPrev" onclick="ctaMove(-1)" aria-label="Previous">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    </button>
+    <div class="cta-dots" id="ctaDots"></div>
+    <button class="cta-arrow" id="ctaNext" onclick="ctaMove(1)" aria-label="Next">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+</div>
+
+<style>
+/* ── CTA SLIDER ─────────────────────────────────────────────────────────── */
+.cta-slider-wrap{
+  background:#fff;
+  border-top:4px solid #C17B2F;
+  border-bottom:1px solid rgba(27,47,78,.1);
+  position:relative;
+  overflow:hidden;
+}
+.cta-track{
+  display:flex;
+  transition:transform .55s cubic-bezier(.4,0,.2,1);
+  will-change:transform;
+}
+.cta-slide{
+  min-width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:2.25rem 5%;
+  gap:2rem;
+  flex-wrap:wrap;
+}
+.cta-slide-left{
+  display:flex;
+  align-items:flex-start;
+  gap:1.25rem;
+  flex:1;
+  min-width:0;
+}
+.cta-slide-icon{
+  width:48px;height:48px;flex-shrink:0;
+  background:rgba(193,123,47,.08);
+  border:1px solid rgba(193,123,47,.2);
+  border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  margin-top:2px;
+}
+.cta-slide-eyebrow{
+  font-family:'DM Sans',sans-serif;
+  font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;
+  color:#C17B2F;margin-bottom:6px;
+}
+.cta-slide-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(18px,2vw,24px);
+  color:#1B2F4E;line-height:1.2;margin-bottom:8px;font-weight:400;
+}
+.cta-slide-desc{
+  font-family:'DM Sans',sans-serif;
+  font-size:13.5px;color:#6B7280;line-height:1.75;max-width:540px;
+}
+.cta-slide-text{display:flex;flex-direction:column;min-width:0}
+.cta-slide-right{flex-shrink:0;display:flex;align-items:center}
+.cta-pill{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:13px 28px;
+  font-family:'DM Sans',sans-serif;
+  font-size:13px;font-weight:500;letter-spacing:.04em;
+  text-decoration:none;border-radius:3px;
+  white-space:nowrap;transition:all .2s;
+}
+.cta-pill svg{transition:transform .2s}
+.cta-pill:hover svg{transform:translateX(5px)}
+.cta-pill-dark{background:#1B2F4E;color:#fff;border:2px solid #1B2F4E}
+.cta-pill-dark:hover{background:transparent;color:#1B2F4E}
+.cta-pill-amber{background:#C17B2F;color:#fff;border:2px solid #C17B2F}
+.cta-pill-amber:hover{background:transparent;color:#C17B2F}
+/* controls */
+.cta-controls{
+  display:flex;align-items:center;justify-content:center;gap:12px;
+  padding:.75rem;
+  border-top:0.5px solid rgba(27,47,78,.08);
+  background:#FAFAF8;
+}
+.cta-arrow{
+  width:32px;height:32px;border:1px solid rgba(27,47,78,.15);
+  background:#fff;border-radius:50%;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  color:#1B2F4E;transition:all .2s;
+}
+.cta-arrow:hover{background:#1B2F4E;color:#fff;border-color:#1B2F4E}
+.cta-dots{display:flex;gap:7px;align-items:center}
+.cta-dot{
+  width:7px;height:7px;border-radius:50%;
+  background:rgba(27,47,78,.18);border:none;cursor:pointer;
+  transition:all .25s;padding:0;
+}
+.cta-dot.active{background:#C17B2F;width:22px;border-radius:4px}
+@media(max-width:700px){
+  .cta-slide{flex-direction:column;gap:1.25rem}
+  .cta-slide-right{width:100%}
+  .cta-pill{width:100%;justify-content:center}
+}
+</style>
+
+<script>
+(function(){
+  var track=document.getElementById('ctaTrack');
+  var slides=[...track.querySelectorAll('.cta-slide')];
+  var dotsWrap=document.getElementById('ctaDots');
+  var cur=0, total=slides.length, timer;
+
+  // build dots
+  slides.forEach(function(_,i){
+    var d=document.createElement('button');
+    d.className='cta-dot'+(i===0?' active':'');
+    d.setAttribute('aria-label','Slide '+(i+1));
+    d.addEventListener('click',function(){goTo(i);resetTimer();});
+    dotsWrap.appendChild(d);
+  });
+
+  function goTo(n){
+    cur=(n+total)%total;
+    track.style.transform='translateX(-'+cur*100+'%)';
+    [...dotsWrap.querySelectorAll('.cta-dot')].forEach(function(d,i){
+      d.classList.toggle('active',i===cur);
+    });
+  }
+
+  function ctaMove(dir){goTo(cur+dir);resetTimer();}
+  window.ctaMove=ctaMove;
+
+  function resetTimer(){
+    clearInterval(timer);
+    timer=setInterval(function(){goTo(cur+1);},5000);
+  }
+  resetTimer();
+})();
+</script>
 <footer class="site-footer">
   <div class="footer-top" style="grid-template-columns:2.4fr 1fr 1fr 1fr">
     <div>
       <div style="display:flex;align-items:center;gap:11px;margin-bottom:14px">
-        <svg width="36" height="36" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;display:block">
-  <circle cx="22" cy="22" r="20" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-  <line x1="22" y1="12" x2="12" y2="28" stroke="rgba(255,255,255,0.22)" stroke-width="1.5" stroke-linecap="round"/>
-  <line x1="22" y1="12" x2="32" y2="28" stroke="rgba(255,255,255,0.22)" stroke-width="1.5" stroke-linecap="round"/>
-  <line x1="12" y1="28" x2="32" y2="28" stroke="rgba(255,255,255,0.22)" stroke-width="1.5" stroke-linecap="round"/>
-  <line x1="22" y1="12" x2="22" y2="28" stroke="rgba(255,255,255,0.1)" stroke-width="1" stroke-linecap="round"/>
-  <polyline points="10,32 16,26 22,28 30,20 36,16" stroke="#C17B2F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <circle cx="22" cy="12" r="3" fill="rgba(255,255,255,0.75)"/>
-  <circle cx="12" cy="28" r="2.5" fill="rgba(255,255,255,0.45)"/>
-  <circle cx="32" cy="28" r="2.5" fill="rgba(255,255,255,0.45)"/>
-  <circle cx="22" cy="28" r="3" fill="#C17B2F"/>
-</svg>
+        <svg width="38" height="38" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;display:block">
+          <circle cx="36" cy="36" r="34" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.18)" stroke-width="1.5"/>
+          <path d="M6 12 L6 60 L24 60 Q48 60 48 36 Q48 12 24 12 Z" fill="#C17B2F"/>
+          <polyline points="10,36 14,25 19,46 24,28 29,36 34,29 41,36" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M64 26 Q64 19 58 19 Q52 19 52 26 Q52 33 58 36 Q64 39 64 46 Q64 53 58 53 Q52 53 52 46" stroke="#fff" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+          <rect x="65" y="44" width="3.5" height="10" rx="1" fill="rgba(255,255,255,.32)"/>
+          <rect x="65" y="37" width="3.5" height="17" rx="1" fill="rgba(255,255,255,.52)"/>
+          <rect x="70" y="28" width="3.5" height="26" rx="1" fill="#C17B2F"/>
+          <circle cx="71.75" cy="28" r="2.5" fill="#fff"/>
+        </svg>
         <div>
           <div class="footer-brand-name">The Decision Signal</div>
           <div class="footer-brand-tag">Data · AI · Decision Intelligence</div>
