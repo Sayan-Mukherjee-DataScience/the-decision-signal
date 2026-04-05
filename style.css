@@ -56,50 +56,12 @@ button { cursor: pointer; font-family: 'DM Sans', sans-serif; }
 .mobile-menu a { font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.75); padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
 
 /* ── TICKER ───────────────────────────────────────────────── */
-.ticker {
-  background: var(--acc);
-  padding: 6px 5%;
-  display: flex;
-  align-items: center;
-  gap: 0;          /* gap handled inside */
-}
-.ticker-label {
-  font-size: 9.5px;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #fff;
-  white-space: nowrap;
-  border-right: 1px solid rgba(255,255,255,0.35);
-  padding-right: 14px;
-  margin-right: 14px;
-  flex-shrink: 0;
-  position: relative;
-  z-index: 2;       /* always on top */
-  background: var(--acc); /* same as bar — masks any bleed */
-}
-/* This wrapper clips the scrolling track to its own box */
-.ticker-overflow {
-  flex: 1;
-  overflow: hidden;  /* clips scrolling text exactly here */
-  min-width: 0;
-}
-.ticker-track {
-  display: flex;
-  gap: 2.5rem;
-  white-space: nowrap;
-  animation: ticker-scroll 35s linear infinite;
-  font-size: 12px;
-  color: rgba(255,255,255,0.9);
-  will-change: transform;
-}
-.ticker-track a { color: rgba(255,255,255,0.9); text-decoration: none; }
+.ticker { background: var(--acc); padding: 6px 5%; display: flex; align-items: center; gap: 12px; overflow: hidden; }
+.ticker-label { font-size: 9.5px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.9); white-space: nowrap; border-right: 1px solid rgba(255,255,255,0.35); padding-right: 12px; flex-shrink: 0; }
+.ticker-track { display: flex; gap: 2rem; white-space: nowrap; animation: ticker-scroll 30s linear infinite; font-size: 12px; color: rgba(255,255,255,0.9); }
+.ticker-track a { color: rgba(255,255,255,0.9); }
 .ticker-track a:hover { color: #fff; text-decoration: underline; }
-.ticker-track span { color: rgba(255,255,255,0.45); }
-@keyframes ticker-scroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
+@keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
 /* ── BUTTONS ──────────────────────────────────────────────── */
 .btn-primary { display: inline-block; padding: 11px 24px; background: var(--sl); color: #fff; font-size: 12.5px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; border: none; transition: background 0.2s; }
