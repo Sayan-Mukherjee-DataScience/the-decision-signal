@@ -142,27 +142,55 @@
 <body>
 
 <nav class="site-nav">
-  <a href="index.html" class="nav-brand">
-    <div class="nav-brand-name">The Decision Signal</div>
-    <div class="nav-brand-tag">Data · AI · Decision Intelligence</div>
+  <a href="index.html" class="nav-brand" style="display:flex;flex-direction:row;align-items:center;gap:11px;text-decoration:none">
+    <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;display:block">
+      <path d="M11 30 Q3 20 11 10" stroke="#fff" stroke-opacity="0.25" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+      <path d="M15.5 26 Q10 20 15.5 14" stroke="#fff" stroke-opacity="0.55" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+      <path d="M29 10 Q37 20 29 30" stroke="#fff" stroke-opacity="0.25" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+      <path d="M24.5 14 Q30 20 24.5 26" stroke="#fff" stroke-opacity="0.55" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+      <circle cx="20" cy="20" r="4.5" fill="#C17B2F"/>
+      <circle cx="20" cy="20" r="8" stroke="#C17B2F" stroke-opacity="0.25" stroke-width="1.5" fill="none"/>
+      <line x1="15.5" y1="20" x2="17" y2="20" stroke="#fff" stroke-opacity="0.65" stroke-width="2" stroke-linecap="round"/>
+      <line x1="23" y1="20" x2="24.5" y2="20" stroke="#fff" stroke-opacity="0.65" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <div style="display:flex;flex-direction:column;gap:1px">
+      <div class="nav-brand-name">The Decision Signal</div>
+      <div class="nav-brand-tag">Data · AI · Decision Intelligence</div>
+    </div>
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="articles.html">Articles</a></li>
     <li><a href="learn.html" class="active">Learn</a></li>
-    <li></li>
   </ul>
   <div class="nav-actions">
-    
     <a href="index.html#subscribeBox" class="btn-subscribe">Subscribe</a>
   </div>
-  <button class="nav-hamburger" onclick="toggleMobile()" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="nav-hamburger" onclick="toggleMobile()" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a><a href="articles.html">Articles</a><a href="learn.html">Learn</a>
-  
+  <a href="index.html">Home</a>
+  <a href="articles.html">Articles</a>
+  <a href="learn.html">Learn</a>
+</div>
+
+<!-- TICKER -->
+<div class="ticker">
+  <span class="ticker-label">Latest</span>
+  <div class="ticker-overflow">
+    <div class="ticker-track">
+      <a href="https://youtu.be/LJyyJOzxlcA" target="_blank">A Complete Understanding of Data Science in 1 Hour — Watch Free</a>
+      <span>·</span><a href="learn.html#masterclasses">Free Masterclass: From Data to Decisions — Register Now</a>
+      <span>·</span><a href="https://youtu.be/eV4UzdER5d4" target="_blank">Why Trust Insights from Data Science Models?</a>
+      <span>·</span><a href="learn.html#coaching">Free 1:1 Coaching Sessions — Book a Slot</a>
+      <span>·</span><a href="learn.html#library">Book Library — This Week's Top Picks</a>
+      <span>·</span><a href="https://youtu.be/LJyyJOzxlcA" target="_blank">A Complete Understanding of Data Science in 1 Hour — Watch Free</a>
+      <span>·</span><a href="learn.html#masterclasses">Free Masterclass: From Data to Decisions — Register Now</a>
+      <span>·</span><a href="https://youtu.be/eV4UzdER5d4" target="_blank">Why Trust Insights from Data Science Models?</a>
+      <span>·</span><a href="learn.html#coaching">Free 1:1 Coaching Sessions — Book a Slot</a>
+      <span>·</span><a href="learn.html#library">Book Library — This Week's Top Picks</a>
+    </div>
+  </div>
 </div>
 
 <div class="page-hero">
@@ -689,17 +717,54 @@
 </div>
 
 <footer class="site-footer">
-  <div class="footer-top">
-    <div><div class="footer-brand-name">The Decision Signal</div><div class="footer-brand-tag">Data · AI · Decision Intelligence</div><p class="footer-brand-desc">Practical insights on ML, enterprise AI, and the craft of turning data into decisions. </p></div>
-    <div class="footer-col"><h4>Content</h4><ul><li><a href="articles.html">All Articles</a></li><li><a href="articles.html">Generative AI</a></li><li><a href="articles.html">ML &amp; AI</a></li></ul></div>
-    <div class="footer-col"><h4>Learn</h4><ul><li><a href="learn.html">Courses</a></li><li><a href="learn.html#masterclasses">Masterclasses</a></li><li><a href="learn.html#coaching">Coaching</a></li><li><a href="https://www.youtube.com/@knowledgesharinggroup4001" target="_blank">YouTube ↗</a></li></ul></div>
-    <div class="footer-col"><h4>Connect</h4><ul><li></li><li></li><li><a href="/cdn-cgi/l/email-protection#1f726a74777a6d757a7a316c7e667e712e285f78727e7673317c7072">Email</a></li></ul></div>
+  <div class="footer-top" style="grid-template-columns:2.2fr 1fr 1fr 1fr">
+    <div class="footer-brand-col">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+        <svg width="32" height="32" viewBox="0 0 40 40" fill="none" style="flex-shrink:0"><path d="M11 30 Q3 20 11 10" stroke="#fff" stroke-opacity="0.2" stroke-width="2.5" stroke-linecap="round" fill="none"/><path d="M15.5 26 Q10 20 15.5 14" stroke="#fff" stroke-opacity="0.45" stroke-width="2.5" stroke-linecap="round" fill="none"/><path d="M29 10 Q37 20 29 30" stroke="#fff" stroke-opacity="0.2" stroke-width="2.5" stroke-linecap="round" fill="none"/><path d="M24.5 14 Q30 20 24.5 26" stroke="#fff" stroke-opacity="0.45" stroke-width="2.5" stroke-linecap="round" fill="none"/><circle cx="20" cy="20" r="4.5" fill="#C17B2F"/><line x1="15.5" y1="20" x2="17" y2="20" stroke="#fff" stroke-opacity="0.55" stroke-width="2" stroke-linecap="round"/><line x1="23" y1="20" x2="24.5" y2="20" stroke="#fff" stroke-opacity="0.55" stroke-width="2" stroke-linecap="round"/></svg>
+        <div><div class="footer-brand-name">The Decision Signal</div><div class="footer-brand-tag">Data · AI · Decision Intelligence</div></div>
+      </div>
+      <p class="footer-brand-desc">An independent publication exploring the intersection of machine learning, enterprise AI, and strategic decision-making — written for practitioners who want to go beyond the hype.</p>
+      <div style="margin-top:14px;display:flex;gap:12px;flex-wrap:wrap">
+        <a href="mailto:mukherjee.sayan17@gmail.com" style="font-family:'DM Sans',sans-serif;font-size:11.5px;color:rgba(255,255,255,.5);text-decoration:none">✉ mukherjee.sayan17@gmail.com</a>
+        <a href="https://www.youtube.com/@knowledgesharinggroup4001" target="_blank" style="font-family:'DM Sans',sans-serif;font-size:11.5px;color:rgba(255,255,255,.5);text-decoration:none">▶ YouTube Channel</a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Content</h4><ul>
+      <li><a href="articles.html">All Articles</a></li>
+      <li><a href="articles.html?filter=genai">Generative AI</a></li>
+      <li><a href="articles.html?filter=ml">ML &amp; AI</a></li>
+      <li><a href="articles.html?filter=leadership">Leadership</a></li>
+      <li><a href="articles.html?filter=career">Career</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Learn</h4><ul>
+      <li><a href="learn.html">Courses</a></li>
+      <li><a href="learn.html#masterclasses">Masterclasses</a></li>
+      <li><a href="learn.html#calendar">Events Calendar</a></li>
+      <li><a href="learn.html#coaching">Free Coaching</a></li>
+      <li><a href="learn.html#library">Book Library</a></li>
+      <li><a href="https://www.youtube.com/@knowledgesharinggroup4001" target="_blank">YouTube ↗</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Legal &amp; Policies</h4><ul>
+      <li><a href="disclaimer.html">Disclaimer</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="terms.html">Terms of Use</a></li>
+      <li><a href="affiliate.html">Affiliate Disclosure</a></li>
+      <li><a href="cookies.html">Cookie Policy</a></li>
+      <li><a href="mailto:mukherjee.sayan17@gmail.com">Contact Us</a></li>
+    </ul></div>
   </div>
-  <div class="footer-bottom"><span class="footer-copy">© 2026 The Decision Signal  · Built on GitHub Pages</span></div>
+  <div class="footer-bottom" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.07)">
+    <span class="footer-copy">© 2026 The Decision Signal · All rights reserved · Built on GitHub Pages</span>
+    <div style="display:flex;gap:1.25rem">
+      <a href="disclaimer.html" style="font-size:11px;color:rgba(255,255,255,.3);text-decoration:none">Disclaimer</a>
+      <a href="privacy.html" style="font-size:11px;color:rgba(255,255,255,.3);text-decoration:none">Privacy</a>
+      <a href="terms.html" style="font-size:11px;color:rgba(255,255,255,.3);text-decoration:none">Terms</a>
+    </div>
+  </div>
 </footer>
 <div class="toast" id="toast"></div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 function toggleMobile(){document.getElementById('mobileMenu').classList.toggle('open')}
 function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),4000)}
 
