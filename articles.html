@@ -21,17 +21,6 @@
 .filter-bar { background: var(--warm); }
 .articles-grid { display: grid; grid-template-columns: 1fr 1fr; background: #fff; }
 .articles-grid .article-card:nth-child(odd) { border-right: 0.5px solid var(--rule); }
-.add-article-guide { background: var(--acc2); border-top: 3px solid var(--acc); padding: 1.75rem 5%; }
-.guide-title { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--acc); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
-.guide-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-bottom: 1.25rem; }
-.guide-step { background: #fff; padding: 14px; border: 0.5px solid rgba(193,123,47,0.2); }
-.guide-step-n { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--acc); margin-bottom: 5px; }
-.guide-step-title { font-size: 12.5px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
-.guide-step-desc { font-size: 11.5px; color: var(--inkl); line-height: 1.6; }
-.guide-template { background: #1B2F4E; padding: 1.25rem 1.5rem; font-family: monospace; font-size: 12px; color: rgba(255,255,255,0.8); line-height: 1.9; overflow-x: auto; }
-.guide-note { font-size: 12px; color: var(--inkl); margin-top: 10px; line-height: 1.6; }
-@media(max-width:700px) { .articles-grid { grid-template-columns: 1fr; } .guide-steps { grid-template-columns: 1fr 1fr; } }
-@media(max-width:480px) { .guide-steps { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -145,46 +134,6 @@
 </div>
 <div id="noResults" style="display:none;padding:3rem;text-align:center;background:#fff;color:var(--inkl);font-size:14px">No articles in this category yet. Check back soon.</div>
 
-  <div class="guide-steps">
-    <div class="guide-step">
-      <div class="guide-step-n">1</div>
-      <div class="guide-step-title">Open GitHub</div>
-      <div class="guide-step-desc">Sign in at github.com, open your repository, click <code>articles.html</code></div>
-    </div>
-    <div class="guide-step">
-      <div class="guide-step-n">2</div>
-      <div class="guide-step-title">Click the pencil ✎</div>
-      <div class="guide-step-desc">Click the edit icon top-right. Use Ctrl+F to find <code>&lt;!-- ✏️ PASTE YOUR NEW ARTICLE</code></div>
-    </div>
-    <div class="guide-step">
-      <div class="guide-step-n">3</div>
-      <div class="guide-step-title">Paste &amp; fill 5 fields</div>
-      <div class="guide-step-desc">Copy the template block, fill in: category key, category name, title, excerpt, date &amp; Article or video URL</div>
-    </div>
-    <div class="guide-step">
-      <div class="guide-step-n">4</div>
-      <div class="guide-step-title">Commit &amp; go live</div>
-      <div class="guide-step-desc">Scroll down, click "Commit changes" — your site updates within 60 seconds automatically</div>
-    </div>
-  </div>
-  <div class="guide-template">
-&lt;div class="article-card" data-cat="<span style="color:#FAC775">CATEGORY_KEY</span>"&gt;<br>
-&nbsp;&nbsp;&lt;div class="article-card-img"&gt;<span style="color:#FAC775">EMOJI</span>&lt;/div&gt;<br>
-&nbsp;&nbsp;&lt;div class="article-card-cat"&gt;<span style="color:#FAC775">Category Name</span>&lt;/div&gt;<br>
-&nbsp;&nbsp;&lt;h3 class="article-card-title"&gt;<span style="color:#FAC775">Your Article Title</span>&lt;/h3&gt;<br>
-&nbsp;&nbsp;&lt;p class="article-card-exc"&gt;<span style="color:#FAC775">2–3 sentence summary.</span>&lt;/p&gt;<br>
-&nbsp;&nbsp;&lt;div class="article-card-foot"&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="article-card-meta"&gt;<span style="color:#FAC775">Mon YYYY · X min</span>&lt;/span&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="<span style="color:#FAC775">YOUR_ARTICLE_OR_VIDEO_URL</span>" target="_blank" class="article-card-link"&gt;Read / Watch →&lt;/a&gt;<br>
-&nbsp;&nbsp;&lt;/div&gt;<br>
-&lt;/div&gt;
-  </div>
-  <p class="guide-note">
-    <strong>Category keys:</strong> use exactly one of these as the <code>data-cat</code> value so the filter works:
-    <code>ml</code> · <code>genai</code> · <code>leadership</code> · <code>experimentation</code> · <code>retail</code> · <code>career</code>
-  </p>
-</div>
-
 <footer class="site-footer">
   <div class="footer-top">
     <div>
@@ -194,7 +143,7 @@
     </div>
     <div class="footer-col"><h4>Content</h4><ul><li><a href="articles.html">All Articles</a></li><li><a href="articles.html">Generative AI</a></li><li><a href="articles.html">ML &amp; AI</a></li><li><a href="articles.html">Leadership</a></li></ul></div>
     <div class="footer-col"><h4>Learn</h4><ul><li><a href="learn.html">Courses</a></li><li><a href="learn.html#masterclasses">Masterclasses</a></li><li><a href="learn.html#coaching">Coaching</a></li><li><a href="https://www.youtube.com/@knowledgesharinggroup4001" target="_blank">YouTube ↗</a></li></ul></div>
-    <div class="footer-col"><h4>Connect</h4><ul><li></li><li><a href="mailto:mukherjee.sayan17@gmail.com">Email</a></li></ul></div>
+    <div class="footer-col"><h4>Connect</h4><ul><li></li><li><a href="/cdn-cgi/l/email-protection#b5d8c0deddd0c7dfd0d09bc6d4ccd4db8482f5d2d8d4dcd99bd6dad8">Email</a></li></ul></div>
   </div>
   <div class="footer-bottom">
     <span class="footer-copy">© 2026 The Decision Signal </span>
@@ -202,7 +151,7 @@
 </footer>
 <div class="toast" id="toast"></div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function toggleMobile() { document.getElementById('mobileMenu').classList.toggle('open'); }
 function showToast(msg) { const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),3500); }
 
@@ -255,11 +204,3 @@ function artPaginate() {
 function artChangePage(dir) { artPage = Math.max(0, artPage + dir); artPaginate(); }
 // Override filter to reset pagination
 const origChips = document.querySelectorAll('#articleFilter .filter-chip');
-origChips.forEach(chip => {
-  chip.addEventListener('click', () => { artPage = 0; });
-});
-// Init
-(function(){ artPaginate(); })();
-</script>
-</body>
-</html>
