@@ -1,10 +1,17 @@
+
+<style>
+.pagination{display:flex;align-items:center;justify-content:center;gap:6px;padding:1.25rem;background:#fff;border-top:0.5px solid var(--rule)}
+.page-btn{font-family:sans-serif;font-size:12px;padding:6px 12px;border:0.5px solid var(--rule);color:var(--inkm);cursor:pointer;background:#fff;transition:all .2s}
+.page-btn:hover,.page-btn.active{background:var(--sl);color:#fff;border-color:var(--sl)}
+.page-btn:disabled{opacity:0.35;cursor:default}
+</style>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Articles — The Decision Signal</title>
-<meta name="description" content="All articles on data science, machine learning, enterprise AI and decision intelligence by Sayan Mukherjee.">
+<meta name="description" content="All articles on data science, machine learning, enterprise AI and decision intelligence ">
 <link rel="stylesheet" href="style.css">
 <style>
 .page-hero { background: var(--sl); padding: 2.5rem 5%; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem; border-bottom: 3px solid var(--acc); }
@@ -86,8 +93,6 @@
 
   <!-- MEDIUM ARTICLE -->
   <div class="article-card" data-cat="leadership">
-    <div class="article-card-img" style="background:var(--sl);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:5px;padding:0">
-      <div style="font-size:28px;font-weight:700;color:rgba(255,255,255,.85);font-family:sans-serif;line-height:1">M</div>
       <div style="font-family:sans-serif;font-size:9px;color:rgba(255,255,255,.5);letter-spacing:.12em;text-transform:uppercase">Medium Article</div>
     </div>
     <div class="article-card-cat">Leadership · Project Management</div>
@@ -101,8 +106,6 @@
 
   <!-- FORBES ARTICLE -->
   <div class="article-card" data-cat="ml">
-    <div class="article-card-img" style="background:#003366;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:5px;padding:0">
-      <div style="font-size:14px;font-weight:700;color:rgba(255,255,255,.88);font-family:sans-serif;letter-spacing:.06em">FORBES</div>
       <div style="font-family:sans-serif;font-size:9px;color:rgba(255,255,255,.5);letter-spacing:.12em;text-transform:uppercase">External Article</div>
     </div>
     <div class="article-card-cat">ML &amp; AI · Science</div>
@@ -114,74 +117,14 @@
     </div>
   </div>
 
-  <!-- YOUTUBE VIDEO 1 -->
-  <div class="article-card" data-cat="ml" style="padding:0;overflow:hidden">
-    <div style="aspect-ratio:16/9;background:#000">
-      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/LJyyJOzxlcA"
-              title="A Complete Understanding of Data Science in 1 Hour"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen loading="lazy" style="border:none;display:block"></iframe>
-    </div>
-    <div style="padding:16px 18px">
-      <div class="article-card-cat" style="display:flex;align-items:center;gap:6px">
-        <span style="background:#FF0000;color:#fff;font-size:9px;padding:2px 6px;font-family:sans-serif;font-weight:500">YT</span>
-        ML &amp; AI · Free Video
-      </div>
-      <h3 class="article-card-title">A Complete Understanding of Data Science in 1 Hour</h3>
-      <div class="article-card-foot">
-        <span class="article-card-meta">1 hr · Free</span>
-        <a href="https://youtu.be/LJyyJOzxlcA" target="_blank" class="article-card-link">Watch →</a>
-      </div>
-    </div>
   </div>
 
-  <!-- YOUTUBE VIDEO 2 -->
-  <div class="article-card" data-cat="ml" style="padding:0;overflow:hidden">
-    <div style="aspect-ratio:16/9;background:#000">
-      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/eV4UzdER5d4"
-              title="Why Trust Insights from Data Science Models?"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen loading="lazy" style="border:none;display:block"></iframe>
-    </div>
-    <div style="padding:16px 18px">
-      <div class="article-card-cat" style="display:flex;align-items:center;gap:6px">
-        <span style="background:#FF0000;color:#fff;font-size:9px;padding:2px 6px;font-family:sans-serif;font-weight:500">YT</span>
-        ML &amp; AI · Free Video
-      </div>
-      <h3 class="article-card-title">Why Trust Insights from Data Science Models?</h3>
-      <div class="article-card-foot">
-        <span class="article-card-meta">Free</span>
-        <a href="https://youtu.be/eV4UzdER5d4" target="_blank" class="article-card-link">Watch →</a>
-      </div>
-    </div>
   </div>
 
-  <!-- YOUTUBE VIDEO 3 -->
-  <div class="article-card" data-cat="career" style="padding:0;overflow:hidden">
-    <div style="aspect-ratio:16/9;background:#000">
-      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/uuearKdgG-A"
-              title="Roadmap To Become A Data Science Professional"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen loading="lazy" style="border:none;display:block"></iframe>
-    </div>
-    <div style="padding:16px 18px">
-      <div class="article-card-cat" style="display:flex;align-items:center;gap:6px">
-        <span style="background:#FF0000;color:#fff;font-size:9px;padding:2px 6px;font-family:sans-serif;font-weight:500">YT</span>
-        Career · Free Video
-      </div>
-      <h3 class="article-card-title">Roadmap To Become A Data Science Professional</h3>
-      <div class="article-card-foot">
-        <span class="article-card-meta">Career guidance · Free</span>
-        <a href="https://youtu.be/uuearKdgG-A" target="_blank" class="article-card-link">Watch →</a>
-      </div>
-    </div>
   </div>
 
   <!-- ✏️ PASTE YOUR NEW ARTICLE/VIDEO HERE
   <div class="article-card" data-cat="CATEGORY_KEY">
-    <div class="article-card-img" style="background:#1B2F4E;display:flex;align-items:center;justify-content:center">
-      SOURCE LOGO OR EMOJI
-    </div>
     <div class="article-card-cat">Category Name</div>
     <h3 class="article-card-title">Title Here</h3>
     <p class="article-card-exc">2-3 sentence summary.</p>
@@ -194,11 +137,14 @@
 
 </div>
 
+
+<div class="pagination" id="artPager">
+  <button class="page-btn" id="artPrev" onclick="artChangePage(-1)" disabled>← Prev</button>
+  <span id="artInfo" style="font-family:sans-serif;font-size:12px;color:var(--inkl);padding:0 8px"></span>
+  <button class="page-btn" id="artNext" onclick="artChangePage(1)">Next →</button>
+</div>
 <div id="noResults" style="display:none;padding:3rem;text-align:center;background:#fff;color:var(--inkl);font-size:14px">No articles in this category yet. Check back soon.</div>
 
-<!-- HOW TO ADD ARTICLES GUIDE -->
-<div class="add-article-guide">
-  <div class="guide-title">✎ How to add a new article — 4 steps, no coding required</div>
   <div class="guide-steps">
     <div class="guide-step">
       <div class="guide-step-n">1</div>
@@ -244,14 +190,14 @@
     <div>
       <div class="footer-brand-name">The Decision Signal</div>
       <div class="footer-brand-tag">Data · AI · Decision Intelligence</div>
-      <p class="footer-brand-desc">Practical insights on machine learning, enterprise AI, and the craft of turning data into decisions. By Sayan Mukherjee.</p>
+      <p class="footer-brand-desc">Practical insights on machine learning, enterprise AI, and the craft of turning data into decisions. </p>
     </div>
     <div class="footer-col"><h4>Content</h4><ul><li><a href="articles.html">All Articles</a></li><li><a href="articles.html">Generative AI</a></li><li><a href="articles.html">ML &amp; AI</a></li><li><a href="articles.html">Leadership</a></li></ul></div>
     <div class="footer-col"><h4>Learn</h4><ul><li><a href="learn.html">Courses</a></li><li><a href="learn.html#masterclasses">Masterclasses</a></li><li><a href="learn.html#coaching">Coaching</a></li><li><a href="https://www.youtube.com/@knowledgesharinggroup4001" target="_blank">YouTube ↗</a></li></ul></div>
-    <div class="footer-col"><h4>Connect</h4><ul><li><a href="about.html">About</a></li><li></li><li><a href="mailto:mukherjee.sayan17@gmail.com">Email</a></li></ul></div>
+    <div class="footer-col"><h4>Connect</h4><ul><li></li><li><a href="mailto:mukherjee.sayan17@gmail.com">Email</a></li></ul></div>
   </div>
   <div class="footer-bottom">
-    <span class="footer-copy">© 2026 The Decision Signal · A publication by Sayan Mukherjee</span>
+    <span class="footer-copy">© 2026 The Decision Signal </span>
   </div>
 </footer>
 <div class="toast" id="toast"></div>
@@ -290,6 +236,30 @@ if (pf) {
 // Fade in
 const obs = new IntersectionObserver(entries => { entries.forEach(e => { if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}}); }, {threshold:0.05});
 document.querySelectorAll('.article-card').forEach(el => { el.style.opacity='0'; el.style.transform='translateY(14px)'; el.style.transition='opacity 0.35s ease, transform 0.35s ease'; obs.observe(el); });
+
+const ART_PER_PAGE = 5;
+let artPage = 0;
+function artPaginate() {
+  const all = [...document.querySelectorAll('#articlesGrid .article-card')].filter(el => el.style.display !== 'none');
+  // Actually work on ALL cards and apply page window
+  const cards = [...document.querySelectorAll('#articlesGrid .article-card')];
+  const visible = cards.filter(c => c.dataset.visible !== 'false');
+  const start = artPage * ART_PER_PAGE;
+  visible.forEach((el, i) => { el.style.display = (i >= start && i < start + ART_PER_PAGE) ? 'block' : 'none'; });
+  const pages = Math.ceil(visible.length / ART_PER_PAGE);
+  document.getElementById('artPrev').disabled = artPage === 0;
+  document.getElementById('artNext').disabled = artPage >= pages - 1;
+  document.getElementById('artInfo').textContent = `Page ${artPage+1} of ${Math.max(1,pages)}`;
+  document.getElementById('articleCount').textContent = visible.length + ' articles';
+}
+function artChangePage(dir) { artPage = Math.max(0, artPage + dir); artPaginate(); }
+// Override filter to reset pagination
+const origChips = document.querySelectorAll('#articleFilter .filter-chip');
+origChips.forEach(chip => {
+  chip.addEventListener('click', () => { artPage = 0; });
+});
+// Init
+(function(){ artPaginate(); })();
 </script>
 </body>
 </html>
