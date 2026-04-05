@@ -91,7 +91,25 @@
 .event-action{margin-left:auto;flex-shrink:0}
 .event-link{font-size:11.5px;font-weight:500;color:var(--sl2);cursor:pointer}
 
-/* COACHING */
+/* LIBRARY */
+.book-card{background:#fff;border:0.5px solid var(--rule);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.book-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(27,47,78,.1)}
+.book-cover{height:130px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px;text-align:center}
+.book-title-on-cover{font-family:'Playfair Display',serif;font-size:14px;color:#fff;font-weight:400;line-height:1.2;margin-bottom:6px}
+.book-author-on-cover{font-family:sans-serif;font-size:10px;color:rgba(255,255,255,.65);letter-spacing:.04em}
+.book-info{padding:12px 14px;display:flex;flex-direction:column;flex:1}
+.book-tag{font-size:9.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:2px 8px;border-radius:2px;display:inline-block;margin-bottom:7px;width:fit-content}
+.book-tag.ds{background:var(--sl3);color:var(--sl2)}
+.book-tag.ai{background:#EEEDFE;color:#534AB7}
+.book-tag.leadership{background:var(--green2);color:var(--green)}
+.book-tag.strategy{background:var(--acc2);color:var(--acc)}
+.book-tag.free-tag{background:var(--green2);color:var(--green)}
+.book-name{font-size:13.5px;color:var(--ink);font-weight:500;margin-bottom:3px;line-height:1.3}
+.book-auth{font-family:sans-serif;font-size:12px;color:var(--inkl);margin-bottom:10px}
+.book-btn{font-family:sans-serif;font-size:11.5px;font-weight:500;color:var(--sl2);border:1px solid var(--sl3);padding:6px 12px;background:var(--sl3);display:block;text-align:center;transition:all .2s;margin-top:auto}
+.book-btn:hover{background:var(--sl);color:#fff;border-color:var(--sl)}
+.free-card .book-info{gap:0}
+@media(max-width:900px){#bookGrid{grid-template-columns:repeat(2,1fr)}#freeGrid{grid-template-columns:1fr}}
 .coaching-wrap{display:grid;grid-template-columns:3fr 2fr;background:#fff;border-bottom:0.5px solid var(--rule)}
 .coaching-left{padding:2rem 5%;border-right:0.5px solid var(--rule)}
 .coaching-intro{font-size:14px;color:var(--inkm);line-height:1.8;margin-bottom:1.5rem;max-width:520px}
@@ -135,7 +153,7 @@
     <li><a href="about.html">About</a></li>
   </ul>
   <div class="nav-actions">
-    <a href="https://linkedin.com/in/sayan-mukherjee-bb513b22/" target="_blank" class="btn-li">LinkedIn ↗</a>
+    
     <a href="index.html#subscribeBox" class="btn-subscribe">Subscribe</a>
   </div>
   <button class="nav-hamburger" onclick="toggleMobile()" aria-label="Menu">
@@ -144,7 +162,7 @@
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <a href="index.html">Home</a><a href="articles.html">Articles</a><a href="learn.html">Learn</a><a href="about.html">About</a>
-  <a href="https://linkedin.com/in/sayan-mukherjee-bb513b22/" target="_blank">LinkedIn ↗</a>
+  
 </div>
 
 <div class="page-hero">
@@ -155,6 +173,7 @@
     <button class="learn-tab" data-section="courses">Courses</button>
     <button class="learn-tab" data-section="masterclasses">Masterclasses</button>
     <button class="learn-tab" data-section="calendar">Calendar</button>
+    <button class="learn-tab" data-section="library">Library</button>
     <button class="learn-tab" data-section="coaching">Coaching</button>
   </div>
 </div>
@@ -163,30 +182,82 @@
 <div class="learn-section active" id="sec-courses">
   <div class="section-label">Upcoming Courses</div>
   <div class="courses-grid">
+
+    <!-- VIDEO 1 — A Complete Understanding of Data Science in 1 Hour -->
     <div class="course-card">
-      <span class="course-status status-soon">Coming Soon</span>
-      <div class="course-img">📊</div>
-      <h3 class="course-title">Decision Science for Non-Technical Leaders</h3>
-      <p class="course-desc">How to ask the right questions, read the right outputs, and lead data science teams without writing a line of code.</p>
-      <div class="course-tags"><span class="course-tag">4 modules</span><span class="course-tag">~3 hrs</span><span class="course-tag">YouTube + PDF</span><span class="course-tag">Free</span></div>
-      <button class="course-btn" onclick="notifyMe('Decision Science for Non-Technical Leaders')">Notify Me When Live →</button>
+      <span class="course-status status-free">Free · Watch Now</span>
+      <a href="https://youtu.be/LJyyJOzxlcA?si=G80AibxtEbee4aBf" target="_blank" style="display:block;margin-bottom:14px">
+        <div class="course-img" style="background:#000;height:160px;position:relative;overflow:hidden;border-radius:3px">
+          <img src="https://img.youtube.com/vi/LJyyJOzxlcA/maxresdefault.jpg"
+               onerror="this.src='https://img.youtube.com/vi/LJyyJOzxlcA/hqdefault.jpg'"
+               alt="A Complete Understanding of Data Science in 1 Hour"
+               style="width:100%;height:100%;object-fit:cover;display:block">
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25)">
+            <div style="width:48px;height:48px;background:rgba(255,0,0,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center">
+              <div style="width:0;height:0;border-top:10px solid transparent;border-bottom:10px solid transparent;border-left:18px solid white;margin-left:4px"></div>
+            </div>
+          </div>
+        </div>
+      </a>
+      <h3 class="course-title">A Complete Understanding of Data Science in 1 Hour</h3>
+      <p class="course-desc">A comprehensive 1-hour session covering the full landscape of data science — what it is, how it works, and what you need to know to get started or level up your understanding.</p>
+      <div class="course-tags">
+        <span class="course-tag">1 hr</span>
+        <span class="course-tag">Beginner friendly</span>
+        <span class="course-tag">Free on YouTube</span>
+        <span class="course-tag">ML & AI</span>
+      </div>
+      <a href="https://youtu.be/LJyyJOzxlcA?si=G80AibxtEbee4aBf" target="_blank">
+        <button class="course-btn">Watch on YouTube →</button>
+      </a>
     </div>
+
+    <!-- VIDEO 2 — Roadmap To Become A Data Science Professional in 2020 -->
     <div class="course-card">
+      <span class="course-status status-free">Free · Watch Now</span>
+      <a href="https://youtu.be/uuearKdgG-A" target="_blank" style="display:block;margin-bottom:14px">
+        <div class="course-img" style="background:#000;height:160px;position:relative;overflow:hidden;border-radius:3px">
+          <img src="https://img.youtube.com/vi/uuearKdgG-A/maxresdefault.jpg"
+               onerror="this.src='https://img.youtube.com/vi/uuearKdgG-A/hqdefault.jpg'"
+               alt="Roadmap To Become A Data Science Professional"
+               style="width:100%;height:100%;object-fit:cover;display:block">
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25)">
+            <div style="width:48px;height:48px;background:rgba(255,0,0,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center">
+              <div style="width:0;height:0;border-top:10px solid transparent;border-bottom:10px solid transparent;border-left:18px solid white;margin-left:4px"></div>
+            </div>
+          </div>
+        </div>
+      </a>
+      <h3 class="course-title">Roadmap To Become A Data Science Professional</h3>
+      <p class="course-desc">A clear, structured career guidance session laying out the exact roadmap to break into or advance in data science — covering skills, tools, and the path forward for professionals at any stage.</p>
+      <div class="course-tags">
+        <span class="course-tag">Career guidance</span>
+        <span class="course-tag">Roadmap</span>
+        <span class="course-tag">Free on YouTube</span>
+        <span class="course-tag">Career</span>
+      </div>
+      <a href="https://youtu.be/uuearKdgG-A" target="_blank">
+        <button class="course-btn">Watch on YouTube →</button>
+      </a>
+    </div>
+
+    <!-- COMING SOON SLOT -->
+    <div class="course-card" style="border:1.5px dashed var(--rule);background:var(--warm)">
       <span class="course-status status-soon">Coming Soon</span>
-      <div class="course-img">🤖</div>
+      <div class="course-img" style="background:var(--warmd);border-radius:3px;height:160px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;margin-bottom:14px">
+        <div style="font-size:2.5rem">🎬</div>
+        <div style="font-size:11px;color:var(--inkl);letter-spacing:0.08em;text-transform:uppercase">Next video coming soon</div>
+      </div>
       <h3 class="course-title">Building with LLMs: From Prompt to Production</h3>
-      <p class="course-desc">Hands-on guide to RAG, agents, and deploying LLM-based tools in enterprise environments — based on real audit AI work.</p>
-      <div class="course-tags"><span class="course-tag">6 modules</span><span class="course-tag">~5 hrs</span><span class="course-tag">YouTube + Notes</span><span class="course-tag">Free</span></div>
+      <p class="course-desc">Hands-on guide to RAG pipelines, agentic frameworks, and deploying LLM-based tools in enterprise environments — based on real work at Tesco.</p>
+      <div class="course-tags">
+        <span class="course-tag">~5 hrs</span>
+        <span class="course-tag">Generative AI</span>
+        <span class="course-tag">Free on YouTube</span>
+      </div>
       <button class="course-btn" onclick="notifyMe('Building with LLMs: From Prompt to Production')">Notify Me When Live →</button>
     </div>
-    <div class="course-card">
-      <span class="course-status status-free">Free Now</span>
-      <div class="course-img">🧪</div>
-      <h3 class="course-title">A/B Testing Fundamentals for Retail &amp; FMCG</h3>
-      <p class="course-desc">The statistical foundations of experimentation — store trials, test vs. control design, and how to present results to leadership.</p>
-      <div class="course-tags"><span class="course-tag">3 modules</span><span class="course-tag">~2 hrs</span><span class="course-tag">Free on YouTube</span></div>
-      <a href="https://www.youtube.com/@knowledgesharinggroup4001" target="_blank"><button class="course-btn ghost">Watch on YouTube →</button></a>
-    </div>
+
   </div>
 </div>
 
@@ -381,6 +452,185 @@
   </div>
 </div>
 
+<!-- LIBRARY -->
+<div class="learn-section active" id="sec-library">
+  <div class="section-label" id="library">Library — Books &amp; Free Resources</div>
+  <div style="padding:1rem 5% 0.5rem;background:var(--warm);border-bottom:0.5px solid var(--rule);display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+    <span style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--inkl);margin-right:4px">Filter:</span>
+    <button class="filter-chip active" onclick="filterBooks(this,'all')">All</button>
+    <button class="filter-chip" onclick="filterBooks(this,'ds')">Data Science</button>
+    <button class="filter-chip" onclick="filterBooks(this,'ai')">AI &amp; ML</button>
+    <button class="filter-chip" onclick="filterBooks(this,'leadership')">Leadership</button>
+    <button class="filter-chip" onclick="filterBooks(this,'strategy')">Strategy</button>
+    <button class="filter-chip" onclick="filterBooks(this,'free')">Free Downloads</button>
+  </div>
+
+  <!-- PAID BOOKS — Amazon affiliate -->
+  <div style="padding:1.25rem 5% 0.75rem;background:#fff;border-bottom:0.5px solid var(--rule)">
+    <div style="font-family:sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:0.18em;color:var(--inkl);margin-bottom:14px">Recommended Books <span style="background:var(--acc2);color:var(--acc);padding:2px 8px;border-radius:2px;font-size:9px;margin-left:6px">Amazon Affiliate Links</span></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px" id="bookGrid">
+
+      <div class="book-card" data-bcat="ds">
+        <div class="book-cover" style="background:linear-gradient(135deg,#1B2F4E,#24426B)">
+          <div class="book-title-on-cover">The Art of Statistics</div>
+          <div class="book-author-on-cover">David Spiegelhalter</div>
+        </div>
+        <div class="book-info">
+          <div class="book-tag ds">Data Science</div>
+          <div class="book-name">The Art of Statistics</div>
+          <div class="book-auth">David Spiegelhalter</div>
+          <a href="https://www.amazon.in/s?k=The+Art+of+Statistics+Spiegelhalter&tag=YOUR-AFFILIATE-ID" target="_blank" class="book-btn">View on Amazon →</a>
+        </div>
+      </div>
+
+      <div class="book-card" data-bcat="ai">
+        <div class="book-cover" style="background:linear-gradient(135deg,#2d1b69,#534AB7)">
+          <div class="book-title-on-cover">Prediction Machines</div>
+          <div class="book-author-on-cover">Agrawal, Gans &amp; Goldfarb</div>
+        </div>
+        <div class="book-info">
+          <div class="book-tag ai">AI &amp; ML</div>
+          <div class="book-name">Prediction Machines</div>
+          <div class="book-auth">Agrawal, Gans &amp; Goldfarb</div>
+          <a href="https://www.amazon.in/s?k=Prediction+Machines+Agrawal&tag=YOUR-AFFILIATE-ID" target="_blank" class="book-btn">View on Amazon →</a>
+        </div>
+      </div>
+
+      <div class="book-card" data-bcat="leadership">
+        <div class="book-cover" style="background:linear-gradient(135deg,#166534,#1D9E75)">
+          <div class="book-title-on-cover">Thinking in Systems</div>
+          <div class="book-author-on-cover">Donella Meadows</div>
+        </div>
+        <div class="book-info">
+          <div class="book-tag leadership">Leadership</div>
+          <div class="book-name">Thinking in Systems</div>
+          <div class="book-auth">Donella Meadows</div>
+          <a href="https://www.amazon.in/s?k=Thinking+in+Systems+Meadows&tag=YOUR-AFFILIATE-ID" target="_blank" class="book-btn">View on Amazon →</a>
+        </div>
+      </div>
+
+      <div class="book-card" data-bcat="strategy">
+        <div class="book-cover" style="background:linear-gradient(135deg,#7a3b1e,#C17B2F)">
+          <div class="book-title-on-cover">Good Strategy Bad Strategy</div>
+          <div class="book-author-on-cover">Richard Rumelt</div>
+        </div>
+        <div class="book-info">
+          <div class="book-tag strategy">Strategy</div>
+          <div class="book-name">Good Strategy Bad Strategy</div>
+          <div class="book-auth">Richard Rumelt</div>
+          <a href="https://www.amazon.in/s?k=Good+Strategy+Bad+Strategy+Rumelt&tag=YOUR-AFFILIATE-ID" target="_blank" class="book-btn">View on Amazon →</a>
+        </div>
+      </div>
+
+      <div class="book-card" data-bcat="ds">
+        <div class="book-cover" style="background:linear-gradient(135deg,#1B2F4E,#378ADD)">
+          <div class="book-title-on-cover">Naked Statistics</div>
+          <div class="book-author-on-cover">Charles Wheelan</div>
+        </div>
+        <div class="book-info">
+          <div class="book-tag ds">Data Science</div>
+          <div class="book-name">Naked Statistics</div>
+          <div class="book-auth">Charles Wheelan</div>
+          <a href="https://www.amazon.in/s?k=Naked+Statistics+Wheelan&tag=YOUR-AFFILIATE-ID" target="_blank" class="book-btn">View on Amazon →</a>
+        </div>
+      </div>
+
+      <div class="book-card" data-bcat="ai">
+        <div class="book-cover" style="background:linear-gradient(135deg,#1a1a2e,#534AB7)">
+          <div class="book-title-on-cover">The Alignment Problem</div>
+          <div class="book-author-on-cover">Brian Christian</div>
+        </div>
+        <div class="book-info">
+          <div class="book-tag ai">AI &amp; ML</div>
+          <div class="book-name">The Alignment Problem</div>
+          <div class="book-auth">Brian Christian</div>
+          <a href="https://www.amazon.in/s?k=The+Alignment+Problem+Brian+Christian&tag=YOUR-AFFILIATE-ID" target="_blank" class="book-btn">View on Amazon →</a>
+        </div>
+      </div>
+
+      <div class="book-card" data-bcat="leadership">
+        <div class="book-cover" style="background:linear-gradient(135deg,#2C2C2A,#888780)">
+          <div class="book-title-on-cover">The Manager's Path</div>
+          <div class="book-author-on-cover">Camille Fournier</div>
+        </div>
+        <div class="book-info">
+          <div class="book-tag leadership">Leadership</div>
+          <div class="book-name">The Manager's Path</div>
+          <div class="book-auth">Camille Fournier</div>
+          <a href="https://www.amazon.in/s?k=The+Managers+Path+Camille+Fournier&tag=YOUR-AFFILIATE-ID" target="_blank" class="book-btn">View on Amazon →</a>
+        </div>
+      </div>
+
+      <div class="book-card" data-bcat="strategy">
+        <div class="book-cover" style="background:linear-gradient(135deg,#3d1a00,#C17B2F)">
+          <div class="book-title-on-cover">Thinking, Fast and Slow</div>
+          <div class="book-author-on-cover">Daniel Kahneman</div>
+        </div>
+        <div class="book-info">
+          <div class="book-tag strategy">Strategy</div>
+          <div class="book-name">Thinking, Fast and Slow</div>
+          <div class="book-auth">Daniel Kahneman</div>
+          <a href="https://www.amazon.in/s?k=Thinking+Fast+and+Slow+Kahneman&tag=YOUR-AFFILIATE-ID" target="_blank" class="book-btn">View on Amazon →</a>
+        </div>
+      </div>
+
+    </div>
+    <div style="font-family:sans-serif;font-size:11px;color:var(--inkl);margin-top:14px;padding-top:10px;border-top:0.5px solid var(--rule)">
+      As an Amazon Associate, purchases through these links support this site at no extra cost to you. Replace <code>YOUR-AFFILIATE-ID</code> with your Amazon Associates tag once approved.
+    </div>
+  </div>
+
+  <!-- FREE DOWNLOADS -->
+  <div style="padding:1.25rem 5% 1.5rem;background:var(--warm);border-bottom:0.5px solid var(--rule)">
+    <div style="font-family:sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:0.18em;color:var(--inkl);margin-bottom:14px">Free Resources &amp; Open Access Books <span style="background:var(--green2);color:var(--green);padding:2px 8px;border-radius:2px;font-size:9px;margin-left:6px;font-weight:500">100% Free &amp; Legal</span></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px" id="freeGrid">
+
+      <div class="book-card free-card" data-bcat="free">
+        <div style="background:var(--green2);border-bottom:3px solid var(--green);padding:14px;text-align:center">
+          <div style="font-size:1.8rem;margin-bottom:4px">📖</div>
+          <div style="font-family:sans-serif;font-size:9px;color:var(--green);text-transform:uppercase;letter-spacing:.1em;font-weight:500">Free · Open Access</div>
+        </div>
+        <div class="book-info">
+          <div class="book-tag free-tag">Free Download</div>
+          <div class="book-name">Introduction to Statistical Learning</div>
+          <div class="book-auth">James, Witten, Hastie &amp; Tibshirani</div>
+          <div style="font-family:sans-serif;font-size:11.5px;color:var(--inkm);line-height:1.5;margin-bottom:8px">The definitive free textbook for statistical learning and machine learning — used in courses worldwide.</div>
+          <a href="https://www.statlearning.com/" target="_blank" class="book-btn" style="background:var(--green);color:#fff;border-color:var(--green)">Download Free PDF →</a>
+        </div>
+      </div>
+
+      <div class="book-card free-card" data-bcat="free">
+        <div style="background:var(--green2);border-bottom:3px solid var(--green);padding:14px;text-align:center">
+          <div style="font-size:1.8rem;margin-bottom:4px">📖</div>
+          <div style="font-family:sans-serif;font-size:9px;color:var(--green);text-transform:uppercase;letter-spacing:.1em;font-weight:500">Free · Open Access</div>
+        </div>
+        <div class="book-info">
+          <div class="book-tag free-tag">Free Download</div>
+          <div class="book-name">Deep Learning</div>
+          <div class="book-auth">Goodfellow, Bengio &amp; Courville</div>
+          <div style="font-family:sans-serif;font-size:11.5px;color:var(--inkm);line-height:1.5;margin-bottom:8px">The comprehensive bible of deep learning — freely available online from the authors.</div>
+          <a href="https://www.deeplearningbook.org/" target="_blank" class="book-btn" style="background:var(--green);color:#fff;border-color:var(--green)">Read Free Online →</a>
+        </div>
+      </div>
+
+      <div class="book-card free-card" data-bcat="free">
+        <div style="background:var(--green2);border-bottom:3px solid var(--green);padding:14px;text-align:center">
+          <div style="font-size:1.8rem;margin-bottom:4px">📖</div>
+          <div style="font-family:sans-serif;font-size:9px;color:var(--green);text-transform:uppercase;letter-spacing:.1em;font-weight:500">Free · Open Access</div>
+        </div>
+        <div class="book-info">
+          <div class="book-tag free-tag">Free Download</div>
+          <div class="book-name">Python Data Science Handbook</div>
+          <div class="book-auth">Jake VanderPlas</div>
+          <div style="font-family:sans-serif;font-size:11.5px;color:var(--inkm);line-height:1.5;margin-bottom:8px">Full coverage of NumPy, Pandas, Matplotlib, Scikit-Learn — freely available on GitHub.</div>
+          <a href="https://jakevdp.github.io/PythonDataScienceHandbook/" target="_blank" class="book-btn" style="background:var(--green);color:#fff;border-color:var(--green)">Read Free Online →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <!-- FREE STRIP -->
 <div class="free-strip">
   <div>
@@ -396,7 +646,7 @@
     <div><div class="footer-brand-name">The Decision Signal</div><div class="footer-brand-tag">Data · AI · Decision Intelligence</div><p class="footer-brand-desc">Practical insights on ML, enterprise AI, and the craft of turning data into decisions. By Sayan Mukherjee.</p></div>
     <div class="footer-col"><h4>Content</h4><ul><li><a href="articles.html">All Articles</a></li><li><a href="articles.html">Generative AI</a></li><li><a href="articles.html">ML &amp; AI</a></li></ul></div>
     <div class="footer-col"><h4>Learn</h4><ul><li><a href="learn.html">Courses</a></li><li><a href="learn.html#masterclasses">Masterclasses</a></li><li><a href="learn.html#coaching">Coaching</a></li><li><a href="https://www.youtube.com/@knowledgesharinggroup4001" target="_blank">YouTube ↗</a></li></ul></div>
-    <div class="footer-col"><h4>Connect</h4><ul><li><a href="about.html">About</a></li><li><a href="https://linkedin.com/in/sayan-mukherjee-bb513b22/" target="_blank">LinkedIn ↗</a></li><li><a href="mailto:mukherjee.sayan17@gmail.com">Email</a></li></ul></div>
+    <div class="footer-col"><h4>Connect</h4><ul><li><a href="about.html">About</a></li><li></li><li><a href="mailto:mukherjee.sayan17@gmail.com">Email</a></li></ul></div>
   </div>
   <div class="footer-bottom"><span class="footer-copy">© 2026 The Decision Signal · A publication by Sayan Mukherjee · Built on GitHub Pages</span></div>
 </footer>
@@ -406,7 +656,7 @@
 function toggleMobile(){document.getElementById('mobileMenu').classList.toggle('open')}
 function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),4000)}
 
-// Tabs
+// Tabs — now includes library
 document.querySelectorAll('.learn-tab').forEach(tab=>{
   tab.addEventListener('click',()=>{
     document.querySelectorAll('.learn-tab').forEach(t=>t.classList.remove('active'));
@@ -423,7 +673,7 @@ document.querySelectorAll('.learn-tab').forEach(tab=>{
 
 // Hash routing
 const hash=window.location.hash.replace('#','');
-if(hash==='coaching'||hash==='masterclasses'||hash==='calendar'){
+if(['coaching','masterclasses','calendar','library'].includes(hash)){
   const btn=document.querySelector(`[data-section="${hash}"]`);
   if(btn)btn.click();
   setTimeout(()=>document.getElementById(hash)?.scrollIntoView({behavior:'smooth'}),200);
@@ -434,7 +684,7 @@ function scrollToCoaching(){
   setTimeout(()=>document.getElementById('coaching').scrollIntoView({behavior:'smooth'}),200);
 }
 
-function selectSession(el, sessionName){
+function selectSession(el,sessionName){
   document.querySelectorAll('.session-card').forEach(c=>c.classList.remove('selected'));
   el.classList.add('selected');
   const sel=document.getElementById('bookSession');
@@ -446,7 +696,6 @@ function bookSession(name){
   document.querySelector('[data-section="coaching"]').click();
   setTimeout(()=>{
     document.getElementById('coaching').scrollIntoView({behavior:'smooth'});
-    const sel=document.getElementById('bookSession');
     document.getElementById('bookDesc').placeholder=`I'd like to register for: ${name}`;
   },300);
 }
@@ -454,11 +703,22 @@ function bookSession(name){
 function notifyMe(item){
   const email=prompt(`Enter your email to be notified about:\n"${item}"`);
   if(email&&email.includes('@')){
-    window.location.href=`mailto:mukherjee.sayan17@gmail.com?subject=Notify Me: ${encodeURIComponent(item)}&body=Please notify me when this is available: ${encodeURIComponent(item)}%0A%0AMy email: ${encodeURIComponent(email)}`;
-    showToast('✓ Request sent! You\'ll hear from us soon.');
+    window.location.href=`mailto:mukherjee.sayan17@gmail.com?subject=Notify Me: ${encodeURIComponent(item)}&body=Please notify me: ${encodeURIComponent(item)}%0AEmail: ${encodeURIComponent(email)}`;
+    showToast('✓ Notification request sent!');
   }
 }
 
+// Book filter
+function filterBooks(btn,cat){
+  document.querySelectorAll('.filter-chip').forEach(c=>c.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.book-card').forEach(card=>{
+    const bcat=card.dataset.bcat;
+    card.style.display=(cat==='all'||bcat===cat)?'flex':'none';
+  });
+}
+
+// Booking form — Formspree with mailto fallback
 function submitBooking(e){
   e.preventDefault();
   const name=document.getElementById('bookName').value;
@@ -466,10 +726,10 @@ function submitBooking(e){
   const session=document.getElementById('bookSession').value;
   const date=document.getElementById('bookDate').value;
   const desc=document.getElementById('bookDesc').value;
-  const subject=`Coaching Booking Request: ${session}`;
-  const body=`Name: ${name}%0AEmail: ${email}%0ASession: ${session}%0APreferred time: ${date}%0A%0AWhat I'd like to work on:%0A${desc}`;
-  window.location.href=`mailto:mukherjee.sayan17@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-  showToast('✓ Booking request sent! You\'ll hear back within 24 hrs.');
+  const subject=`Coaching Booking: ${session}`;
+  const body=`Name: ${name}\nEmail: ${email}\nSession: ${session}\nPreferred time: ${date}\n\nWhat I'd like to work on:\n${desc}`;
+  window.location.href=`mailto:mukherjee.sayan17@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  showToast('✓ Booking request opening in your email — send it to confirm!');
   e.target.reset();
 }
 
@@ -502,9 +762,8 @@ function renderCalendar(){
 function changeMonth(dir){currentMonth+=dir;if(currentMonth>11){currentMonth=0;currentYear++;}if(currentMonth<0){currentMonth=11;currentYear--;}renderCalendar();}
 renderCalendar();
 
-// Fade in
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});},{threshold:0.05});
-document.querySelectorAll('.course-card,.mc-item,.session-card').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(14px)';el.style.transition='opacity 0.35s ease, transform 0.35s ease';obs.observe(el);});
+document.querySelectorAll('.course-card,.mc-item,.session-card,.book-card').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(14px)';el.style.transition='opacity 0.35s ease, transform 0.35s ease';obs.observe(el);});
 </script>
 </body>
 </html>
