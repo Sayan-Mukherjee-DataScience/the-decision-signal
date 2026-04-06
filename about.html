@@ -3,89 +3,116 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About — The Decision Signal</title>
-<meta name="description" content="About Sayan Mukherjee — Data Science leader, AI strategist, and founder of The Decision Signal.">
+<title>About — Sayan Mukherjee · The Decision Signal</title>
+<meta name="description" content="Sayan Mukherjee — Data Science & AI Leader, Decision Intelligence practitioner, and founder of The Decision Signal.">
 <link rel="stylesheet" href="style.css">
 <style>
+/* ── BANNER ─────────────────────────────────────────────────────────────── */
 .about-banner{background:var(--sl);padding:2.5rem 5%;display:flex;gap:2rem;align-items:center;border-bottom:3px solid var(--acc);flex-wrap:wrap}
-.avatar{width:80px;height:80px;border-radius:50%;background:var(--sl3);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:26px;color:var(--sl);flex-shrink:0;border:2px solid rgba(255,255,255,0.15)}
-.banner-info h1{font-size:clamp(22px,3vw,32px);color:#fff;margin-bottom:4px}
-.banner-info p{font-size:13.5px;color:rgba(255,255,255,0.55);margin-bottom:12px}
+.avatar{width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,#C17B2F,#a86826);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:28px;color:#fff;flex-shrink:0;border:3px solid rgba(255,255,255,0.2);letter-spacing:-.5px}
+.banner-info h1{font-size:clamp(22px,3vw,32px);color:#fff;margin-bottom:4px;font-weight:400}
+.banner-info .banner-role{font-size:13.5px;color:rgba(255,255,255,.6);margin-bottom:12px}
 .banner-tags{display:flex;gap:7px;flex-wrap:wrap}
-.banner-tag{font-size:10px;padding:3px 10px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.65);border-radius:12px}
+.banner-tag{font-size:10px;padding:3px 11px;border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.7);border-radius:12px;letter-spacing:.04em}
 
-.about-body{display:grid;grid-template-columns:260px 1fr;background:#fff;border-bottom:0.5px solid var(--rule)}
-.about-sidebar{padding:2rem;border-right:0.5px solid var(--rule);background:var(--warm)}
-.sidebar-section{margin-bottom:1.75rem}
-.sidebar-label{font-size:10px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--inkl);margin-bottom:10px}
-.sidebar-link{display:block;font-size:13px;font-weight:500;color:var(--sl2);padding:8px 12px;border:0.5px solid var(--rule);margin-bottom:7px;background:#fff;transition:all 0.2s}
-.sidebar-link:hover{background:var(--sl);color:#fff;border-color:var(--sl)}
-.sidebar-text{font-size:13px;color:var(--inkm);line-height:1.65}
-.sidebar-text+.sidebar-text{margin-top:6px}
+/* ── LAYOUT ─────────────────────────────────────────────────────────────── */
+.about-body{display:grid;grid-template-columns:300px 1fr;background:#fff;align-items:start}
+.about-sidebar{padding:2rem 1.75rem;border-right:0.5px solid var(--rule);background:var(--warm);position:sticky;top:58px;max-height:calc(100vh - 58px);overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(27,47,78,.15) transparent}
+.about-sidebar::-webkit-scrollbar{width:4px}
+.about-sidebar::-webkit-scrollbar-thumb{background:rgba(27,47,78,.15);border-radius:2px}
+.about-main{padding:2.25rem 2.5rem;overflow-y:auto}
 
-.about-main{padding:2rem 2.5rem}
-.about-section{margin-bottom:2.5rem}
-.about-section-label{font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--inkl);margin-bottom:14px;padding-bottom:8px;border-bottom:0.5px solid var(--rule)}
-.about-bio{font-size:15px;color:var(--inkm);line-height:1.9}
+/* ── SIDEBAR ELEMENTS ───────────────────────────────────────────────────── */
+.sb-section{margin-bottom:1.75rem;padding-bottom:1.75rem;border-bottom:0.5px solid var(--rule)}
+.sb-section:last-child{border-bottom:none;margin-bottom:0}
+.sb-label{font-size:9.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--inkl);margin-bottom:10px}
+.sb-contact-item{display:flex;flex-direction:column;gap:2px;padding:7px 0;border-bottom:0.5px solid var(--rule)}
+.sb-contact-item:last-child{border-bottom:none}
+.sb-contact-lbl{font-size:9.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--inkl)}
+.sb-contact-val{font-size:12.5px;color:var(--ink)}
+.sb-contact-val a{color:var(--sl2);transition:color .2s}
+.sb-contact-val a:hover{color:var(--sl)}
+
+/* Skills in sidebar — compact single-col chips */
+.skill-group-sb{margin-bottom:12px}
+.skill-group-lbl{font-size:10.5px;font-weight:500;color:var(--ink);margin-bottom:5px}
+.skill-chips-sb{display:flex;flex-wrap:wrap;gap:4px}
+.skill-chip-sb{font-size:10.5px;padding:3px 8px;border:0.5px solid var(--rule);color:var(--inkm);border-radius:2px;background:#fff;white-space:nowrap}
+
+/* Education in sidebar */
+.edu-sb{padding:7px 0;border-bottom:0.5px solid var(--rule)}
+.edu-sb:last-child{border-bottom:none}
+.edu-degree-sb{font-size:12.5px;font-weight:500;color:var(--ink)}
+.edu-uni-sb{font-size:11.5px;color:var(--sl2);margin-top:1px}
+.edu-year-sb{font-size:10.5px;color:var(--inkl);margin-top:1px}
+.cert-sb{font-size:11.5px;color:var(--inkm);padding:5px 0;border-bottom:0.5px solid var(--rule);display:flex;align-items:flex-start;gap:7px;line-height:1.5}
+.cert-sb:last-child{border-bottom:none}
+.cert-sb::before{content:'✓';color:var(--sl2);font-size:11px;flex-shrink:0;margin-top:1px}
+
+/* Publication in sidebar */
+.pub-sb{font-size:12px;color:var(--inkm);line-height:1.6;padding:6px 0}
+.pub-sb strong{color:var(--ink);font-weight:500}
+
+/* Contact form in sidebar */
+.sb-form{display:flex;flex-direction:column;gap:10px}
+.sb-form .form-group{margin-bottom:0}
+.sb-form label{font-size:10.5px;font-weight:500;color:var(--inkm);margin-bottom:3px;display:block}
+.sb-form .form-input,.sb-form .form-textarea,.sb-form .form-select{font-size:12px;padding:7px 10px;width:100%}
+.sb-form .form-textarea{min-height:80px;resize:vertical}
+.sb-submit{padding:10px;background:var(--sl);color:#fff;border:none;font-size:12px;font-weight:500;cursor:pointer;transition:background .2s;width:100%;letter-spacing:.04em}
+.sb-submit:hover{background:var(--sl2)}
+
+/* ── MAIN CONTENT ───────────────────────────────────────────────────────── */
+.main-section{margin-bottom:2.5rem}
+.main-section:last-child{margin-bottom:0}
+.main-section-label{font-size:9.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--inkl);margin-bottom:14px;padding-bottom:8px;border-bottom:0.5px solid var(--rule);display:flex;align-items:center;gap:8px}
+.main-section-label::before{content:'';display:block;width:3px;height:14px;background:var(--acc);border-radius:2px}
+
+/* Bio */
+.about-bio{font-size:14.5px;color:var(--inkm);line-height:1.9}
 .about-bio p+p{margin-top:1rem}
 .about-bio strong{color:var(--ink);font-weight:500}
-.about-bio a{color:var(--sl2);text-decoration:underline}
 
-.exp-row{display:flex;justify-content:space-between;align-items:flex-start;padding:12px 0;border-bottom:0.5px solid var(--rule);gap:1rem;flex-wrap:wrap}
-.exp-left{}
-.exp-role{font-size:14px;font-weight:500;color:var(--ink)}
-.exp-company{font-size:13px;color:var(--sl2);margin-top:2px}
-.exp-bullets{margin-top:8px;list-style:none;display:flex;flex-direction:column;gap:5px}
-.exp-bullets li{font-size:12.5px;color:var(--inkm);padding-left:14px;position:relative;line-height:1.5}
-.exp-bullets li::before{content:'→';position:absolute;left:0;color:var(--acc);font-size:11px;top:1px}
-.exp-year{font-size:12px;color:var(--inkl);white-space:nowrap;flex-shrink:0}
+/* Experience */
+.exp-block{padding:1.25rem 0;border-bottom:0.5px solid var(--rule)}
+.exp-block:last-child{border-bottom:none;padding-bottom:0}
+.exp-hdr{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:6px;flex-wrap:wrap}
+.exp-role{font-family:'Playfair Display',serif;font-size:16px;color:var(--ink);font-weight:400}
+.exp-company{font-size:12.5px;font-weight:500;color:var(--sl2);margin-top:2px}
+.exp-location{font-size:12px;color:var(--inkl)}
+.exp-period{font-size:11.5px;color:var(--inkl);white-space:nowrap;flex-shrink:0;background:var(--sl3);padding:3px 9px;border-radius:10px}
+.exp-context{font-size:13px;color:var(--inkm);line-height:1.7;margin:8px 0;font-style:italic;border-left:2px solid var(--acc);padding-left:10px}
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:7px;margin-top:8px}
+.exp-bullets li{font-size:13px;color:var(--inkm);padding-left:16px;position:relative;line-height:1.6}
+.exp-bullets li::before{content:'→';position:absolute;left:0;color:var(--acc);font-size:11px;top:2px;font-weight:700}
+.exp-impact{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.impact-chip{font-size:10px;padding:3px 9px;background:var(--acc2);color:var(--acc);border-radius:2px;font-weight:500;letter-spacing:.04em}
 
-.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.skill-group{}
-.skill-group-label{font-size:11.5px;font-weight:500;color:var(--ink);margin-bottom:7px}
-.skill-chips-wrap{display:flex;flex-wrap:wrap;gap:5px}
-.skill-chip{font-size:11.5px;padding:4px 10px;border:0.5px solid var(--rule);color:var(--inkm);border-radius:2px;background:var(--warm)}
-
-.edu-row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:0.5px solid var(--rule);gap:1rem;align-items:baseline;flex-wrap:wrap}
-.edu-degree{font-size:15px;color:var(--ink)}
-.edu-uni{font-size:13px;color:var(--sl2);margin-top:2px}
-.edu-year{font-size:12px;color:var(--inkl);white-space:nowrap}
-
-.certs{margin-top:1.25rem;display:flex;flex-direction:column;gap:7px}
-.cert-row{display:flex;align-items:center;gap:9px;font-size:13.5px;color:var(--inkm);padding:8px 0;border-bottom:0.5px solid var(--rule)}
-.cert-row::before{content:'✓';color:var(--sl2);font-weight:500;flex-shrink:0}
-
-/* CONTACT FORM */
-.contact-strip{background:var(--sl3);border-top:0.5px solid var(--sl4);padding:2rem 5%;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
-.contact-left h2{font-size:clamp(20px,2.5vw,28px);color:var(--sl);margin-bottom:8px}
-.contact-left p{font-size:14px;color:var(--inkm);line-height:1.8;margin-bottom:1.25rem}
-.contact-items{display:flex;flex-direction:column;gap:0}
-.contact-item{padding:10px 0;border-bottom:0.5px solid var(--rule);display:flex;flex-direction:column;gap:2px}
-.contact-item-label{font-size:10px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--inkl)}
-.contact-item-val{font-size:14px;color:var(--ink)}
-.contact-item-val a{color:var(--sl2);transition:color 0.2s}
-.contact-item-val a:hover{color:var(--sl)}
-.contact-form{background:#fff;padding:1.75rem;border:0.5px solid var(--rule)}
-.contact-form h3{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink);margin-bottom:1.25rem}
-.contact-form-inner{display:flex;flex-direction:column;gap:12px}
-.contact-submit{padding:11px;background:var(--sl);color:#fff;border:none;font-size:13px;font-weight:500;cursor:pointer;transition:background 0.2s;letter-spacing:0.04em}
-.contact-submit:hover{background:var(--sl2)}
-
-/* ANALYTICS NOTE */
-.analytics-note{background:var(--warmd);border-top:0.5px solid var(--rule);padding:1rem 5%;display:flex;gap:2rem;flex-wrap:wrap;align-items:center}
-.an-label{font-size:10px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--inkl)}
-.an-item{font-size:12px;color:var(--inkm);display:flex;align-items:center;gap:5px}
-.an-dot{width:6px;height:6px;border-radius:50%;background:var(--sl2)}
-
-@media(max-width:900px){.about-body{grid-template-columns:1fr}.about-sidebar{border-right:none;border-bottom:0.5px solid var(--rule)}.contact-strip{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr}}
+@media(max-width:960px){
+  .about-body{grid-template-columns:1fr}
+  .about-sidebar{position:static;max-height:none;border-right:none;border-bottom:0.5px solid var(--rule)}
+}
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav class="site-nav">
-  <a href="index.html" class="nav-brand">
-    <div class="nav-brand-name">The Decision Signal</div>
-    <div class="nav-brand-tag">Data · AI · Decision Intelligence</div>
+  <a href="index.html" class="nav-brand" style="display:flex;flex-direction:row;align-items:center;gap:11px;text-decoration:none">
+    <svg width="36" height="36" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;display:block">
+      <circle cx="36" cy="36" r="34" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.18)" stroke-width="1.5"/>
+      <path d="M6 12 L6 60 L24 60 Q48 60 48 36 Q48 12 24 12 Z" fill="#C17B2F"/>
+      <polyline points="10,36 14,25 19,46 24,28 29,36 34,29 41,36" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <path d="M64 26 Q64 19 58 19 Q52 19 52 26 Q52 33 58 36 Q64 39 64 46 Q64 53 58 53 Q52 53 52 46" stroke="#fff" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+      <rect x="65" y="44" width="3.5" height="10" rx="1" fill="rgba(255,255,255,.32)"/>
+      <rect x="65" y="37" width="3.5" height="17" rx="1" fill="rgba(255,255,255,.52)"/>
+      <rect x="70" y="28" width="3.5" height="26" rx="1" fill="#C17B2F"/>
+      <circle cx="71.75" cy="28" r="2.5" fill="#fff"/>
+    </svg>
+    <div style="display:flex;flex-direction:column;gap:1px">
+      <div class="nav-brand-name">The Decision Signal</div>
+      <div class="nav-brand-tag">Data · AI · Decision Intelligence</div>
+    </div>
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
@@ -94,259 +121,436 @@
     <li><a href="about.html" class="active">About</a></li>
   </ul>
   <div class="nav-actions">
-    <a href="https://linkedin.com/in/sayan-mukherjee-bb513b22/" target="_blank" class="btn-li">LinkedIn ↗</a>
-    <a href="index.html#subscribeBox" class="btn-subscribe">Subscribe</a>
+    <a href="https://linkedin.com/in/sayan-mukherjee-bb513b22/" target="_blank" class="btn-ghost" style="font-size:12px;padding:7px 14px">LinkedIn ↗</a>
+    <button class="btn-subscribe" onclick="window.location='index.html#subscribeBox'">Subscribe</button>
   </div>
-  <button class="nav-hamburger" onclick="toggleMobile()" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="nav-hamburger" onclick="toggleMobile()" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <a href="index.html">Home</a><a href="articles.html">Articles</a><a href="learn.html">Learn</a><a href="about.html">About</a>
   <a href="https://linkedin.com/in/sayan-mukherjee-bb513b22/" target="_blank">LinkedIn ↗</a>
 </div>
 
+<!-- BANNER -->
 <div class="about-banner">
   <div class="avatar">SM</div>
   <div class="banner-info">
     <h1>Sayan Mukherjee</h1>
-    <p>Manager, Applied Decision Scientist · Tesco Bengaluru · Bangalore, India</p>
+    <div class="banner-role">Manager, Applied Decision Scientist · Tesco Bengaluru · Bangalore, India</div>
     <div class="banner-tags">
       <span class="banner-tag">Decision Intelligence</span>
       <span class="banner-tag">AI &amp; ML</span>
-      <span class="banner-tag">Audit &amp; Risk</span>
+      <span class="banner-tag">Audit &amp; Risk Analytics</span>
       <span class="banner-tag">LLMs &amp; RAG</span>
-      <span class="banner-tag">Retail Analytics</span>
       <span class="banner-tag">13+ Years Experience</span>
+      <span class="banner-tag">Retail &amp; FMCG</span>
     </div>
   </div>
 </div>
 
+<!-- BODY: SIDEBAR + MAIN -->
 <div class="about-body">
+
+  <!-- ════════════════════════════════
+       LEFT SIDEBAR
+       ════════════════════════════════ -->
   <div class="about-sidebar">
-    <div class="sidebar-section">
-      <div class="sidebar-label">Connect</div>
-      <a href="https://linkedin.com/in/sayan-mukherjee-bb513b22/" target="_blank" class="sidebar-link">LinkedIn ↗</a>
-      <a href="https://www.youtube.com/@knowledgesharinggroup4001" target="_blank" class="sidebar-link">YouTube ↗</a>
-      <a href="mailto:mukherjee.sayan17@gmail.com" class="sidebar-link">Email ↗</a>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-label">Location</div>
-      <div class="sidebar-text">Bangalore, India</div>
-      <div class="sidebar-text" style="color:var(--inkl)">Open to global opportunities</div>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-label">Current Role</div>
-      <div class="sidebar-text" style="font-weight:500;color:var(--ink)">Manager, Applied Decision Scientist</div>
-      <div class="sidebar-text">Tesco Bengaluru · Oct 2024 – Present</div>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-label">Education</div>
-      <div class="sidebar-text" style="font-weight:500;color:var(--ink)">M.Sc. Business Analytics</div>
-      <div class="sidebar-text">BITS Pilani · 2016–2019</div>
-      <div class="sidebar-text" style="font-weight:500;color:var(--ink);margin-top:8px">M.A. Economics</div>
-      <div class="sidebar-text">Jadavpur University · 1st Class</div>
-      <div class="sidebar-text" style="font-weight:500;color:var(--ink);margin-top:8px">B.Sc. Economics</div>
-      <div class="sidebar-text">University of Calcutta · 1st Class</div>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-label">Publication</div>
-      <div class="sidebar-text" style="font-style:italic;color:var(--ink)">Artificial Intelligence and Happiness</div>
-      <div class="sidebar-text">Agent-Based Modelling Applications</div>
-    </div>
-  </div>
 
+    <!-- Contact -->
+    <div class="sb-section">
+      <div class="sb-label">Contact</div>
+      <div class="sb-contact-item">
+        <span class="sb-contact-lbl">Email</span>
+        <span class="sb-contact-val"><a href="mailto:mukherjee.sayan17@gmail.com">mukherjee.sayan17@gmail.com</a></span>
+      </div>
+      <div class="sb-contact-item">
+        <span class="sb-contact-lbl">Phone</span>
+        <span class="sb-contact-val"><a href="tel:+917406001678">+91 74060 01678</a></span>
+      </div>
+      <div class="sb-contact-item">
+        <span class="sb-contact-lbl">LinkedIn</span>
+        <span class="sb-contact-val"><a href="https://linkedin.com/in/sayan-mukherjee-bb513b22/" target="_blank">sayan-mukherjee-bb513b22</a></span>
+      </div>
+      <div class="sb-contact-item">
+        <span class="sb-contact-lbl">YouTube</span>
+        <span class="sb-contact-val"><a href="https://www.youtube.com/@knowledgesharinggroup4001" target="_blank">@knowledgesharinggroup4001</a></span>
+      </div>
+      <div class="sb-contact-item">
+        <span class="sb-contact-lbl">Website</span>
+        <span class="sb-contact-val"><a href="https://sayan-mukherjee-datascience.github.io/the-decision-signal/" target="_blank">The Decision Signal</a></span>
+      </div>
+      <div class="sb-contact-item">
+        <span class="sb-contact-lbl">Location</span>
+        <span class="sb-contact-val">Bangalore, India · Open to global roles</span>
+      </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="sb-section">
+      <div class="sb-label">Skills</div>
+      <div class="skill-group-sb">
+        <div class="skill-group-lbl">ML &amp; AI</div>
+        <div class="skill-chips-sb">
+          <span class="skill-chip-sb">Regression &amp; Classification</span>
+          <span class="skill-chip-sb">NLP</span>
+          <span class="skill-chip-sb">Time Series</span>
+          <span class="skill-chip-sb">Neural Networks</span>
+          <span class="skill-chip-sb">Anomaly Detection</span>
+          <span class="skill-chip-sb">Optimisation</span>
+        </div>
+      </div>
+      <div class="skill-group-sb">
+        <div class="skill-group-lbl">LLMs &amp; Generative AI</div>
+        <div class="skill-chips-sb">
+          <span class="skill-chip-sb">Generative AI</span>
+          <span class="skill-chip-sb">Prompt Engineering</span>
+          <span class="skill-chip-sb">RAG</span>
+          <span class="skill-chip-sb">Agentic Frameworks</span>
+          <span class="skill-chip-sb">Claude</span>
+          <span class="skill-chip-sb">CoPilot</span>
+        </div>
+      </div>
+      <div class="skill-group-sb">
+        <div class="skill-group-lbl">Programming &amp; Data</div>
+        <div class="skill-chips-sb">
+          <span class="skill-chip-sb">Python</span>
+          <span class="skill-chip-sb">SQL</span>
+          <span class="skill-chip-sb">PySpark</span>
+          <span class="skill-chip-sb">Hive</span>
+          <span class="skill-chip-sb">Airflow</span>
+          <span class="skill-chip-sb">ETL Pipelines</span>
+        </div>
+      </div>
+      <div class="skill-group-sb">
+        <div class="skill-group-lbl">Cloud &amp; MLOps</div>
+        <div class="skill-chips-sb">
+          <span class="skill-chip-sb">Azure Databricks</span>
+          <span class="skill-chip-sb">BigQuery</span>
+          <span class="skill-chip-sb">ML Pipelines</span>
+          <span class="skill-chip-sb">Model Monitoring</span>
+        </div>
+      </div>
+      <div class="skill-group-sb">
+        <div class="skill-group-lbl">Leadership &amp; Strategy</div>
+        <div class="skill-chips-sb">
+          <span class="skill-chip-sb">Analytics Strategy</span>
+          <span class="skill-chip-sb">Product Roadmaps</span>
+          <span class="skill-chip-sb">Stakeholder Influence</span>
+          <span class="skill-chip-sb">C-Suite Storytelling</span>
+          <span class="skill-chip-sb">Design Thinking</span>
+        </div>
+      </div>
+      <div class="skill-group-sb">
+        <div class="skill-group-lbl">Visualisation &amp; Tools</div>
+        <div class="skill-chips-sb">
+          <span class="skill-chip-sb">Tableau</span>
+          <span class="skill-chip-sb">Plotly Dash</span>
+          <span class="skill-chip-sb">Streamlit</span>
+          <span class="skill-chip-sb">Figma</span>
+          <span class="skill-chip-sb">Git</span>
+          <span class="skill-chip-sb">Miro</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="sb-section">
+      <div class="sb-label">Education</div>
+      <div class="edu-sb">
+        <div class="edu-degree-sb">M.Sc. Business Analytics</div>
+        <div class="edu-uni-sb">BITS Pilani — Work Integrated Learning</div>
+        <div class="edu-year-sb">2016 – 2019</div>
+      </div>
+      <div class="edu-sb">
+        <div class="edu-degree-sb">M.A. Economics</div>
+        <div class="edu-uni-sb">Jadavpur University · First Class</div>
+        <div class="edu-year-sb">2009 – 2011</div>
+      </div>
+      <div class="edu-sb">
+        <div class="edu-degree-sb">B.Sc. Economics</div>
+        <div class="edu-uni-sb">University of Calcutta · First Class</div>
+        <div class="edu-year-sb">2006 – 2009</div>
+      </div>
+      <div style="margin-top:10px">
+        <div class="cert-sb">Lean Tested &amp; Certified — Genpact, 2016</div>
+        <div class="cert-sb">How to Build Digital Products — Product School</div>
+        <div class="cert-sb">Introduction to Project Management — Simplilearn</div>
+        <div class="cert-sb">Introduction to Generative AI — Google Cloud</div>
+      </div>
+    </div>
+
+    <!-- Publication -->
+    <div class="sb-section">
+      <div class="sb-label">Publication</div>
+      <div class="pub-sb">
+        <strong>Artificial Intelligence and Happiness</strong><br>
+        Agent-Based Modelling Applications — exploring how AI systems interact with human wellbeing and decision-making at scale.
+      </div>
+    </div>
+
+    <!-- Get in Touch -->
+    <div class="sb-section">
+      <div class="sb-label">Get in Touch</div>
+      <p style="font-size:12px;color:var(--inkm);line-height:1.65;margin-bottom:12px">Open to conversations about data science leadership, AI strategy, collaboration, and interesting problems worth solving.</p>
+      <form class="sb-form" id="contactForm"
+        action="https://formspree.io/f/mzdkynna"
+        method="POST">
+        <input type="hidden" name="_subject" value="Message via About Page — The Decision Signal">
+        <div class="form-group">
+          <label>Name *</label>
+          <input type="text" name="name" class="form-input" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label>Email *</label>
+          <input type="email" name="email" class="form-input" placeholder="your@email.com" required>
+        </div>
+        <div class="form-group">
+          <label>Subject</label>
+          <select name="subject" class="form-select form-input">
+            <option>General enquiry</option>
+            <option>Coaching / Mentorship</option>
+            <option>Collaboration / Speaking</option>
+            <option>Course / Content feedback</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message *</label>
+          <textarea name="message" class="form-textarea" placeholder="What's on your mind?" required style="min-height:80px;resize:vertical"></textarea>
+        </div>
+        <button type="submit" class="sb-submit">Send Message →</button>
+      </form>
+    </div>
+
+  </div><!-- /sidebar -->
+
+  <!-- ════════════════════════════════
+       MAIN CONTENT
+       ════════════════════════════════ -->
   <div class="about-main">
-    <div class="about-section">
-      <div class="about-section-label">About</div>
+
+    <!-- About -->
+    <div class="main-section">
+      <div class="main-section-label">About</div>
       <div class="about-bio">
-        <p>I'm a <strong>Data Science leader with 13+ years</strong> of experience delivering measurable business impact through decision science, advanced analytics, and AI/ML solutions. I started The Decision Signal as a platform to share practical, no-fluff insights for data science practitioners and leaders who want to cut through the noise.</p>
-        <p>Currently at <strong>Tesco Bengaluru</strong>, I lead AI-driven transformation of internal audit and risk — deploying anomaly detection at scale, building LLM-powered knowledge tools, and helping senior leadership make faster, smarter decisions with data they can trust.</p>
-        <p>Before Tesco, I've built models and led analytics across retail pricing, supply chain optimisation, marketing mix modelling, and customer analytics — for global FMCG clients, CPG retailers, and financial services firms.</p>
-        <p>My work sits at the intersection of <strong>rigorous statistics, ML engineering, and executive storytelling</strong>. I believe data science's real value isn't in the models — it's in the decisions they enable. That's what I write about, teach, and coach.</p>
+        <p>I'm a <strong>Data Science and AI leader with 13+ years of experience</strong> turning messy, complex business problems into decisions that actually move the needle. I've spent my career at the intersection of advanced analytics, machine learning, and strategic storytelling — working across retail, FMCG, supply chain, and financial services to deliver real, measurable impact.</p>
+        <p>At <strong>Tesco</strong>, I currently lead AI-driven transformation of internal audit and risk — deploying cutting-edge ML techniques including Isolation Forests, Generative Adversarial Networks, Network Graph models, and Markov Models to detect anomalies, enhance risk coverage, and dramatically reduce manual effort. I also shaped and now lead an LLM-based conversational intelligence platform that gives audit and risk teams instant access to historical strategic insights.</p>
+        <p>What drives me is the space between data and decisions — where <strong>rigorous science meets real business judgement</strong>. I believe the best data scientists are also translators: fluent in both the technical depth of the model and the strategic language of the boardroom. That belief is what led me to create <em>The Decision Signal</em> — a platform for practitioners who want to go beyond the hype.</p>
+        <p>I'm especially drawn to high-impact roles where I can lead strategic capability development, drive enterprise-scale transformation, and work in environments that value intellectual curiosity, collaboration, and real-world results.</p>
       </div>
     </div>
 
-    <div class="about-section">
-      <div class="about-section-label">Professional Experience</div>
-      <div class="exp-row">
-        <div class="exp-left">
-          <div class="exp-role">Manager, Applied Decision Scientist</div>
-          <div class="exp-company">Tesco Bengaluru Private Limited</div>
-          <ul class="exp-bullets">
-            <li>Led AI-driven audit transformation with Isolation Forests, GANs, Network Graphs &amp; Markov Models — 50% effort reduction</li>
-            <li>Designed LLM-based conversational agent for strategic insight retrieval</li>
-            <li>Mentored and shaped a team of 5+ data scientists</li>
-          </ul>
-        </div>
-        <div class="exp-year">Oct 2024 – Present</div>
-      </div>
-      <div class="exp-row">
-        <div class="exp-left">
-          <div class="exp-role">Lead, Applied Decision Scientist</div>
-          <div class="exp-company">Tesco Bengaluru Private Limited</div>
-          <ul class="exp-bullets">
-            <li>Fuel price elasticity framework — 5% margin improvement</li>
-            <li>A/B testing MVP — 4+ weeks saved per store trial</li>
-            <li>Statistical methodology identifying £10m+ annual savings potential</li>
-          </ul>
-        </div>
-        <div class="exp-year">Oct 2020 – Sep 2024</div>
-      </div>
-      <div class="exp-row">
-        <div class="exp-left">
-          <div class="exp-role">Associate Consultant (Manager)</div>
-          <div class="exp-company">Evalueserve</div>
-          <ul class="exp-bullets">
-            <li>Supply chain optimisation with Gurobi — 15% logistics cost reduction</li>
-            <li>Freight demand forecasting tool — ~20% accuracy improvement</li>
-          </ul>
-        </div>
-        <div class="exp-year">Jul 2018 – Sep 2020</div>
-      </div>
-      <div class="exp-row">
-        <div class="exp-left">
-          <div class="exp-role">Manager → Assistant Manager → Business Analyst</div>
-          <div class="exp-company">Genpact</div>
-          <ul class="exp-bullets">
-            <li>Analytics for Retail &amp; CPG — churn models, market basket analysis, pricing</li>
-          </ul>
-        </div>
-        <div class="exp-year">Sep 2013 – Jun 2018</div>
-      </div>
-      <div class="exp-row">
-        <div class="exp-left">
-          <div class="exp-role">Business Analyst</div>
-          <div class="exp-company">Ipsos MMA</div>
-          <ul class="exp-bullets"><li>Marketing mix modelling and ROI/MROI analysis for FMCG clients</li></ul>
-        </div>
-        <div class="exp-year">Jun 2012 – Sep 2013</div>
-      </div>
-    </div>
+    <!-- Professional Experience -->
+    <div class="main-section">
+      <div class="main-section-label">Professional Experience</div>
 
-    <div class="about-section">
-      <div class="about-section-label">Skills</div>
-      <div class="skills-grid">
-        <div class="skill-group">
-          <div class="skill-group-label">Machine Learning &amp; AI</div>
-          <div class="skill-chips-wrap">
-            <span class="skill-chip">Regression &amp; Classification</span><span class="skill-chip">NLP</span><span class="skill-chip">Time Series</span><span class="skill-chip">Neural Networks</span><span class="skill-chip">Anomaly Detection</span><span class="skill-chip">Optimisation</span>
+      <!-- Tesco Manager -->
+      <div class="exp-block">
+        <div class="exp-hdr">
+          <div>
+            <div class="exp-role">Manager, Applied Decision Scientist</div>
+            <div class="exp-company">Tesco Bengaluru Private Limited · Bangalore, India</div>
           </div>
+          <div class="exp-period">Oct 2024 – Present</div>
         </div>
-        <div class="skill-group">
-          <div class="skill-group-label">LLMs &amp; Generative AI</div>
-          <div class="skill-chips-wrap">
-            <span class="skill-chip">Generative AI</span><span class="skill-chip">Prompt Engineering</span><span class="skill-chip">RAG</span><span class="skill-chip">Agentic Frameworks</span><span class="skill-chip">Claude</span><span class="skill-chip">CoPilot</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <div class="skill-group-label">Programming &amp; Data</div>
-          <div class="skill-chips-wrap">
-            <span class="skill-chip">Python</span><span class="skill-chip">SQL</span><span class="skill-chip">PySpark</span><span class="skill-chip">Airflow</span><span class="skill-chip">ETL Pipelines</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <div class="skill-group-label">Cloud &amp; MLOps</div>
-          <div class="skill-chips-wrap">
-            <span class="skill-chip">Azure Databricks</span><span class="skill-chip">BigQuery</span><span class="skill-chip">ML Pipelines</span><span class="skill-chip">Model Monitoring</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <div class="skill-group-label">Leadership &amp; Strategy</div>
-          <div class="skill-chips-wrap">
-            <span class="skill-chip">Analytics Strategy</span><span class="skill-chip">Product Roadmaps</span><span class="skill-chip">Stakeholder Influence</span><span class="skill-chip">Executive Communication</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <div class="skill-group-label">Visualisation &amp; Tools</div>
-          <div class="skill-chips-wrap">
-            <span class="skill-chip">Tableau</span><span class="skill-chip">Plotly Dash</span><span class="skill-chip">Streamlit</span><span class="skill-chip">Figma</span><span class="skill-chip">Git</span>
-          </div>
+        <div class="exp-context">Leading AI-driven transformation of internal audit and risk across one of the UK's largest retailers. Responsible for defining and executing the analytics roadmap, building ML-powered assurance capabilities, and mentoring a high-performing team of data scientists.</div>
+        <ul class="exp-bullets">
+          <li>Architected and deployed an advanced anomaly detection platform for internal audit, combining <strong>Isolation Forests, Generative Adversarial Networks (GANs), Network Graph analysis, and Markov Models</strong> to surface risk signals that traditional rule-based methods consistently miss — reducing manual audit effort by 50%.</li>
+          <li>Partnered with senior commercial, finance, and audit leadership to define and execute a multi-year analytics roadmap, aligning data science capability with Tesco's strategic risk priorities and delivering a <strong>~15% improvement in audit process efficiency</strong> through structured problem scoping and data-driven solutions.</li>
+          <li>Designed and led the end-to-end development of an <strong>LLM-based conversational intelligence agent</strong> enabling audit and risk teams to rapidly retrieve and interrogate years of historical strategic insights — fundamentally changing how institutional knowledge is accessed and applied in decision-making.</li>
+          <li>Shaped, recruited and mentors a high-performing team of 5+ applied data scientists, setting technical standards, driving delivery excellence, and building a culture of intellectual rigour and cross-functional collaboration across the UK and India.</li>
+          <li>Established structured stakeholder engagement with C-suite and senior leadership across Finance, Commercial and Internal Audit, translating complex ML outputs into actionable risk narratives that drive board-level decisions.</li>
+        </ul>
+        <div class="exp-impact">
+          <span class="impact-chip">50% Manual Effort Reduction</span>
+          <span class="impact-chip">15% Audit Efficiency Gain</span>
+          <span class="impact-chip">LLM Platform Delivery</span>
+          <span class="impact-chip">Team of 5+ Scientists</span>
         </div>
       </div>
-    </div>
 
-    <div class="about-section">
-      <div class="about-section-label">Education</div>
-      <div class="edu-row"><div><div class="edu-degree">M.Sc. Business Analytics</div><div class="edu-uni">BITS Pilani — Work Integrated Learning Programme</div></div><div class="edu-year">2016 – 2019</div></div>
-      <div class="edu-row"><div><div class="edu-degree">M.A. Economics</div><div class="edu-uni">Jadavpur University · First Class</div></div><div class="edu-year">2009 – 2011</div></div>
-      <div class="edu-row"><div><div class="edu-degree">B.Sc. Economics</div><div class="edu-uni">University of Calcutta · First Class</div></div><div class="edu-year">2006 – 2009</div></div>
-      <div class="certs">
-        <div class="cert-row">Lean Tested &amp; Certified — Genpact, 2016</div>
-        <div class="cert-row">How to Build Digital Products — Product School</div>
-        <div class="cert-row">Introduction to Project Management — Simplilearn</div>
-        <div class="cert-row">Introduction to Generative AI — Google Cloud Skills Boost</div>
+      <!-- Tesco Lead -->
+      <div class="exp-block">
+        <div class="exp-hdr">
+          <div>
+            <div class="exp-role">Lead, Applied Decision Scientist</div>
+            <div class="exp-company">Tesco Bengaluru Private Limited · Bangalore, India</div>
+          </div>
+          <div class="exp-period">Oct 2020 – Sep 2024</div>
+        </div>
+        <div class="exp-context">Led the design and delivery of decision science solutions across fuel pricing, experimentation science, demand analytics, and capital investment evaluation — directly influencing strategic decisions at a retailer operating thousands of UK stores.</div>
+        <ul class="exp-bullets">
+          <li>Designed a <strong>site-level fuel price elasticity framework</strong> combining log-log regression modelling with competitor-indexed scenario simulations, enabling dynamic pricing optimisation across Tesco's fuel estate and delivering a <strong>5% improvement in fuel margin</strong>.</li>
+          <li>Built and productionised an <strong>A/B testing MVP platform</strong> in Python and Plotly Dash — standardising trial measurement across the entire organisation, enabling statistically rigorous store trials with consistent uplift evaluation and reducing manual analysis time by <strong>4+ weeks per trial</strong>.</li>
+          <li>Developed an end-to-end scientific framework for <strong>demand transference analysis</strong> using product substitution modelling, achieving ~80% accuracy against external benchmarks with a 50% reduction in analyst time — enabling confident ranging and delisting decisions across product categories.</li>
+          <li>Developed a <strong>statistical test-and-control methodology</strong> to evaluate the impact of non-returning capital investment across the store estate, identifying over <strong>£10m in annual savings potential</strong> and directly shaping Tesco's capital allocation decisions.</li>
+          <li>Delivered executive-ready strategic diagnostics combining advanced analytics, competitive intelligence, and compelling data storytelling to inform C-suite decisions across commercial, marketing, and operations.</li>
+          <li>Led analytical scoping workshops with senior business stakeholders, translating ambiguous commercial questions into structured analytical briefs and driving alignment between data science output and business decision timelines.</li>
+        </ul>
+        <div class="exp-impact">
+          <span class="impact-chip">5% Fuel Margin Improvement</span>
+          <span class="impact-chip">£10m+ Savings Identified</span>
+          <span class="impact-chip">4+ Weeks Saved per Trial</span>
+          <span class="impact-chip">80% Demand Model Accuracy</span>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
 
-<!-- CONTACT -->
-<div class="contact-strip">
-  <div class="contact-left">
-    <h2>Get in touch</h2>
-    <p>Open to conversations about data science leadership, AI strategy, collaboration, and interesting problems worth solving. Fill the form or reach out directly.</p>
-    <div class="contact-items">
-      <div class="contact-item"><span class="contact-item-label">Email</span><span class="contact-item-val"><a href="mailto:mukherjee.sayan17@gmail.com">mukherjee.sayan17@gmail.com</a></span></div>
-      <div class="contact-item"><span class="contact-item-label">LinkedIn</span><span class="contact-item-val"><a href="https://linkedin.com/in/sayan-mukherjee-bb513b22/" target="_blank">linkedin.com/in/sayan-mukherjee-bb513b22</a></span></div>
-      <div class="contact-item"><span class="contact-item-label">YouTube</span><span class="contact-item-val"><a href="https://www.youtube.com/@knowledgesharinggroup4001" target="_blank">@knowledgesharinggroup4001</a></span></div>
-      <div class="contact-item"><span class="contact-item-label">Location</span><span class="contact-item-val">Bangalore, India · Open to global roles</span></div>
-    </div>
-  </div>
-  <div class="contact-form">
-    <h3>Send a Message</h3>
-    <form class="contact-form-inner" id="contactForm" onsubmit="submitContact(event)">
-      <div class="form-group"><label>Name</label><input type="text" id="cName" class="form-input" placeholder="Your name" required></div>
-      <div class="form-group"><label>Email</label><input type="email" id="cEmail" class="form-input" placeholder="your@email.com" required></div>
-      <div class="form-group"><label>Subject</label>
-        <select id="cSubject" class="form-select form-input">
-          <option>General enquiry</option>
-          <option>Coaching / Mentorship</option>
-          <option>Collaboration / Speaking</option>
-          <option>Course / Content feedback</option>
-          <option>Other</option>
-        </select>
+      <!-- Evalueserve -->
+      <div class="exp-block">
+        <div class="exp-hdr">
+          <div>
+            <div class="exp-role">Associate Consultant (Manager)</div>
+            <div class="exp-company">Evalueserve · Bangalore, India</div>
+          </div>
+          <div class="exp-period">Jul 2018 – Sep 2020</div>
+        </div>
+        <div class="exp-context">Led high-complexity analytics engagements for global FMCG and logistics clients, building production-grade optimisation models and forecasting tools while managing client relationships and delivery teams.</div>
+        <ul class="exp-bullets">
+          <li>Engineered large-scale <strong>supply chain optimisation models</strong> using Gurobi linear programming to solve multi-depot, multi-constraint logistics network problems for a global FMCG client — delivering a <strong>15% reduction in logistics costs</strong> across the distribution network.</li>
+          <li>Developed a <strong>freight demand forecasting tool</strong> using Auto-ARIMA time series modelling with Flask API integration, improving prediction accuracy by ~20% and fully automating what had previously been a labour-intensive monthly reporting process.</li>
+          <li>Built interactive exploratory dashboards to visualise complex supply chain network data, accelerating planning decisions for logistics teams and reducing manual data preparation time by <strong>40%</strong>.</li>
+          <li>Managed end-to-end client delivery across concurrent analytical workstreams, handling stakeholder communication, scope management, and team coordination across analyst and consultant levels.</li>
+        </ul>
+        <div class="exp-impact">
+          <span class="impact-chip">15% Logistics Cost Reduction</span>
+          <span class="impact-chip">20% Forecast Accuracy Gain</span>
+          <span class="impact-chip">40% Time Saved on Reporting</span>
+        </div>
       </div>
-      <div class="form-group"><label>Message</label><textarea id="cMessage" class="form-textarea" placeholder="What's on your mind?" required></textarea></div>
-      <button type="submit" class="contact-submit">Send Message →</button>
-    </form>
-  </div>
-</div>
 
-<div class="analytics-note">
-  <span class="an-label">Powered by:</span>
-  <div class="an-item"><div class="an-dot"></div>GitHub Pages — free hosting</div>
-  <div class="an-item"><div class="an-dot"></div>Google Analytics — visitor insights (add your ID to enable)</div>
-  <div class="an-item"><div class="an-dot"></div>Email enquiry forms — direct to Gmail</div>
-</div>
+      <!-- Genpact Manager -->
+      <div class="exp-block">
+        <div class="exp-hdr">
+          <div>
+            <div class="exp-role">Manager — Analytics</div>
+            <div class="exp-company">Genpact · Bangalore, India</div>
+          </div>
+          <div class="exp-period">Jan 2018 – Jun 2018</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Led analytics engagements for Retail &amp; CPG clients, delivering data-driven insights to solve complex business problems through structured analysis and executive-quality storytelling.</li>
+          <li>Managed client relationships, project delivery timelines, and a team of analysts supporting strategic and ad-hoc analysis across brick-and-mortar and e-commerce business contexts.</li>
+        </ul>
+      </div>
 
+      <!-- Genpact AM -->
+      <div class="exp-block">
+        <div class="exp-hdr">
+          <div>
+            <div class="exp-role">Assistant Manager — Analytics</div>
+            <div class="exp-company">Genpact · Bangalore, India</div>
+          </div>
+          <div class="exp-period">Jun 2015 – Dec 2017</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Developed <strong>customer churn prediction models</strong> using logistic regression and survival analysis, identifying high-risk customer segments and enabling targeted retention strategies that improved campaign efficiency for a major retail client.</li>
+          <li>Built <strong>market basket analysis models</strong> using association rule mining (Apriori, FP-Growth algorithms), uncovering significant cross-sell and up-sell opportunities that directly improved campaign effectiveness and customer lifetime value.</li>
+          <li>Delivered in-store testing analytics, pricing analysis, customer segmentation, marketing mix modelling, text mining, and order-to-cash operations analysis across multiple simultaneous client engagements.</li>
+        </ul>
+      </div>
+
+      <!-- Genpact BA -->
+      <div class="exp-block">
+        <div class="exp-hdr">
+          <div>
+            <div class="exp-role">Business Analyst</div>
+            <div class="exp-company">Genpact · Bangalore, India</div>
+          </div>
+          <div class="exp-period">Sep 2013 – Jun 2015</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Applied advanced statistical techniques including <strong>ANCOVA, linear regression and multivariate analysis</strong> to analyse workforce productivity patterns and drive efficiency improvements across business operations.</li>
+          <li>Delivered analytical insights across pricing analysis, customer segmentation, and marketing mix modelling — building foundational expertise in applied statistics and business problem structuring.</li>
+        </ul>
+      </div>
+
+      <!-- Ipsos MMA -->
+      <div class="exp-block">
+        <div class="exp-hdr">
+          <div>
+            <div class="exp-role">Business Analyst</div>
+            <div class="exp-company">Ipsos MMA · Bangalore, India</div>
+          </div>
+          <div class="exp-period">Jun 2012 – Sep 2013</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Analysed marketing ROI using <strong>marketing mix models (MMM)</strong>, supporting media spend optimisation for FMCG clients across multiple markets.</li>
+          <li>Conducted ROI and MROI analysis to assess media saturation and profitability, isolating seasonal effects and evaluating direct, halo, and synergy impacts on business performance.</li>
+        </ul>
+      </div>
+
+      <!-- Netscribes -->
+      <div class="exp-block">
+        <div class="exp-hdr">
+          <div>
+            <div class="exp-role">Market Research Associate</div>
+            <div class="exp-company">Netscribes · Kolkata, India</div>
+          </div>
+          <div class="exp-period">Jun 2011 – May 2012</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Conducted qualitative and quantitative research across diverse B2B sectors, generating strategic insights to inform client decision-making and market positioning.</li>
+          <li>Produced daily business newsletters covering economic and industry developments, developing strong analytical writing and market intelligence skills.</li>
+        </ul>
+      </div>
+
+    </div><!-- /experience -->
+  </div><!-- /main -->
+</div><!-- /about-body -->
+
+<!-- FOOTER -->
 <footer class="site-footer">
-  <div class="footer-top">
-    <div><div class="footer-brand-name">The Decision Signal</div><div class="footer-brand-tag">Data · AI · Decision Intelligence</div><p class="footer-brand-desc">A publication by Sayan Mukherjee. Practical insights on ML, enterprise AI, and decision intelligence.</p></div>
-    <div class="footer-col"><h4>Content</h4><ul><li><a href="articles.html">All Articles</a></li><li><a href="articles.html">ML &amp; AI</a></li><li><a href="articles.html">Leadership</a></li></ul></div>
-    <div class="footer-col"><h4>Learn</h4><ul><li><a href="learn.html">Courses</a></li><li><a href="learn.html#masterclasses">Masterclasses</a></li><li><a href="learn.html#coaching">Coaching</a></li><li><a href="https://www.youtube.com/@knowledgesharinggroup4001" target="_blank">YouTube ↗</a></li></ul></div>
-    <div class="footer-col"><h4>Connect</h4><ul><li><a href="https://linkedin.com/in/sayan-mukherjee-bb513b22/" target="_blank">LinkedIn ↗</a></li><li><a href="mailto:mukherjee.sayan17@gmail.com">Email</a></li></ul></div>
+  <div class="footer-top" style="grid-template-columns:2.4fr 1fr 1fr 1fr">
+    <div>
+      <div style="display:flex;align-items:center;gap:11px;margin-bottom:14px">
+        <svg width="38" height="38" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;display:block">
+          <circle cx="36" cy="36" r="34" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.18)" stroke-width="1.5"/>
+          <path d="M6 12 L6 60 L24 60 Q48 60 48 36 Q48 12 24 12 Z" fill="#C17B2F"/>
+          <polyline points="10,36 14,25 19,46 24,28 29,36 34,29 41,36" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M64 26 Q64 19 58 19 Q52 19 52 26 Q52 33 58 36 Q64 39 64 46 Q64 53 58 53 Q52 53 52 46" stroke="#fff" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+          <rect x="65" y="44" width="3.5" height="10" rx="1" fill="rgba(255,255,255,.32)"/>
+          <rect x="65" y="37" width="3.5" height="17" rx="1" fill="rgba(255,255,255,.52)"/>
+          <rect x="70" y="28" width="3.5" height="26" rx="1" fill="#C17B2F"/>
+          <circle cx="71.75" cy="28" r="2.5" fill="#fff"/>
+        </svg>
+        <div><div class="footer-brand-name">The Decision Signal</div><div class="footer-brand-tag">Data · AI · Decision Intelligence</div></div>
+      </div>
+      <p class="footer-brand-desc">An independent publication exploring the intersection of machine learning, enterprise AI, and strategic decision-making — written for practitioners who want to go beyond the hype.</p>
+      <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px">
+        <a href="mailto:mukherjee.sayan17@gmail.com" style="font-size:12px;color:rgba(255,255,255,.55);display:inline-flex;align-items:center;gap:7px;transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.55)'"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>Contact Us</a>
+        <a href="https://www.youtube.com/@knowledgesharinggroup4001" target="_blank" style="font-size:12px;color:rgba(255,255,255,.55);display:inline-flex;align-items:center;gap:7px;transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.55)'"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7s-.3-2-1.2-2.8c-1.1-1.2-2.4-1.2-3-1.3C16.3 2.7 12 2.7 12 2.7s-4.3 0-6.8.2c-.6.1-1.9.1-3 1.3C1.3 5 1 7 1 7S.7 9.1.7 11.3v2.1C.7 15.5 1 17.6 1 17.6s.3 2 1.2 2.8c1.1 1.2 2.6 1.1 3.3 1.2C7.6 21.8 12 21.8 12 21.8s4.3 0 6.8-.2c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.8 1.2-2.8s.3-2.1.3-4.2v-2.1C23.3 9.1 23 7 23 7zM9.7 15.5V8.4l8.1 3.6-8.1 3.5z"/></svg>YouTube Channel</a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Explore</h4><ul>
+      <li><a href="learn.html#sec-masterclasses">Masterclasses</a></li>
+      <li><a href="articles.html?filter=ml">Industry Case Studies</a></li>
+      <li><a href="learn.html#sec-coaching">Mentorship</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Learn</h4><ul>
+      <li><a href="learn.html">Courses</a></li>
+      <li><a href="articles.html">Blog</a></li>
+      <li><a href="learn.html#sec-library">Library</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Follow</h4><ul>
+      <li><a href="index.html#subscribeBox">Newsletter</a></li>
+      <li><a href="learn.html#sec-library">E-book</a></li>
+      <li><a href="about.html">About Sayan</a></li>
+    </ul></div>
   </div>
-  <div class="footer-bottom"><span class="footer-copy">© 2026 The Decision Signal · A publication by Sayan Mukherjee · Built on GitHub Pages</span></div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 The Decision Signal · A publication by Sayan Mukherjee · Built on GitHub Pages</span>
+    <div style="display:flex;gap:1.25rem">
+      <a href="disclaimer.html" style="font-size:11px;color:rgba(255,255,255,.3)">Disclaimer</a>
+      <a href="privacy.html" style="font-size:11px;color:rgba(255,255,255,.3)">Privacy</a>
+      <a href="terms.html" style="font-size:11px;color:rgba(255,255,255,.3)">Terms</a>
+    </div>
+  </div>
 </footer>
-<div class="toast" id="toast"></div>
 
+<div class="toast" id="toast"></div>
 <script>
 function toggleMobile(){document.getElementById('mobileMenu').classList.toggle('open')}
-function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),4000)}
-function submitContact(e){
-  e.preventDefault();
-  const name=document.getElementById('cName').value;
-  const email=document.getElementById('cEmail').value;
-  const subject=document.getElementById('cSubject').value;
-  const message=document.getElementById('cMessage').value;
-  const mailto=`mailto:mukherjee.sayan17@gmail.com?subject=${encodeURIComponent(subject+' — from '+name)}&body=${encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\n'+message)}`;
-  window.location.href=mailto;
-  showToast('✓ Message ready to send in your email client!');
-  e.target.reset();
-}
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});},{threshold:0.05});
-document.querySelectorAll('.exp-row,.skill-group,.edu-row,.cert-row').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(12px)';el.style.transition='opacity 0.35s ease, transform 0.35s ease';obs.observe(el);});
+function showToast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show');},4000);}
 </script>
 </body>
 </html>
