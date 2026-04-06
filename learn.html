@@ -1362,7 +1362,7 @@ function bookSession(name){
     if(sel){ for(var i=0;i<sel.options.length;i++){ if(sel.options[i].text.indexOf(name.split('—')[0].trim())===0){ sel.selectedIndex=i; break; } } }
   }, 400);
 }
-function notifyMe(name){ showToast('✓ We'll notify you when "'+name+'" goes live!'); }
+function notifyMe(name){ showToast("✓ We'll notify you when '" + name + "' goes live!"); }
 
 // ── HASH ROUTING ──────────────────────────────────────────────────────────
 (function(){
