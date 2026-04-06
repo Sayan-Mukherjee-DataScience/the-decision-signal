@@ -121,16 +121,17 @@
 .coaching-left{padding:2rem 5%;border-right:0.5px solid var(--rule)}
 .coaching-intro{font-size:14px;color:var(--inkm);line-height:1.8;margin-bottom:1.5rem}
 .session-types{display:flex;flex-direction:column;gap:10px}
-.session-card{border:0.5px solid var(--rule);cursor:pointer;transition:all 0.15s;border-radius:2px;overflow:hidden}
+.session-card{border:0.5px solid var(--rule);cursor:pointer;transition:border-color .15s;border-radius:2px;overflow:hidden;margin-bottom:8px}
 .session-card:hover{border-color:var(--sl2)}
-.session-card.selected{background:var(--sl3);border-color:var(--sl2)}
-.session-card-top{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:14px 16px}
-.session-card-chevron{width:20px;height:20px;flex-shrink:0;transition:transform .25s;color:var(--inkl)}
-.session-card.open .session-card-chevron{transform:rotate(180deg)}
-.session-bullets{display:none;padding:0 16px 14px 16px;border-top:0.5px solid var(--rule);margin-top:0;background:#fff}
+.session-card.open{border-color:var(--acc);box-shadow:0 2px 12px rgba(193,123,47,.12)}
+.session-card-top{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:14px 16px;background:#fff;transition:background .15s}
+.session-card.open .session-card-top{background:var(--sl3)}
+.session-card-chevron{transition:transform .25s !important}
+.session-card.open .session-card-chevron{transform:rotate(180deg) !important}
+.session-bullets{display:none;padding:8px 16px 16px;border-top:0.5px solid rgba(193,123,47,.2);background:#fff}
 .session-card.open .session-bullets{display:block}
-.session-bullet{display:flex;align-items:flex-start;gap:8px;padding:6px 0;font-size:12.5px;color:var(--inkm);line-height:1.55}
-.session-bullet-arrow{color:#166534;font-size:14px;flex-shrink:0;margin-top:1px}
+.session-bullet{display:flex;align-items:flex-start;gap:10px;padding:5px 0;font-size:13px;color:var(--inkm);line-height:1.6}
+.session-bullet-arrow{color:#166534;font-size:13px;flex-shrink:0;margin-top:2px;font-weight:700}
 .session-name{font-family:'Playfair Display',serif;font-size:15px;color:var(--ink);margin-bottom:3px}
 .session-desc{font-size:12px;color:var(--inkm);line-height:1.5}
 .session-price{font-size:14px;font-weight:500;text-align:right}
@@ -182,6 +183,26 @@
 .always-section{display:block !important}
 .vid-section{background:#fff;padding:2.5rem 5% 2rem;border-bottom:0.5px solid var(--rule)}
 .section-label{font-family:"DM Sans",sans-serif;font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--inkl);padding:1.5rem 5% 0}
+
+/* ── PROFESSIONAL BOOK CARDS ────────────────────────────────────────── */
+.bk-card{display:flex;flex-direction:column;border:1px solid rgba(27,47,78,.08);border-radius:4px;overflow:hidden;transition:box-shadow .2s,transform .2s;cursor:pointer}
+.bk-card:hover{box-shadow:0 8px 24px rgba(27,47,78,.13);transform:translateY(-2px)}
+.bk-hdr{height:150px;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:14px 16px;position:relative;flex-shrink:0}
+.bk-cat-pill{font-size:9px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.18);color:rgba(255,255,255,.9);padding:3px 9px;border-radius:10px;margin-bottom:8px;width:fit-content}
+.bk-hdr-title{font-family:'Playfair Display',serif;font-size:14px;color:#fff;line-height:1.3;margin-bottom:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.bk-hdr-author{font-size:11px;color:rgba(255,255,255,.65)}
+.bk-body{padding:12px 14px;flex:1;display:flex;flex-direction:column;background:#fff}
+.bk-tag{font-size:9px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:10px;margin-bottom:8px;width:fit-content}
+.bk-tag.ds{background:var(--sl3);color:var(--sl2)}
+.bk-tag.ai{background:#EDE9FE;color:#5B21B6}
+.bk-tag.leadership{background:#DCFCE7;color:#166534}
+.bk-tag.strategy{background:var(--acc2);color:var(--acc)}
+.bk-name{font-family:'Playfair Display',serif;font-size:13.5px;color:var(--ink);line-height:1.3;margin-bottom:4px}
+.bk-auth{font-size:11px;color:var(--inkl);margin-bottom:12px;flex:1}
+.bk-btn{display:block;text-align:center;padding:8px 10px;background:var(--sl);color:#fff;font-size:11.5px;font-weight:500;border:1.5px solid var(--sl);transition:all .2s;text-decoration:none;border-radius:2px}
+.bk-btn:hover{background:transparent;color:var(--sl)}
+@media(max-width:1100px){#bookGrid{grid-template-columns:repeat(3,1fr) !important}}
+@media(max-width:700px){#bookGrid{grid-template-columns:repeat(2,1fr) !important}}
 </style>
 </head>
 <body>
@@ -250,30 +271,30 @@
       <div class="hero-stat"><span class="hero-stat-num">8+</span><span class="hero-stat-lbl">Curated Books</span></div>
     </div>
     <div class="hero-cta-group">
-      <a href="#sec-ml" onclick="scrollToSection('sec-ml')" class="hero-btn-primary">Start Learning →</a>
-      <a href="#coaching" onclick="scrollToSection('sec-coaching')" class="hero-btn-ghost">Book Free Mentorship</a>
+      <a href="javascript:void(0)" onclick="scrollToSection('sec-ml')" class="hero-btn-primary">Start Learning →</a>
+      <a href="javascript:void(0)" onclick="scrollToSection('sec-coaching')" class="hero-btn-ghost">Book Free Mentorship</a>
     </div>
   </div>
   <div class="learn-hero-right">
-    <a href="#sec-ml" onclick="scrollToSection('sec-ml')" class="hero-feat-card">
+    <a href="javascript:void(0)" onclick="scrollToSection('sec-ml')" class="hero-feat-card">
       <div class="hero-feat-icon" style="background:rgba(193,123,47,.2)">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C17B2F" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
       </div>
       <div><div class="hero-feat-title">ML &amp; AI Fundamentals</div><div class="hero-feat-sub">5 free videos · Beginner to advanced</div></div>
     </a>
-    <a href="#sec-career" onclick="scrollToSection('sec-career')" class="hero-feat-card">
+    <a href="javascript:void(0)" onclick="scrollToSection('sec-career')" class="hero-feat-card">
       <div class="hero-feat-icon" style="background:rgba(22,101,52,.2)">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#166534" stroke-width="2" stroke-linecap="round"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
       </div>
       <div><div class="hero-feat-title">Career &amp; Roadmap</div><div class="hero-feat-sub">5 free videos · DS career paths</div></div>
     </a>
-    <a href="#sec-masterclasses" onclick="scrollToSection('sec-masterclasses')" class="hero-feat-card">
+    <a href="javascript:void(0)" onclick="scrollToSection('sec-masterclasses')" class="hero-feat-card">
       <div class="hero-feat-icon" style="background:rgba(27,47,78,.3)">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
       </div>
       <div><div class="hero-feat-title">Live Masterclasses</div><div class="hero-feat-sub">Free Zoom · Limited seats</div></div>
     </a>
-    <a href="#sec-coaching" onclick="scrollToSection('sec-coaching')" class="hero-feat-card">
+    <a href="javascript:void(0)" onclick="scrollToSection('sec-coaching')" class="hero-feat-card">
       <div class="hero-feat-icon" style="background:rgba(193,123,47,.15)">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C17B2F" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
       </div>
@@ -413,59 +434,72 @@
     <div class="vid-section-title">Live Masterclasses &amp; Workshops</div>
   </div>
   <div class="mc-list">
-    <div class="mc-item">
-      <div class="mc-date-box"><div class="mc-month">May</div><div class="mc-day">14</div></div>
-      <div class="mc-body">
-        <div class="mc-type">Free Masterclass · Live via Zoom</div>
-        <h3 class="mc-title">From Data to Decisions: Building an AI Strategy That Sticks</h3>
-        <div class="mc-meta"><span>90 min</span><span class="meta-dot"></span><span>Slides + recording</span><span class="meta-dot"></span><span>Live Q&amp;A</span><span class="meta-dot"></span><span style="color:var(--green);font-weight:500">Free</span></div>
-      </div>
-      <div class="mc-right">
-        <div class="mc-price" style="color:var(--green)">Free</div>
-        <button class="mc-btn" onclick="openMcModal('From Data to Decisions Masterclass — 14 May')">Register Now</button>
-        <div class="mc-spots">12 spots remaining</div>
-      </div>
+
+  <div class="mc-item">
+    <div class="mc-date-box" style="background:var(--inkl)">
+      <div class="mc-month" style="letter-spacing:.05em">TBD</div>
+      <div style="font-size:11px;color:rgba(255,255,255,.7);margin-top:4px;letter-spacing:.05em">2026</div>
     </div>
-    <div class="mc-item">
-      <div class="mc-date-box"><div class="mc-month">Jun</div><div class="mc-day">4</div></div>
-      <div class="mc-body">
-        <div class="mc-type">Free Masterclass · Live via Zoom</div>
-        <h3 class="mc-title">LLMs in the Enterprise: What Leaders Need to Know in 2026</h3>
-        <div class="mc-meta"><span>60 min</span><span class="meta-dot"></span><span>Slides + recording</span><span class="meta-dot"></span><span>Live Q&amp;A</span></div>
-      </div>
-      <div class="mc-right">
-        <div class="mc-price" style="color:var(--green)">Free</div>
-        <button class="mc-btn outline" onclick="openMcModal('LLMs in the Enterprise Masterclass — 4 Jun')">Register</button>
-        <div class="mc-spots">Open registration</div>
-      </div>
+    <div class="mc-body">
+      <div class="mc-type">Free Masterclass · Live via Zoom</div>
+      <h3 class="mc-title">From Data to Decisions: Building an AI Strategy That Sticks</h3>
+      <div class="mc-meta"><span>90 min</span><span class="meta-dot"></span><span>Slides + recording</span><span class="meta-dot"></span><span>Live Q&amp;A</span><span class="meta-dot"></span><span style="color:var(--green);font-weight:500">Free</span></div>
     </div>
-    <div class="mc-item">
-      <div class="mc-date-box"><div class="mc-month">Jun</div><div class="mc-day">18</div></div>
-      <div class="mc-body">
-        <div class="mc-type">Free Workshop · Small Group · Max 8</div>
-        <h3 class="mc-title">Experimentation Science: Designing Rigorous Store Trials</h3>
-        <div class="mc-meta"><span>3 hrs</span><span class="meta-dot"></span><span>Interactive exercises</span><span class="meta-dot"></span><span>Certificate of completion</span></div>
-      </div>
-      <div class="mc-right">
-        <div class="mc-price" style="color:var(--green)">Free</div>
-        <button class="mc-btn" onclick="openMcModal('Experimentation Science Workshop — 18 Jun')">Book Now</button>
-        <div class="mc-spots">5 spots left</div>
-      </div>
-    </div>
-    <div class="mc-item">
-      <div class="mc-date-box"><div class="mc-month">Jul</div><div class="mc-day">9</div></div>
-      <div class="mc-body">
-        <div class="mc-type">Free Workshop · Hands-on</div>
-        <h3 class="mc-title">Anomaly Detection in Practice: From Theory to Deployment</h3>
-        <div class="mc-meta"><span>2 hrs</span><span class="meta-dot"></span><span>Python code included</span><span class="meta-dot"></span><span>Recording available</span></div>
-      </div>
-      <div class="mc-right">
-        <div class="mc-price" style="color:var(--green)">Free</div>
-        <button class="mc-btn outline" onclick="openMcModal('Anomaly Detection Workshop — 9 Jul')">Register</button>
-        <div class="mc-spots">Open registration</div>
-      </div>
+    <div class="mc-right">
+      <div style="display:inline-block;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;background:var(--sl3);color:var(--sl2);padding:4px 12px;border-radius:2px">Coming Soon</div>
+      <button class="mc-btn" disabled style="opacity:.45;cursor:not-allowed;margin-top:6px">Register</button>
     </div>
   </div>
+
+  <div class="mc-item">
+    <div class="mc-date-box" style="background:var(--inkl)">
+      <div class="mc-month" style="letter-spacing:.05em">TBD</div>
+      <div style="font-size:11px;color:rgba(255,255,255,.7);margin-top:4px;letter-spacing:.05em">2026</div>
+    </div>
+    <div class="mc-body">
+      <div class="mc-type">Free Masterclass · Live via Zoom</div>
+      <h3 class="mc-title">LLMs in the Enterprise: What Leaders Need to Know in 2026</h3>
+      <div class="mc-meta"><span>60 min</span><span class="meta-dot"></span><span>Slides + recording</span><span class="meta-dot"></span><span>Live Q&amp;A</span></div>
+    </div>
+    <div class="mc-right">
+      <div style="display:inline-block;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;background:var(--sl3);color:var(--sl2);padding:4px 12px;border-radius:2px">Coming Soon</div>
+      <button class="mc-btn" disabled style="opacity:.45;cursor:not-allowed;margin-top:6px">Register</button>
+    </div>
+  </div>
+
+  <div class="mc-item">
+    <div class="mc-date-box" style="background:var(--inkl)">
+      <div class="mc-month" style="letter-spacing:.05em">TBD</div>
+      <div style="font-size:11px;color:rgba(255,255,255,.7);margin-top:4px;letter-spacing:.05em">2026</div>
+    </div>
+    <div class="mc-body">
+      <div class="mc-type">Free Workshop · Small Group · Max 8</div>
+      <h3 class="mc-title">Experimentation Science: Designing Rigorous Store Trials</h3>
+      <div class="mc-meta"><span>3 hrs</span><span class="meta-dot"></span><span>Interactive exercises</span><span class="meta-dot"></span><span>Certificate of completion</span></div>
+    </div>
+    <div class="mc-right">
+      <div style="display:inline-block;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;background:var(--sl3);color:var(--sl2);padding:4px 12px;border-radius:2px">Coming Soon</div>
+      <button class="mc-btn" disabled style="opacity:.45;cursor:not-allowed;margin-top:6px">Register</button>
+    </div>
+  </div>
+
+  <div class="mc-item">
+    <div class="mc-date-box" style="background:var(--inkl)">
+      <div class="mc-month" style="letter-spacing:.05em">TBD</div>
+      <div style="font-size:11px;color:rgba(255,255,255,.7);margin-top:4px;letter-spacing:.05em">2026</div>
+    </div>
+    <div class="mc-body">
+      <div class="mc-type">Free Workshop · Hands-on</div>
+      <h3 class="mc-title">Anomaly Detection in Practice: From Theory to Deployment</h3>
+      <div class="mc-meta"><span>2 hrs</span><span class="meta-dot"></span><span>Python code included</span><span class="meta-dot"></span><span>Recording available</span></div>
+    </div>
+    <div class="mc-right">
+      <div style="display:inline-block;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;background:var(--sl3);color:var(--sl2);padding:4px 12px;border-radius:2px">Coming Soon</div>
+      <button class="mc-btn" disabled style="opacity:.45;cursor:not-allowed;margin-top:6px">Register</button>
+    </div>
+  </div>
+
+</div>
 </div>
 
 <div class="always-section" id="sec-coaching">
@@ -477,23 +511,100 @@
       <h2 style="font-size:clamp(20px,2.5vw,28px);color:var(--sl);margin-bottom:10px">Book a Free Session</h2>
       <p class="coaching-intro">Connect with industry experts for free mentorship, career guidance, and technical coaching. Whether you're navigating a career decision, tackling a complex AI problem, or building your data science roadmap — book a slot and get focused, practical guidance.</p>
       <div class="session-types" id="sessionTypes">
-        <div class="session-card" onclick="selectSession(this,'Career Mentorship Session — CV review, career path guidance & interview prep for DS/AI roles (45 min)')" >
-          <div><div class="session-name">Career Mentorship Session</div><div class="session-desc">CV review, career path guidance, interview prep for DS/AI roles</div></div>
-          <div><div class="session-price" style="color:var(--green)">Free</div><div class="session-duration">45 min · Zoom</div></div>
-        </div>
-        <div class="session-card" onclick="selectSession(this,'Technical Deep-Dive — Whiteboard a real ML/AI problem and get structured feedback (60 min)')">
-          <div><div class="session-name">Technical Deep-Dive</div><div class="session-desc">Whiteboard a real ML/AI problem you're working on — get structured feedback and direction</div></div>
-          <div><div class="session-price" style="color:var(--green)">Free</div><div class="session-duration">60 min · Zoom</div></div>
-        </div>
-        <div class="session-card" onclick="selectSession(this,'AI Strategy Advisory — Help defining a data science roadmap and capability plan (90 min)')">
-          <div><div class="session-name">AI Strategy Advisory</div><div class="session-desc">Help your team or org define a data science roadmap and capability plan</div></div>
-          <div><div class="session-price" style="color:var(--green)">Free</div><div class="session-duration">90 min · Zoom</div></div>
-        </div>
-        <div class="session-card" onclick="selectSession(this,'Ongoing Mentorship — 2 sessions/month for sustained growth over 3–6 months')">
-          <div><div class="session-name">Ongoing Mentorship</div><div class="session-desc">2 sessions/month for sustained growth over 3–6 months. For serious career development.</div></div>
-          <div><div class="session-price" style="color:var(--green)">Free</div><div class="session-duration">Monthly · Ongoing</div></div>
-        </div>
+
+  <div class="session-card" id="sc-career">
+    <div class="session-card-top" onclick="toggleSession('sc-career','Career Mentorship Session — 45 min')">
+      <div style="flex:1;min-width:0">
+        <div class="session-name">Career Mentorship Session</div>
+        <div class="session-desc">CV review, career path guidance, interview prep for DS/AI roles</div>
       </div>
+      <div style="display:flex;align-items:center;gap:14px;flex-shrink:0">
+        <div style="text-align:right">
+          <div class="session-price" style="color:var(--green)">Free</div>
+          <div class="session-duration">45 min · Zoom</div>
+        </div>
+        <svg class="session-card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0;transition:transform .25s;color:var(--inkl)"><path d="M6 9l6 6 6-6"/></svg>
+      </div>
+    </div>
+    <div class="session-bullets">
+      <div class="session-bullet"><span class="session-bullet-arrow">➜</span>CV and LinkedIn profile review with actionable improvement points</div>
+      <div class="session-bullet"><span class="session-bullet-arrow">➜</span>Clarity on which DS/AI role best fits your background and goals</div>
+      <div class="session-bullet"><span class="session-bullet-arrow">➜</span>Interview prep: common DS questions and case study walkthroughs</div>
+      <div class="session-bullet"><span class="session-bullet-arrow">➜</span>How to position yourself for senior or leadership roles</div>
+      <div class="session-bullet"><span class="session-bullet-arrow">➜</span>Personalised 30/60/90 day action plan to achieve your career goal</div>
+    </div>
+  </div>
+
+  <div class="session-card" id="sc-tech">
+    <div class="session-card-top" onclick="toggleSession('sc-tech','Technical Deep-Dive — 60 min')">
+      <div style="flex:1;min-width:0">
+        <div class="session-name">Technical Deep-Dive</div>
+        <div class="session-desc">Whiteboard a real ML/AI problem you're working on — get structured feedback and direction</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;flex-shrink:0">
+        <div style="text-align:right">
+          <div class="session-price" style="color:var(--green)">Free</div>
+          <div class="session-duration">60 min · Zoom</div>
+        </div>
+        <svg class="session-card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0;transition:transform .25s;color:var(--inkl)"><path d="M6 9l6 6 6-6"/></svg>
+      </div>
+    </div>
+    <div class="session-bullets">
+      <div class="session-bullet"><span class="session-bullet-arrow">➜</span>Live whiteboard session on your specific ML or AI problem</div>
+      <div class="session-bullet"><span class="session-bullet-arrow">➜</span>Model selection guidance — which approach fits your data and constraints</div>
+      <div class="session-bullet"><span class="session-bullet-arrow">➜</span>Feedback on feature engineering, evaluation strategy and deployment plan</div>
+      <div class="session-bullet"><span class="session-bullet-arrow">➜</span>Common pitfalls to avoid for your specific problem type</div>
+      <div class="session-bullet"><span class="session-bullet-arrow">➜</span>Recommended papers, tools and next steps to move forward confidently</div>
+    </div>
+  </div>
+
+  <div class="session-card" id="sc-strategy">
+    <div class="session-card-top" onclick="toggleSession('sc-strategy','AI Strategy Advisory — 90 min')">
+      <div style="flex:1;min-width:0">
+        <div class="session-name">AI Strategy Advisory</div>
+        <div class="session-desc">Help your team or org define a data science roadmap and capability plan</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;flex-shrink:0">
+        <div style="text-align:right">
+          <div class="session-price" style="color:var(--green)">Free</div>
+          <div class="session-duration">90 min · Zoom</div>
+        </div>
+        <svg class="session-card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0;transition:transform .25s;color:var(--inkl)"><path d="M6 9l6 6 6-6"/></svg>
+      </div>
+    </div>
+    <div class="session-bullets">
+      <div class="session-bullet"><span class="session-bullet-arrow">➜</span>Audit of your current data infrastructure, maturity and capability gaps</div>
+      <div class="session-bullet"><span class="session-bullet-arrow">➜</span>Prioritised AI use-case identification for your specific business context</div>
+      <div class="session-bullet"><span class="session-bullet-arrow">➜</span>Build-vs-buy decision framework for ML tooling and platforms</div>
+      <div class="session-bullet"><span class="session-bullet-arrow">➜</span>Team structure and hiring recommendations for DS/AI capability building</div>
+      <div class="session-bullet"><span class="session-bullet-arrow">➜</span>12-month roadmap outline with quick wins and long-term milestones</div>
+    </div>
+  </div>
+
+  <div class="session-card" id="sc-ongoing">
+    <div class="session-card-top" onclick="toggleSession('sc-ongoing','Ongoing Mentorship — Monthly')">
+      <div style="flex:1;min-width:0">
+        <div class="session-name">Ongoing Mentorship</div>
+        <div class="session-desc">2 sessions/month for sustained growth over 3–6 months. For serious career development.</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;flex-shrink:0">
+        <div style="text-align:right">
+          <div class="session-price" style="color:var(--green)">Free</div>
+          <div class="session-duration">Monthly · Ongoing</div>
+        </div>
+        <svg class="session-card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0;transition:transform .25s;color:var(--inkl)"><path d="M6 9l6 6 6-6"/></svg>
+      </div>
+    </div>
+    <div class="session-bullets">
+      <div class="session-bullet"><span class="session-bullet-arrow">➜</span>Structured monthly check-ins tied to your personal development plan</div>
+      <div class="session-bullet"><span class="session-bullet-arrow">➜</span>Accountability on learning goals: courses, projects, job applications</div>
+      <div class="session-bullet"><span class="session-bullet-arrow">➜</span>Real-time feedback on your work product — models, analyses, presentations</div>
+      <div class="session-bullet"><span class="session-bullet-arrow">➜</span>Network introductions and endorsements as opportunities arise</div>
+      <div class="session-bullet"><span class="session-bullet-arrow">➜</span>Designed for serious career transitions or growth into data leadership</div>
+    </div>
+  </div>
+
+</div>
     </div>
     <div class="coaching-right">
       <div class="booking-title">Request a Booking</div>
@@ -565,113 +676,121 @@
   <!-- PAID BOOKS — Amazon affiliate -->
   <div style="padding:1.25rem 5% 0.75rem;background:#fff;border-bottom:0.5px solid var(--rule)">
     <div style="font-family:sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:0.18em;color:var(--inkl);margin-bottom:14px">This Week's Top Picks <span style="background:var(--acc2);color:var(--acc);padding:2px 8px;border-radius:2px;font-size:9px;margin-left:6px">Amazon Affiliate Links</span></div>
-    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px" id="bookGrid">
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px" id="bookGrid">
 
-      <div class="book-card" data-bcat="ds">
-        <div class="book-cover" style="background:linear-gradient(135deg,#1B2F4E,#24426B);height:160px;padding:0;overflow:hidden;position:relative">
-          <div class="book-title-on-cover">The Art of Statistics</div>
-          <div class="book-author-on-cover">David Spiegelhalter</div>
-        </div>
-        <div class="book-info">
-          <div class="book-tag ds">Data Science</div>
-          <div class="book-name">The Art of Statistics</div>
-          <div class="book-auth">David Spiegelhalter</div>
-          <a href="https://www.amazon.in/s?k=The+Art+of+Statistics+Spiegelhalter&tag=YOUR-AFFILIATE-ID" target="_blank" class="book-btn">Buy at Amazon →</a>
-        </div>
-      </div>
-
-      <div class="book-card" data-bcat="ai">
-        <div class="book-cover" style="background:linear-gradient(135deg,#2d1b69,#534AB7);height:160px;padding:0;overflow:hidden;position:relative">
-          <img src="https://covers.openlibrary.org/b/isbn/9781633695672-M.jpg" alt="Prediction Machines" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.style.display='none'">
-          <div class="book-author-on-cover">Agrawal, Gans &amp; Goldfarb</div>
-        </div>
-        <div class="book-info">
-          <div class="book-tag ai">AI &amp; ML</div>
-          <div class="book-name">Prediction Machines</div>
-          <div class="book-auth">Agrawal, Gans &amp; Goldfarb</div>
-          <a href="https://www.amazon.in/s?k=Prediction+Machines+Agrawal&tag=YOUR-AFFILIATE-ID" target="_blank" class="book-btn">Buy at Amazon →</a>
-        </div>
-      </div>
-
-      <div class="book-card" data-bcat="leadership">
-        <div class="book-cover" style="background:linear-gradient(135deg,#166534,#1D9E75);height:160px;padding:0;overflow:hidden;position:relative">
-          <img src="https://covers.openlibrary.org/b/isbn/9781603580557-M.jpg" alt="Thinking in Systems" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.style.display='none'">
-          <div class="book-author-on-cover">Donella Meadows</div>
-        </div>
-        <div class="book-info">
-          <div class="book-tag leadership">Leadership</div>
-          <div class="book-name">Thinking in Systems</div>
-          <div class="book-auth">Donella Meadows</div>
-          <a href="https://www.amazon.in/s?k=Thinking+in+Systems+Meadows&tag=YOUR-AFFILIATE-ID" target="_blank" class="book-btn">Buy at Amazon →</a>
-        </div>
-      </div>
-
-      <div class="book-card" data-bcat="strategy">
-        <div class="book-cover" style="background:linear-gradient(135deg,#7a3b1e,#C17B2F);height:160px;padding:0;overflow:hidden;position:relative">
-          <img src="https://covers.openlibrary.org/b/isbn/9780307886231-M.jpg" alt="Good Strategy Bad Strategy" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.style.display='none'">
-          <div class="book-author-on-cover">Richard Rumelt</div>
-        </div>
-        <div class="book-info">
-          <div class="book-tag strategy">Strategy</div>
-          <div class="book-name">Good Strategy Bad Strategy</div>
-          <div class="book-auth">Richard Rumelt</div>
-          <a href="https://www.amazon.in/s?k=Good+Strategy+Bad+Strategy+Rumelt&tag=YOUR-AFFILIATE-ID" target="_blank" class="book-btn">Buy at Amazon →</a>
-        </div>
-      </div>
-
-      <div class="book-card" data-bcat="ds">
-        <div class="book-cover" style="background:linear-gradient(135deg,#1B2F4E,#378ADD);height:160px;padding:0;overflow:hidden;position:relative">
-          <img src="https://covers.openlibrary.org/b/isbn/9780393347777-M.jpg" alt="Naked Statistics" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.style.display='none'">
-          <div class="book-author-on-cover">Charles Wheelan</div>
-        </div>
-        <div class="book-info">
-          <div class="book-tag ds">Data Science</div>
-          <div class="book-name">Naked Statistics</div>
-          <div class="book-auth">Charles Wheelan</div>
-          <a href="https://www.amazon.in/s?k=Naked+Statistics+Wheelan&tag=YOUR-AFFILIATE-ID" target="_blank" class="book-btn">Buy at Amazon →</a>
-        </div>
-      </div>
-
-      <div class="book-card" data-bcat="ai">
-        <div class="book-cover" style="background:linear-gradient(135deg,#1a1a2e,#534AB7);height:160px;padding:0;overflow:hidden;position:relative">
-          <img src="https://covers.openlibrary.org/b/isbn/9780393635782-M.jpg" alt="The Alignment Problem" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.style.display='none'">
-          <div class="book-author-on-cover">Brian Christian</div>
-        </div>
-        <div class="book-info">
-          <div class="book-tag ai">AI &amp; ML</div>
-          <div class="book-name">The Alignment Problem</div>
-          <div class="book-auth">Brian Christian</div>
-          <a href="https://www.amazon.in/s?k=The+Alignment+Problem+Brian+Christian&tag=YOUR-AFFILIATE-ID" target="_blank" class="book-btn">Buy at Amazon →</a>
-        </div>
-      </div>
-
-      <div class="book-card" data-bcat="leadership">
-        <div class="book-cover" style="background:linear-gradient(135deg,#2C2C2A,#888780);height:160px;padding:0;overflow:hidden;position:relative">
-          <img src="https://covers.openlibrary.org/b/isbn/9781491973899-M.jpg" alt="The Manager's Path" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.style.display='none'">
-          <div class="book-author-on-cover">Camille Fournier</div>
-        </div>
-        <div class="book-info">
-          <div class="book-tag leadership">Leadership</div>
-          <div class="book-name">The Manager's Path</div>
-          <div class="book-auth">Camille Fournier</div>
-          <a href="https://www.amazon.in/s?k=The+Managers+Path+Camille+Fournier&tag=YOUR-AFFILIATE-ID" target="_blank" class="book-btn">Buy at Amazon →</a>
-        </div>
-      </div>
-
-      <div class="book-card" data-bcat="strategy">
-        <div class="book-cover" style="background:linear-gradient(135deg,#3d1a00,#C17B2F);height:160px;padding:0;overflow:hidden;position:relative">
-          <img src="https://covers.openlibrary.org/b/isbn/9780374533557-M.jpg" alt="Thinking, Fast and Slow" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.style.display='none'">
-          <div class="book-author-on-cover">Daniel Kahneman</div>
-        </div>
-        <div class="book-info">
-          <div class="book-tag strategy">Strategy</div>
-          <div class="book-name">Thinking, Fast and Slow</div>
-          <div class="book-auth">Daniel Kahneman</div>
-          <a href="https://www.amazon.in/s?k=Thinking+Fast+and+Slow+Kahneman&tag=YOUR-AFFILIATE-ID" target="_blank" class="book-btn">Buy at Amazon →</a>
-        </div>
-      </div>
-
+  <div class="bk-card" data-bcat="ds">
+    <div class="bk-hdr" style="background:linear-gradient(145deg,#0F2A4A,#24426B)">
+      <div class="bk-cat-pill">Data Science</div>
+      <div class="bk-hdr-title">The Art of Statistics</div>
+      <div class="bk-hdr-author">David Spiegelhalter</div>
     </div>
+    <div class="bk-body">
+      <div class="bk-tag ds">Data Science</div>
+      <div class="bk-name">The Art of Statistics</div>
+      <div class="bk-auth">David Spiegelhalter</div>
+      <a href="https://www.amazon.in/s?k=The+Art+of+Statistics+Spiegelhalter&tag=YOUR-AFFILIATE-ID" target="_blank" class="bk-btn">Buy at Amazon →</a>
+    </div>
+  </div>
+
+  <div class="bk-card" data-bcat="ai">
+    <div class="bk-hdr" style="background:linear-gradient(145deg,#2d1b69,#534AB7)">
+      <div class="bk-cat-pill">AI &amp; ML</div>
+      <div class="bk-hdr-title">Prediction Machines</div>
+      <div class="bk-hdr-author">Agrawal, Gans &amp; Goldfarb</div>
+    </div>
+    <div class="bk-body">
+      <div class="bk-tag ai">AI &amp; ML</div>
+      <div class="bk-name">Prediction Machines</div>
+      <div class="bk-auth">Agrawal, Gans &amp; Goldfarb</div>
+      <a href="https://www.amazon.in/s?k=Prediction+Machines+Agrawal&tag=YOUR-AFFILIATE-ID" target="_blank" class="bk-btn">Buy at Amazon →</a>
+    </div>
+  </div>
+
+  <div class="bk-card" data-bcat="leadership">
+    <div class="bk-hdr" style="background:linear-gradient(145deg,#0d4d2e,#166534)">
+      <div class="bk-cat-pill">Leadership</div>
+      <div class="bk-hdr-title">Thinking in Systems</div>
+      <div class="bk-hdr-author">Donella Meadows</div>
+    </div>
+    <div class="bk-body">
+      <div class="bk-tag leadership">Leadership</div>
+      <div class="bk-name">Thinking in Systems</div>
+      <div class="bk-auth">Donella Meadows</div>
+      <a href="https://www.amazon.in/s?k=Thinking+in+Systems+Meadows&tag=YOUR-AFFILIATE-ID" target="_blank" class="bk-btn">Buy at Amazon →</a>
+    </div>
+  </div>
+
+  <div class="bk-card" data-bcat="strategy">
+    <div class="bk-hdr" style="background:linear-gradient(145deg,#7a3b1e,#C17B2F)">
+      <div class="bk-cat-pill">Strategy</div>
+      <div class="bk-hdr-title">Good Strategy Bad Strategy</div>
+      <div class="bk-hdr-author">Richard Rumelt</div>
+    </div>
+    <div class="bk-body">
+      <div class="bk-tag strategy">Strategy</div>
+      <div class="bk-name">Good Strategy Bad Strategy</div>
+      <div class="bk-auth">Richard Rumelt</div>
+      <a href="https://www.amazon.in/s?k=Good+Strategy+Bad+Strategy+Rumelt&tag=YOUR-AFFILIATE-ID" target="_blank" class="bk-btn">Buy at Amazon →</a>
+    </div>
+  </div>
+
+  <div class="bk-card" data-bcat="ds">
+    <div class="bk-hdr" style="background:linear-gradient(145deg,#1B2F4E,#378ADD)">
+      <div class="bk-cat-pill">Data Science</div>
+      <div class="bk-hdr-title">Naked Statistics</div>
+      <div class="bk-hdr-author">Charles Wheelan</div>
+    </div>
+    <div class="bk-body">
+      <div class="bk-tag ds">Data Science</div>
+      <div class="bk-name">Naked Statistics</div>
+      <div class="bk-auth">Charles Wheelan</div>
+      <a href="https://www.amazon.in/s?k=Naked+Statistics+Wheelan&tag=YOUR-AFFILIATE-ID" target="_blank" class="bk-btn">Buy at Amazon →</a>
+    </div>
+  </div>
+
+  <div class="bk-card" data-bcat="ai">
+    <div class="bk-hdr" style="background:linear-gradient(145deg,#1a1a2e,#4a47a3)">
+      <div class="bk-cat-pill">AI &amp; ML</div>
+      <div class="bk-hdr-title">The Alignment Problem</div>
+      <div class="bk-hdr-author">Brian Christian</div>
+    </div>
+    <div class="bk-body">
+      <div class="bk-tag ai">AI &amp; ML</div>
+      <div class="bk-name">The Alignment Problem</div>
+      <div class="bk-auth">Brian Christian</div>
+      <a href="https://www.amazon.in/s?k=The+Alignment+Problem+Brian+Christian&tag=YOUR-AFFILIATE-ID" target="_blank" class="bk-btn">Buy at Amazon →</a>
+    </div>
+  </div>
+
+  <div class="bk-card" data-bcat="leadership">
+    <div class="bk-hdr" style="background:linear-gradient(145deg,#2C2C2A,#5a5a56)">
+      <div class="bk-cat-pill">Leadership</div>
+      <div class="bk-hdr-title">The Manager's Path</div>
+      <div class="bk-hdr-author">Camille Fournier</div>
+    </div>
+    <div class="bk-body">
+      <div class="bk-tag leadership">Leadership</div>
+      <div class="bk-name">The Manager's Path</div>
+      <div class="bk-auth">Camille Fournier</div>
+      <a href="https://www.amazon.in/s?k=The+Managers+Path+Camille+Fournier&tag=YOUR-AFFILIATE-ID" target="_blank" class="bk-btn">Buy at Amazon →</a>
+    </div>
+  </div>
+
+  <div class="bk-card" data-bcat="strategy">
+    <div class="bk-hdr" style="background:linear-gradient(145deg,#3d1a00,#a85f1a)">
+      <div class="bk-cat-pill">Strategy</div>
+      <div class="bk-hdr-title">Thinking, Fast and Slow</div>
+      <div class="bk-hdr-author">Daniel Kahneman</div>
+    </div>
+    <div class="bk-body">
+      <div class="bk-tag strategy">Strategy</div>
+      <div class="bk-name">Thinking, Fast and Slow</div>
+      <div class="bk-auth">Daniel Kahneman</div>
+      <a href="https://www.amazon.in/s?k=Thinking+Fast+and+Slow+Kahneman&tag=YOUR-AFFILIATE-ID" target="_blank" class="bk-btn">Buy at Amazon →</a>
+    </div>
+  </div>
+
+</div>
     <div style="font-family:sans-serif;font-size:11px;color:var(--inkl);margin-top:14px;padding-top:10px;border-top:0.5px solid var(--rule)">
       As an Amazon Associate, purchases through these links support this site at no extra cost to you. Replace <code>YOUR-AFFILIATE-ID</code> with your Amazon Associates tag once approved.
     </div>
@@ -1074,20 +1193,24 @@
 <div class="toast" id="toast"></div>
 
 <script>
-// ── UTILS ───────────────────────────────────────────────────────────────
+// ── UTILS ────────────────────────────────────────────────────────────────
 function toggleMobile(){document.getElementById('mobileMenu').classList.toggle('open')}
-function scrollToSubscribe(){const b=document.getElementById('subscribeBox');if(b)b.scrollIntoView({behavior:'smooth',block:'center'})}
-function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),4000)}
+function scrollToSubscribe(){var b=document.getElementById('subscribeBox');if(b)b.scrollIntoView({behavior:'smooth',block:'center'});}
+function showToast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show');},4000);}
 
-// ── STICKY CATEGORY NAV — scroll to section + spy ───────────────────────
-var SEC_OFFSET = 110; // sticky nav (58) + cat nav (42) + padding
+// ── STICKY CATEGORY NAV ───────────────────────────────────────────────────
+// Use offsetTop which gives absolute position from document top
+// Offset: site-nav 58px + ticker 38px + cat-nav 44px + small buffer = 150px
+var SEC_OFFSET = 150;
 var catSecs = ['sec-ml','sec-career','sec-decision','sec-masterclasses','sec-coaching','sec-library'];
 
 function scrollToSection(id){
   var el = document.getElementById(id);
   if(!el) return;
-  window.scrollTo({top: el.offsetTop - SEC_OFFSET, behavior:'smooth'});
+  var top = el.getBoundingClientRect().top + window.pageYOffset - SEC_OFFSET;
+  window.scrollTo({top: top, behavior:'smooth'});
 }
+window.scrollToSection = scrollToSection;
 
 document.querySelectorAll('.cat-tab').forEach(function(tab){
   tab.addEventListener('click', function(){
@@ -1099,208 +1222,162 @@ document.querySelectorAll('.cat-tab').forEach(function(tab){
 
 // Scroll spy
 window.addEventListener('scroll', function(){
-  var scrollY = window.scrollY + SEC_OFFSET + 30;
+  var scrollY = window.pageYOffset + SEC_OFFSET + 40;
   catSecs.forEach(function(id){
     var el = document.getElementById(id);
-    if(el && el.offsetTop <= scrollY && el.offsetTop + el.offsetHeight > scrollY){
+    if(el && el.offsetTop <= scrollY && (el.offsetTop + el.offsetHeight) > scrollY){
       document.querySelectorAll('.cat-tab').forEach(function(t){t.classList.remove('active');});
       var tab = document.querySelector('[data-sec="'+id+'"]');
       if(tab) tab.classList.add('active');
     }
   });
-},{passive:true});
+}, {passive:true});
 
-// Hero link helper
-window.scrollToSection = scrollToSection;
-
-// ── CALENDAR ────────────────────────────────────────────────────────────
-var calendarEvents = {
-  '2026-05-14':{type:'sl', label:'From Data to Decisions Masterclass'},
-  '2026-05-23':{type:'green', label:'1:1 Coaching Slots'},
-  '2026-06-04':{type:'sl', label:'LLMs in the Enterprise Masterclass'},
-  '2026-06-18':{type:'acc', label:'Experimentation Workshop'},
-  '2026-07-09':{type:'sl', label:'Anomaly Detection Workshop'}
-};
-var typeColors = {sl:'var(--sl)', green:'var(--green)', acc:'var(--acc)'};
-var calYear=2026, calMonth=4; // May (0-indexed)
-
-function renderCal(){
-  var grid = document.getElementById('calGrid');
-  var title = document.getElementById('calTitle');
-  if(!grid || !title) return;
-  var monthNames=['January','February','March','April','May','June','July','August','September','October','November','December'];
-  title.textContent = monthNames[calMonth]+' '+calYear;
-  var days=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
-  var today = new Date();
-  var firstDay = new Date(calYear, calMonth, 1);
-  var startDow = firstDay.getDay(); // 0=Sun
-  startDow = (startDow===0) ? 6 : startDow-1; // Mon=0
-  var daysInMonth = new Date(calYear, calMonth+1, 0).getDate();
-  var html = days.map(function(d){return '<div class="cal-day-label">'+d+'</div>';}).join('');
-  for(var i=0;i<startDow;i++) html+='<div class="cal-day empty"></div>';
-  for(var d=1;d<=daysInMonth;d++){
-    var key = calYear+'-'+String(calMonth+1).padStart(2,'0')+'-'+String(d).padStart(2,'0');
-    var ev = calendarEvents[key];
-    var isToday=(d===today.getDate()&&calMonth===today.getMonth()&&calYear===today.getFullYear());
-    var cls='cal-day'+(ev?' has-event':'')+(isToday?' today':'');
-    var dot=ev?'<div class="event-dot" style="background:'+typeColors[ev.type]+'"></div>':'';
-    html+='<div class="'+cls+'" title="'+(ev?ev.label:'')+'">'+d+dot+'</div>';
-  }
-  grid.innerHTML = html;
-}
-
-function changeMonth(dir){
-  calMonth += dir;
-  if(calMonth>11){calMonth=0;calYear++;}
-  if(calMonth<0){calMonth=11;calYear--;}
-  renderCal();
-}
-
-// Run calendar after DOM ready
-document.addEventListener('DOMContentLoaded', function(){ renderCal(); });
-// Also run immediately in case DOMContentLoaded already fired
-renderCal();
-
-// ── HASH ROUTING ────────────────────────────────────────────────────────
-(function(){
-  var hash = window.location.hash.replace('#','');
-  var map = {
-    'masterclasses':'sec-masterclasses','calendar':'sec-calendar',
-    'coaching':'sec-coaching','library':'sec-library','courses':'sec-ml'
-  };
-  if(map[hash]){
-    setTimeout(function(){ scrollToSection(map[hash]); }, 300);
-  }
-})();
-
-// ── BOOK FILTERS ────────────────────────────────────────────────────────
-function filterBooks(btn,cat){
-  document.querySelectorAll('#bookGrid .book-card, #freeGrid .book-card, #freeGrid .free-card').forEach(function(c){
-    c.style.display=(cat==='all'||c.dataset.bcat===cat)?'flex':'none';
-  });
-  document.querySelectorAll('.filter-chip').forEach(function(c){c.classList.remove('active');});
-  btn.classList.add('active');
-}
-
-// ── FREE BOOK PAGINATION ────────────────────────────────────────────────
-var fbPage=0; var FB_PER=3;
-function freeBookPage(dir){
-  var all=[...document.querySelectorAll('#freeGrid .free-card')];
-  fbPage=Math.max(0,Math.min(fbPage+dir,Math.ceil(all.length/FB_PER)-1));
-  all.forEach(function(el,i){el.style.display=(i>=fbPage*FB_PER&&i<(fbPage+1)*FB_PER)?'flex':'none';});
-  var prev=document.getElementById('fbPrev');var next=document.getElementById('fbNext');var info=document.getElementById('fbInfo');
-  if(prev)prev.disabled=fbPage===0;
-  if(next)next.disabled=fbPage>=Math.ceil(all.length/FB_PER)-1;
-  if(info)info.textContent='Page '+(fbPage+1)+' of '+Math.ceil(all.length/FB_PER);
-}
-(function(){var all=[...document.querySelectorAll('#freeGrid .free-card')];if(all.length)freeBookPage(0);})();
-
-// ── COACHING ────────────────────────────────────────────────────────────
-function scrollToCoaching(){ scrollToSection('sec-coaching'); }
-function selectSession(el,sessionName){
-  document.querySelectorAll('.session-card').forEach(function(c){c.classList.remove('selected');});
-  el.classList.add('selected');
-  var sel=document.getElementById('bookSession');
-  if(!sel)return;
-  var shortName=sessionName.split('—')[0].trim();
-  for(var opt of sel.options){if(opt.text.startsWith(shortName)){sel.value=opt.text;break;}}
-}
-function submitBooking(e){
-  e.preventDefault();
-  showToast("✓ Booking request sent! You'll hear back within 24 hrs.");
-  e.target.reset();
-  document.querySelectorAll('.session-card').forEach(function(c){c.classList.remove('selected');});
-}
-function bookSession(name){
-  scrollToSection('sec-coaching');
-  setTimeout(function(){
-    var sel=document.getElementById('bookSession');
-    if(sel){for(var opt of sel.options){if(opt.text.includes(name.split('—')[0].trim())){sel.value=opt.text;break;}}}
-  },400);
-}
-function notifyMe(name){showToast('✓ We'll notify you when "'+name+'" goes live!');}
-
-
-// ── MASTERCLASS REGISTRATION MODAL ──────────────────────────────────────
-function openMcModal(eventName){
-  document.getElementById('mcModalTitle').textContent = eventName;
-  document.getElementById('mcForm').reset();
-  var modal = document.getElementById('mcModal');
-  modal.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-}
-function closeMcModal(){
-  document.getElementById('mcModal').style.display = 'none';
-  document.body.style.overflow = '';
-}
-function submitMcRegistration(e){
-  e.preventDefault();
-  closeMcModal();
-  showToast('✓ Registered! You'll receive a Zoom link within 24 hrs.');
-}
-document.getElementById('mcModal').addEventListener('click', function(e){
-  if(e.target === this) closeMcModal();
-});
-
-// ── WEEKEND DATE PICKER + TIME SLOTS ────────────────────────────────────
-(function(){
-  var input = document.getElementById('bookDate');
-  if(!input) return;
-  var today = new Date();
-  input.min = today.toISOString().split('T')[0];
-})();
-
-function validateWeekend(input){
-  var msg = document.getElementById('dateMsg');
-  var tg = document.getElementById('timeslotGroup');
-  if(!input.value){ if(msg)msg.style.display='none'; if(tg)tg.style.display='none'; return; }
-  var d = new Date(input.value + 'T00:00:00');
-  var dow = d.getDay(); // 0=Sun, 6=Sat
-  if(dow !== 0 && dow !== 6){
-    input.setCustomValidity('Please select a Saturday or Sunday.');
-    if(msg)msg.style.display='block';
-    if(tg)tg.style.display='none';
-  } else {
-    input.setCustomValidity('');
-    if(msg)msg.style.display='none';
-  }
-}
-function updateTimeSlots(){
-  var input = document.getElementById('bookDate');
-  var tg = document.getElementById('timeslotGroup');
-  if(!input || !tg) return;
-  var d = new Date(input.value + 'T00:00:00');
-  var dow = d.getDay();
-  tg.style.display = (dow===0||dow===6) ? 'block' : 'none';
-}
-
-// ── EXPANDABLE SESSION CARDS ─────────────────────────────────────────────
+// ── EXPANDABLE SESSION CARDS ──────────────────────────────────────────────
 function toggleSession(cardId, sessionName){
   var card = document.getElementById(cardId);
   if(!card) return;
   var isOpen = card.classList.contains('open');
-  // close all first
-  document.querySelectorAll('.session-card').forEach(function(c){ c.classList.remove('open','selected'); });
+  // close all
+  ['sc-career','sc-tech','sc-strategy','sc-ongoing'].forEach(function(id){
+    var c = document.getElementById(id);
+    if(c) c.classList.remove('open');
+  });
   if(!isOpen){
-    card.classList.add('open','selected');
-    // also update the session dropdown
+    card.classList.add('open');
+    // sync dropdown
     var sel = document.getElementById('bookSession');
     if(sel){
-      for(var opt of sel.options){
-        var sn = sessionName.split('—')[0].trim();
-        if(opt.text.startsWith(sn)){ sel.value = opt.text; break; }
+      var label = sessionName.split('—')[0].trim();
+      for(var i=0;i<sel.options.length;i++){
+        if(sel.options[i].text.indexOf(label) === 0){
+          sel.selectedIndex = i; break;
+        }
       }
     }
   }
 }
 
-// ── CTA SLIDER ───────────────────────────────────────────────────────────
+// ── DATE PICKER — WEEKEND ONLY + TIME SLOTS ──────────────────────────────
 (function(){
-  var track=document.getElementById('ctaTrack');
-  var dotsWrap=document.getElementById('ctaDots');
-  if(!track||!dotsWrap)return;
-  var slides=[...track.querySelectorAll('.cta-slide')];
-  var cur=0,total=slides.length,timer;
+  var input = document.getElementById('bookDate');
+  if(!input) return;
+  // Set min to today
+  var now = new Date();
+  var y = now.getFullYear();
+  var m = String(now.getMonth()+1).padStart(2,'0');
+  var d = String(now.getDate()).padStart(2,'0');
+  input.min = y+'-'+m+'-'+d;
+})();
+
+function validateWeekend(input){
+  var msg = document.getElementById('dateMsg');
+  var tg  = document.getElementById('timeslotGroup');
+  if(!input.value){ if(msg)msg.style.display='none'; if(tg)tg.style.display='none'; return true; }
+  // Parse date parts directly to avoid timezone issues
+  var parts = input.value.split('-'); // [yyyy, mm, dd]
+  var tempDate = new Date(parseInt(parts[0]), parseInt(parts[1])-1, parseInt(parts[2]));
+  var dow = tempDate.getDay(); // 0=Sun, 6=Sat
+  var isWeekend = (dow === 0 || dow === 6);
+  if(!isWeekend){
+    input.setCustomValidity('Please pick a Saturday or Sunday.');
+    if(msg) msg.style.display = 'block';
+    if(tg)  tg.style.display  = 'none';
+    return false;
+  } else {
+    input.setCustomValidity('');
+    if(msg) msg.style.display = 'none';
+    if(tg)  tg.style.display  = 'block';
+    return true;
+  }
+}
+
+function updateTimeSlots(){
+  validateWeekend(document.getElementById('bookDate'));
+}
+
+// ── MASTERCLASS REGISTRATION MODAL ───────────────────────────────────────
+function openMcModal(eventName){
+  var modal = document.getElementById('mcModal');
+  var title = document.getElementById('mcModalTitle');
+  if(!modal) return;
+  if(title) title.textContent = eventName;
+  var form = document.getElementById('mcForm');
+  if(form) form.reset();
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeMcModal(){
+  var modal = document.getElementById('mcModal');
+  if(modal) modal.style.display = 'none';
+  document.body.style.overflow = '';
+}
+function submitMcRegistration(e){
+  e.preventDefault();
+  closeMcModal();
+  showToast("✓ Registered! You'll receive a Zoom link by email within 24 hrs.");
+}
+var mcm = document.getElementById('mcModal');
+if(mcm) mcm.addEventListener('click', function(e){ if(e.target===this) closeMcModal(); });
+
+// ── BOOK FILTER ───────────────────────────────────────────────────────────
+function filterBooks(btn, cat){
+  document.querySelectorAll('#bookGrid .bk-card, #freeGrid .free-card').forEach(function(c){
+    c.style.display = (cat==='all' || c.dataset.bcat===cat) ? 'flex' : 'none';
+  });
+  document.querySelectorAll('.filter-chip').forEach(function(c){c.classList.remove('active');});
+  btn.classList.add('active');
+}
+
+// ── FREE BOOK PAGINATION ──────────────────────────────────────────────────
+var fbPage=0; var FB_PER=3;
+function freeBookPage(dir){
+  var all = [...document.querySelectorAll('#freeGrid .free-card')];
+  fbPage = Math.max(0, Math.min(fbPage+dir, Math.ceil(all.length/FB_PER)-1));
+  all.forEach(function(el,i){ el.style.display=(i>=fbPage*FB_PER && i<(fbPage+1)*FB_PER)?'flex':'none'; });
+  var prev=document.getElementById('fbPrev'), next=document.getElementById('fbNext'), info=document.getElementById('fbInfo');
+  if(prev) prev.disabled = fbPage===0;
+  if(next) next.disabled = fbPage>=Math.ceil(all.length/FB_PER)-1;
+  if(info) info.textContent = 'Page '+(fbPage+1)+' of '+Math.ceil(all.length/FB_PER);
+}
+(function(){ var all=[...document.querySelectorAll('#freeGrid .free-card')]; if(all.length) freeBookPage(0); })();
+
+// ── COACHING BOOKING ──────────────────────────────────────────────────────
+function scrollToCoaching(){ scrollToSection('sec-coaching'); }
+function submitBooking(e){
+  e.preventDefault();
+  showToast("✓ Booking request sent! You'll hear back within 24 hrs.");
+  e.target.reset();
+  // close all session cards
+  ['sc-career','sc-tech','sc-strategy','sc-ongoing'].forEach(function(id){
+    var c=document.getElementById(id); if(c) c.classList.remove('open');
+  });
+  // reset timeslot visibility
+  var tg=document.getElementById('timeslotGroup'); if(tg) tg.style.display='none';
+}
+function bookSession(name){
+  scrollToSection('sec-coaching');
+  setTimeout(function(){
+    var sel=document.getElementById('bookSession');
+    if(sel){ for(var i=0;i<sel.options.length;i++){ if(sel.options[i].text.indexOf(name.split('—')[0].trim())===0){ sel.selectedIndex=i; break; } } }
+  }, 400);
+}
+function notifyMe(name){ showToast('✓ We'll notify you when "'+name+'" goes live!'); }
+
+// ── HASH ROUTING ──────────────────────────────────────────────────────────
+(function(){
+  var hash = (window.location.hash||'').replace('#','');
+  var map = {masterclasses:'sec-masterclasses',coaching:'sec-coaching',library:'sec-library',courses:'sec-ml'};
+  if(map[hash]){ setTimeout(function(){ scrollToSection(map[hash]); }, 400); }
+})();
+
+// ── CTA SLIDER ────────────────────────────────────────────────────────────
+(function(){
+  var track = document.getElementById('ctaTrack');
+  var dotsWrap = document.getElementById('ctaDots');
+  if(!track || !dotsWrap) return;
+  var slides = [...track.querySelectorAll('.cta-slide')];
+  var cur=0, total=slides.length, timer;
   slides.forEach(function(_,i){
     var d=document.createElement('button');
     d.className='cta-dot'+(i===0?' active':'');
@@ -1317,39 +1394,5 @@ function toggleSession(cardId, sessionName){
   reset();
 })();
 </script>
-
-<!-- MASTERCLASS REGISTRATION MODAL -->
-<div id="mcModal" style="display:none;position:fixed;inset:0;z-index:2000;background:rgba(10,20,36,.7);backdrop-filter:blur(3px);align-items:center;justify-content:center">
-  <div style="background:#fff;border-radius:6px;width:min(520px,90vw);max-height:90vh;overflow-y:auto;box-shadow:0 24px 60px rgba(0,0,0,.3);position:relative">
-    <div style="background:var(--sl);padding:1.75rem 2rem;border-radius:6px 6px 0 0;display:flex;justify-content:space-between;align-items:flex-start">
-      <div>
-        <div style="font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);margin-bottom:6px">Free Registration</div>
-        <div id="mcModalTitle" style="font-family:'Playfair Display',serif;font-size:18px;color:#fff;line-height:1.3;max-width:380px"></div>
-      </div>
-      <button onclick="closeMcModal()" style="background:rgba(255,255,255,.12);border:none;width:32px;height:32px;border-radius:50%;cursor:pointer;color:#fff;font-size:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-left:12px;margin-top:-4px">×</button>
-    </div>
-    <form id="mcForm" onsubmit="submitMcRegistration(event)" style="padding:1.75rem 2rem;display:flex;flex-direction:column;gap:14px">
-      <div class="form-group">
-        <label>Your Name</label>
-        <input type="text" id="mcName" class="form-input" placeholder="Full name" required>
-      </div>
-      <div class="form-group">
-        <label>Email Address</label>
-        <input type="email" id="mcEmail" class="form-input" placeholder="your@email.com" required>
-      </div>
-      <div class="form-group">
-        <label>Organisation <span style="color:var(--inkl);font-weight:400">(optional)</span></label>
-        <input type="text" id="mcOrg" class="form-input" placeholder="Company or institution">
-      </div>
-      <div class="form-group">
-        <label>What do you hope to learn?</label>
-        <textarea id="mcGoal" class="form-textarea" placeholder="Briefly describe your learning goal or question for the session..." rows="3"></textarea>
-      </div>
-      <button type="submit" class="booking-btn" style="margin-top:4px">Confirm Registration →</button>
-      <div class="booking-note">You'll receive a Zoom link by email within 24 hrs · Sessions are free · Recording shared with all registrants</div>
-    </form>
-  </div>
-</div>
-
 </body>
 </html>
