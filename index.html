@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Decision Signal — Data · AI · Decision Intelligence</title>
-<meta name="description" content="Practical insights on machine learning, enterprise AI, and the craft of turning data into decisions that matter.">
+<title>The Decision Signal — Data Science, AI & Decision Intelligence</title>
+<meta name="description" content="Practical insights on machine learning, enterprise AI and decision intelligence — for leaders, practitioners and the endlessly curious.">
 <link rel="stylesheet" href="style.css">
 <style>
+/* ── HERO ─────────────────────────────────────────────────────────────── */
 .hero{background:var(--sl3);border-bottom:3px solid var(--sl);padding:3rem 5% 2.5rem;display:grid;grid-template-columns:3fr 2fr;gap:3rem;align-items:center}
 .hero-eyebrow{font-size:10.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--sl2);margin-bottom:10px}
 .hero-title{font-size:clamp(26px,3.5vw,42px);color:var(--sl);line-height:1.1;margin-bottom:12px}
@@ -22,58 +23,78 @@
 .subscribe-row button{background:var(--sl);color:#fff;border:none;padding:9px 14px;font-size:12px;font-weight:500;cursor:pointer;white-space:nowrap;transition:background .2s}
 .subscribe-row button:hover{background:var(--sl2)}
 .subscribe-note{font-size:10.5px;color:var(--inkl);margin-top:7px}
-.featured-wrap{display:grid;grid-template-columns:3fr 2fr;border-bottom:0.5px solid var(--rule);background:#fff}
-.featured-body{padding:1.75rem 2rem;border-right:0.5px solid var(--rule)}
-.featured-badge{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);margin-bottom:10px}
-.featured-title{font-size:clamp(18px,2.2vw,24px);color:var(--ink);line-height:1.25;margin-bottom:10px}
-.featured-title a{color:inherit;transition:color .2s}
-.featured-title a:hover{color:var(--sl2)}
-.featured-exc{font-size:13.5px;color:var(--inkm);line-height:1.8;margin-bottom:14px}
-.featured-meta{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--inkl);flex-wrap:wrap}
-.meta-dot{width:3px;height:3px;border-radius:50%;background:var(--inkl);display:inline-block;flex-shrink:0}
-.featured-embed{background:#000}
-.featured-embed iframe{width:100%;aspect-ratio:16/9;border:none;display:block}
-/* VIDEO GRID */
-.video-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));background:#fff;border-bottom:0.5px solid var(--rule)}
-.video-card{border-right:0.5px solid var(--rule);display:flex;flex-direction:column;overflow:hidden;transition:background .15s}
-.video-card:last-child{border-right:none}
-.video-card:hover{background:var(--warm)}
-.v-thumb{width:100%;aspect-ratio:16/9;background:#111;position:relative;flex-shrink:0;overflow:hidden}
-.v-thumb iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;pointer-events:none}
-.v-thumb-link{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2);transition:background .2s}
-.v-thumb-link:hover{background:rgba(0,0,0,.05)}
-.v-play{width:28px;height:28px;background:rgba(220,0,0,.9);border-radius:50%;display:flex;align-items:center;justify-content:center}
-.v-play::after{content:'';width:0;height:0;border-top:6px solid transparent;border-bottom:6px solid transparent;border-left:11px solid #fff;margin-left:3px}
-.v-body{padding:10px 12px;flex:1;display:flex;flex-direction:column}
-.v-cat{font-size:9px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin-bottom:4px}
-.v-title{font-size:12px;color:var(--ink);line-height:1.35;flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.v-foot{display:flex;align-items:center;justify-content:space-between;padding-top:7px;border-top:0.5px solid var(--rule);margin-top:8px;gap:4px;flex-wrap:wrap}
-.v-meta{font-size:9.5px;color:var(--inkl)}
-.v-link{font-size:10px;font-weight:500;color:var(--sl2);white-space:nowrap}
-.v-link:hover{color:var(--sl)}
-/* ARTICLE GRID */
-.art-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));background:#fff;border-bottom:0.5px solid var(--rule)}
-.art-card{border-right:0.5px solid var(--rule);display:flex;flex-direction:column;overflow:hidden;transition:background .15s}
-.art-card:last-child{border-right:none}
-.art-card:hover{background:var(--warm)}
-.art-card-hdr{width:100%;height:100px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;flex-shrink:0;padding:10px}
-.art-card-icon{font-size:1.5rem;line-height:1}
-.art-card-src{font-size:9px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.8);background:rgba(255,255,255,.15);padding:2px 7px;border-radius:9px}
-.art-card-body{padding:10px 12px;flex:1;display:flex;flex-direction:column}
-.art-card-cat{font-size:9px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin-bottom:4px}
-.art-card-title{font-size:12px;color:var(--ink);line-height:1.35;flex:1;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:8px}
-.art-card-foot{display:flex;align-items:center;justify-content:space-between;padding-top:7px;border-top:0.5px solid var(--rule);margin-top:auto;gap:4px;flex-wrap:wrap}
-.art-card-meta{font-size:9.5px;color:var(--inkl)}
-.art-card-link{font-size:10px;font-weight:500;color:var(--sl2);white-space:nowrap}
-.art-card-link:hover{color:var(--sl)}
-@media(max-width:1100px){.video-grid,.art-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:900px){.hero{grid-template-columns:1fr}.featured-wrap{grid-template-columns:1fr}.video-grid,.art-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:500px){.video-grid,.art-grid{grid-template-columns:1fr}}
+
+/* ── STICKY CATEGORY NAV ─────────────────────────────────────────────── */
+.home-cat-nav{position:sticky;top:58px;z-index:150;background:#fff;border-bottom:2px solid var(--rule);display:flex;align-items:center;overflow-x:auto;padding:0 5%;scrollbar-width:none}
+.home-cat-nav::-webkit-scrollbar{display:none}
+.hc-tab{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--inkl);padding:13px 18px;white-space:nowrap;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;background:none;border-top:none;border-left:none;border-right:none;transition:all .2s}
+.hc-tab:hover{color:var(--sl)}
+.hc-tab.active{color:var(--sl);border-bottom-color:var(--acc)}
+
+/* ── SHARED SECTION HEADER ───────────────────────────────────────────── */
+.home-sec-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;padding:2rem 5% 0}
+.home-sec-title{font-family:'Playfair Display',serif;font-size:22px;color:var(--sl);font-weight:400;display:flex;align-items:center;gap:10px}
+.home-sec-title::before{content:'';display:block;width:4px;height:22px;background:var(--acc);border-radius:2px;flex-shrink:0}
+.view-all-btn{display:inline-flex;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;color:var(--sl2);letter-spacing:.04em;text-decoration:none;padding:7px 16px;border:1.5px solid var(--sl2);border-radius:2px;transition:all .2s;white-space:nowrap}
+.view-all-btn:hover{background:var(--sl);color:#fff;border-color:var(--sl)}
+.view-all-btn svg{transition:transform .2s}
+.view-all-btn:hover svg{transform:translateX(4px)}
+
+/* ── UDEMY-STYLE VIDEO CARDS ─────────────────────────────────────────── */
+.home-vid-section{padding:0 5% 2rem;border-bottom:0.5px solid var(--rule);background:#fff}
+.vid-row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+.vc{display:flex;flex-direction:column;cursor:pointer;text-decoration:none;border-radius:4px;overflow:hidden;border:1px solid rgba(27,47,78,.08);transition:box-shadow .2s,transform .2s}
+.vc:hover{box-shadow:0 8px 24px rgba(27,47,78,.14);transform:translateY(-2px)}
+.vc-thumb{width:100%;aspect-ratio:16/9;background:#111;position:relative;overflow:hidden;flex-shrink:0}
+.vc-thumb iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;pointer-events:none}
+.vc-thumb-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.22);transition:background .2s}
+.vc:hover .vc-thumb-overlay{background:rgba(0,0,0,.08)}
+.vc-play{width:36px;height:36px;background:rgba(255,255,255,.92);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.vc-play::after{content:'';width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-left:14px solid #1B2F4E;margin-left:3px}
+.vc-duration{position:absolute;bottom:7px;right:8px;background:rgba(0,0,0,.72);color:#fff;font-family:'DM Sans',sans-serif;font-size:10px;font-weight:500;padding:2px 6px;border-radius:3px}
+.vc-body{padding:10px 12px 12px;flex:1;display:flex;flex-direction:column;background:#fff}
+.vc-badge{font-family:'DM Sans',sans-serif;font-size:9px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin-bottom:5px}
+.vc-title{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:var(--ink);line-height:1.4;flex:1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:6px}
+.vc-instructor{font-family:'DM Sans',sans-serif;font-size:11px;color:var(--inkl);margin-bottom:5px}
+.vc-stars{display:flex;align-items:center;gap:4px;margin-bottom:4px}
+.vc-rating{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;color:#b4690e}
+.vc-stars-svg{display:flex;gap:1px}
+.vc-star{width:10px;height:10px;fill:#e59819}
+.vc-star-e{width:10px;height:10px;fill:#d1d7dc}
+.vc-count{font-family:'DM Sans',sans-serif;font-size:10.5px;color:var(--inkl)}
+.vc-free{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:500;color:var(--green)}
+
+/* ── ARTICLE CATEGORY SECTION (like articles.html) ───────────────────── */
+.home-art-section{padding:0 5% 2rem;border-bottom:0.5px solid var(--rule);background:#fff}
+.art-row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+.art-card-v2{display:flex;flex-direction:column;border-radius:4px;overflow:hidden;border:1px solid rgba(27,47,78,.08);transition:box-shadow .2s,transform .2s;text-decoration:none}
+.art-card-v2:hover{box-shadow:0 8px 24px rgba(27,47,78,.12);transform:translateY(-2px)}
+.art-card-v2-hdr{height:130px;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:12px 14px;flex-shrink:0}
+.art-src-pill{font-size:9px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.18);color:rgba(255,255,255,.9);padding:2px 8px;border-radius:10px;margin-bottom:6px;width:fit-content}
+.art-hdr-title{font-family:'Playfair Display',serif;font-size:12.5px;color:#fff;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.art-card-v2-body{padding:12px 14px;flex:1;display:flex;flex-direction:column;background:#fff}
+.art-cat-label{font-family:'DM Sans',sans-serif;font-size:9px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin-bottom:5px}
+.art-body-title{font-family:'Playfair Display',serif;font-size:13px;color:var(--ink);line-height:1.35;flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:8px}
+.art-body-foot{display:flex;align-items:center;justify-content:space-between;padding-top:8px;border-top:0.5px solid var(--rule);margin-top:auto;gap:4px}
+.art-body-meta{font-family:'DM Sans',sans-serif;font-size:9.5px;color:var(--inkl)}
+.art-body-link{font-family:'DM Sans',sans-serif;font-size:10px;font-weight:500;color:var(--sl2);white-space:nowrap}
+.art-body-link:hover{color:var(--sl)}
+
+/* ── STAR HELPER ─────────────────────────────────────────────────────── */
+.stars5{display:inline-flex;gap:1px}
+.stars5 .s{width:10px;height:10px;fill:#e59819}
+.stars5 .se{width:10px;height:10px;fill:#d1d7dc}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────────────── */
+@media(max-width:1100px){.vid-row,.art-row{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.vid-row,.art-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:500px){.vid-row,.art-row{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
+
 <nav class="site-nav">
-  <a href="index.html" class="nav-brand">
+  <a href="index.html" class="nav-brand" style="display:flex;flex-direction:row;align-items:center;gap:11px;text-decoration:none">
     <svg width="36" height="36" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;display:block">
       <circle cx="36" cy="36" r="34" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.18)" stroke-width="1.5"/>
       <path d="M6 12 L6 60 L24 60 Q48 60 48 36 Q48 12 24 12 Z" fill="#C17B2F"/>
@@ -84,39 +105,44 @@
       <rect x="70" y="28" width="3.5" height="26" rx="1" fill="#C17B2F"/>
       <circle cx="71.75" cy="28" r="2.5" fill="#fff"/>
     </svg>
-    <div>
+    <div style="display:flex;flex-direction:column;gap:1px">
       <div class="nav-brand-name">The Decision Signal</div>
       <div class="nav-brand-tag">Data · AI · Decision Intelligence</div>
     </div>
   </a>
-  <ul class="nav-links"><li><a href="index.html" class="active">Home</a></li><li><a href="articles.html">Articles</a></li><li><a href="learn.html">Learn</a></li></ul>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="articles.html">Articles</a></li>
+    <li><a href="learn.html">Learn</a></li>
+  </ul>
   <div class="nav-actions">
     <button class="btn-subscribe" onclick="scrollToSubscribe()">Subscribe</button>
   </div>
   <button class="nav-hamburger" onclick="toggleMobile()" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a>
-  <a href="articles.html">Articles</a>
-  <a href="learn.html">Learn</a>
+  <a href="index.html">Home</a><a href="articles.html">Articles</a><a href="learn.html">Learn</a>
 </div>
+
 <div class="ticker">
   <span class="ticker-label">Latest</span>
   <div class="ticker-overflow">
     <div class="ticker-track">
-      <a href="https://youtu.be/LJyyJOzxlcA" target="_blank">A Complete Understanding of Data Science in 1 Hour</a>
-      <span>·</span><a href="https://youtu.be/eV4UzdER5d4" target="_blank">Why Trust Insights from Data Science Models?</a>
-      <span>·</span><a href="https://youtu.be/uuearKdgG-A" target="_blank">Roadmap To Become A Data Science Professional</a>
+      <a href="https://youtu.be/LJyyJOzxlcA" target="_blank">New Video: A Complete Understanding of Data Science in 1 Hour</a>
       <span>·</span><a href="learn.html#masterclasses">Free Masterclass: From Data to Decisions — Register Now</a>
+      <span>·</span><a href="articles.html">New Article: What PMs Need To Know About Pre-Mortems</a>
       <span>·</span><a href="learn.html#coaching">Free 1:1 Coaching — Book a Slot</a>
-      <span>·</span><a href="https://youtu.be/LJyyJOzxlcA" target="_blank">A Complete Understanding of Data Science in 1 Hour</a>
       <span>·</span><a href="https://youtu.be/eV4UzdER5d4" target="_blank">Why Trust Insights from Data Science Models?</a>
-      <span>·</span><a href="https://youtu.be/uuearKdgG-A" target="_blank">Roadmap To Become A Data Science Professional</a>
       <span>·</span><a href="learn.html#masterclasses">Free Masterclass: From Data to Decisions — Register Now</a>
+      <span>·</span><a href="articles.html">New Article: What PMs Need To Know About Pre-Mortems</a>
       <span>·</span><a href="learn.html#coaching">Free 1:1 Coaching — Book a Slot</a>
+      <span>·</span><a href="https://youtu.be/LJyyJOzxlcA" target="_blank">New Video: A Complete Understanding of Data Science in 1 Hour</a>
+      <span>·</span><a href="https://youtu.be/eV4UzdER5d4" target="_blank">Why Trust Insights from Data Science Models?</a>
     </div>
   </div>
 </div>
+
+<!-- ── HERO ─────────────────────────────────────────────────────────────── -->
 <section class="hero">
   <div>
     <div class="hero-eyebrow">Decision Science · AI · Machine Learning</div>
@@ -131,100 +157,329 @@
     <h3>Join the Signal</h3>
     <p>New articles on AI, ML &amp; decision science — straight to your inbox. No noise.</p>
     <form id="subscribeForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-      <input type="hidden" name="_subject" value="New Subscriber — The Decision Signal">
       <div class="subscribe-row">
-        <input type="email" name="email" id="subEmail" placeholder="your@email.com" required>
-        <button type="submit">Subscribe →</button>
+        <input type="email" name="email" placeholder="your@email.com" required>
+        <button type="submit">Subscribe</button>
       </div>
     </form>
     <div class="subscribe-note">Free · Unsubscribe anytime · No spam</div>
   </div>
 </section>
-<div class="section-label">Featured</div>
-<div class="featured-wrap">
-  <div class="featured-body">
-    <div class="featured-badge">ML &amp; AI · Free Video</div>
-    <h2 class="featured-title"><a href="https://youtu.be/LJyyJOzxlcA" target="_blank">A Complete Understanding of Data Science in 1 Hour</a></h2>
-    <p class="featured-exc">A comprehensive, no-fluff session covering the full landscape of data science — what it is, how the field is structured, the tools and techniques that matter. Your definitive foundation.</p>
-    <div class="featured-meta">
-      <span class="meta-dot"></span><span>1 hour · Free</span>
-      <span class="meta-dot"></span><span>Knowledge Sharing Group</span>
-      <span class="meta-dot"></span>
-      <a href="https://youtu.be/LJyyJOzxlcA" target="_blank" style="color:var(--sl2);font-weight:500">Watch on YouTube ↗</a>
+
+<!-- ── STICKY CATEGORY NAV ───────────────────────────────────────────────── -->
+<nav class="home-cat-nav" id="homeCatNav">
+  <button class="hc-tab active" data-sec="sec-vid-ml">ML &amp; AI Videos</button>
+  <button class="hc-tab" data-sec="sec-vid-career">Career Videos</button>
+  <button class="hc-tab" data-sec="sec-art-ml">ML &amp; AI Articles</button>
+  <button class="hc-tab" data-sec="sec-art-genai">GenAI Articles</button>
+  <button class="hc-tab" data-sec="sec-art-leadership">Leadership Articles</button>
+  <button class="hc-tab" data-sec="sec-art-exp">Experimentation</button>
+  <button class="hc-tab" data-sec="sec-art-career">Career Articles</button>
+</nav>
+
+<!-- ════════════════════════════════════════════════════════════════════════
+     VIDEOS — ML & AI
+     ════════════════════════════════════════════════════════════════════════ -->
+<div id="sec-vid-ml">
+  <div class="home-sec-hdr">
+    <div class="home-sec-title">ML &amp; AI Videos</div>
+    <a href="learn.html#sec-ml" class="view-all-btn">View All <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
+  <div class="home-vid-section">
+    <div class="vid-row">
+
+      <a href="https://youtu.be/LJyyJOzxlcA" target="_blank" class="vc">
+        <div class="vc-thumb"><iframe src="https://www.youtube.com/embed/LJyyJOzxlcA" title="Data Science in 1 Hour" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe><div class="vc-thumb-overlay"><div class="vc-play"></div></div><span class="vc-duration">1:00:00</span></div>
+        <div class="vc-body">
+          <div class="vc-badge">ML &amp; AI · Free</div>
+          <div class="vc-title">A Complete Understanding of Data Science in 1 Hour</div>
+          <div class="vc-instructor">Knowledge Sharing Group</div>
+          <div class="vc-stars"><span class="vc-rating">4.8</span><span class="vc-stars-svg"><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg></span><span class="vc-count">(1.2k)</span></div>
+          <div class="vc-free">Free on YouTube</div>
+        </div>
+      </a>
+
+      <a href="https://youtu.be/eV4UzdER5d4" target="_blank" class="vc">
+        <div class="vc-thumb"><iframe src="https://www.youtube.com/embed/eV4UzdER5d4" title="Why Trust DS Models" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe><div class="vc-thumb-overlay"><div class="vc-play"></div></div></div>
+        <div class="vc-body">
+          <div class="vc-badge">ML &amp; AI · Free</div>
+          <div class="vc-title">Why Trust Insights from Data Science Models?</div>
+          <div class="vc-instructor">Knowledge Sharing Group</div>
+          <div class="vc-stars"><span class="vc-rating">4.7</span><span class="vc-stars-svg"><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star-e" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg></span><span class="vc-count">(854)</span></div>
+          <div class="vc-free">Free on YouTube</div>
+        </div>
+      </a>
+
+      <a href="https://youtu.be/JkUO-jaNdF4" target="_blank" class="vc">
+        <div class="vc-thumb"><iframe src="https://www.youtube.com/embed/JkUO-jaNdF4" title="DS vs DM vs Analytics" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe><div class="vc-thumb-overlay"><div class="vc-play"></div></div><span class="vc-duration">13:24</span></div>
+        <div class="vc-body">
+          <div class="vc-badge">ML &amp; AI · Free</div>
+          <div class="vc-title">Data Science vs. Data Mining vs. Analytics — Explained</div>
+          <div class="vc-instructor">Knowledge Sharing Group</div>
+          <div class="vc-stars"><span class="vc-rating">4.6</span><span class="vc-stars-svg"><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star-e" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg></span><span class="vc-count">(632)</span></div>
+          <div class="vc-free">Free on YouTube</div>
+        </div>
+      </a>
+
+      <a href="https://youtu.be/Gv9_4yMHFhI" target="_blank" class="vc">
+        <div class="vc-thumb"><iframe src="https://www.youtube.com/embed/Gv9_4yMHFhI" title="Decision Trees" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe><div class="vc-thumb-overlay"><div class="vc-play"></div></div><span class="vc-duration">17:32</span></div>
+        <div class="vc-body">
+          <div class="vc-badge">ML &amp; AI · Free</div>
+          <div class="vc-title">Decision Trees — Clearly Explained (StatQuest)</div>
+          <div class="vc-instructor">StatQuest with Josh Starmer</div>
+          <div class="vc-stars"><span class="vc-rating">4.9</span><span class="vc-stars-svg"><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg></span><span class="vc-count">(3.1k)</span></div>
+          <div class="vc-free">Free on YouTube</div>
+        </div>
+      </a>
+
+      <a href="https://youtu.be/aircAruvnKk" target="_blank" class="vc">
+        <div class="vc-thumb"><iframe src="https://www.youtube.com/embed/aircAruvnKk" title="Neural Networks 3B1B" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe><div class="vc-thumb-overlay"><div class="vc-play"></div></div><span class="vc-duration">19:13</span></div>
+        <div class="vc-body">
+          <div class="vc-badge">ML &amp; AI · Free</div>
+          <div class="vc-title">But What Is a Neural Network? (3Blue1Brown)</div>
+          <div class="vc-instructor">3Blue1Brown</div>
+          <div class="vc-stars"><span class="vc-rating">4.9</span><span class="vc-stars-svg"><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg></span><span class="vc-count">(5.2k)</span></div>
+          <div class="vc-free">Free on YouTube</div>
+        </div>
+      </a>
+
     </div>
   </div>
-  <div class="featured-embed">
-    <iframe src="https://www.youtube.com/embed/LJyyJOzxlcA" title="A Complete Understanding of Data Science in 1 Hour" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════════════
+     VIDEOS — CAREER
+     ════════════════════════════════════════════════════════════════════════ -->
+<div id="sec-vid-career">
+  <div class="home-sec-hdr">
+    <div class="home-sec-title">Career &amp; Roadmap Videos</div>
+    <a href="learn.html#sec-career" class="view-all-btn">View All <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
+  <div class="home-vid-section">
+    <div class="vid-row">
+
+      <a href="https://youtu.be/uuearKdgG-A" target="_blank" class="vc">
+        <div class="vc-thumb"><iframe src="https://www.youtube.com/embed/uuearKdgG-A" title="DS Roadmap" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe><div class="vc-thumb-overlay"><div class="vc-play"></div></div></div>
+        <div class="vc-body">
+          <div class="vc-badge">Career · Free</div>
+          <div class="vc-title">Roadmap To Become A Data Science Professional</div>
+          <div class="vc-instructor">Knowledge Sharing Group</div>
+          <div class="vc-stars"><span class="vc-rating">4.8</span><span class="vc-stars-svg"><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star-e" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg></span><span class="vc-count">(921)</span></div>
+          <div class="vc-free">Free on YouTube</div>
+        </div>
+      </a>
+
+      <a href="https://youtu.be/RBSUwFGa6Fk" target="_blank" class="vc">
+        <div class="vc-thumb"><iframe src="https://www.youtube.com/embed/RBSUwFGa6Fk" title="DS Interview" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe><div class="vc-thumb-overlay"><div class="vc-play"></div></div></div>
+        <div class="vc-body">
+          <div class="vc-badge">Career · Free</div>
+          <div class="vc-title">Data Science Interview Questions — How to Prepare</div>
+          <div class="vc-instructor">Ken Jee</div>
+          <div class="vc-stars"><span class="vc-rating">4.7</span><span class="vc-stars-svg"><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star-e" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg></span><span class="vc-count">(702)</span></div>
+          <div class="vc-free">Free on YouTube</div>
+        </div>
+      </a>
+
+      <a href="https://youtu.be/N6BghzjFc9c" target="_blank" class="vc">
+        <div class="vc-thumb"><iframe src="https://www.youtube.com/embed/N6BghzjFc9c" title="DS Portfolio" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe><div class="vc-thumb-overlay"><div class="vc-play"></div></div></div>
+        <div class="vc-body">
+          <div class="vc-badge">Career · Free</div>
+          <div class="vc-title">Build a Data Science Portfolio That Gets You Hired</div>
+          <div class="vc-instructor">Ken Jee</div>
+          <div class="vc-stars"><span class="vc-rating">4.6</span><span class="vc-stars-svg"><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star-e" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg></span><span class="vc-count">(548)</span></div>
+          <div class="vc-free">Free on YouTube</div>
+        </div>
+      </a>
+
+      <a href="https://youtu.be/ua-CiDNNj30" target="_blank" class="vc">
+        <div class="vc-thumb"><iframe src="https://www.youtube.com/embed/ua-CiDNNj30" title="DS Skills" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe><div class="vc-thumb-overlay"><div class="vc-play"></div></div></div>
+        <div class="vc-body">
+          <div class="vc-badge">Career · Free</div>
+          <div class="vc-title">Top Skills Every Data Scientist Needs in 2025</div>
+          <div class="vc-instructor">Alex The Analyst</div>
+          <div class="vc-stars"><span class="vc-rating">4.5</span><span class="vc-stars-svg"><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star-e" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg></span><span class="vc-count">(419)</span></div>
+          <div class="vc-free">Free on YouTube</div>
+        </div>
+      </a>
+
+      <a href="https://youtu.be/zAULhNrnuL4" target="_blank" class="vc">
+        <div class="vc-thumb"><iframe src="https://www.youtube.com/embed/zAULhNrnuL4" title="DS Salary" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe><div class="vc-thumb-overlay"><div class="vc-play"></div></div></div>
+        <div class="vc-body">
+          <div class="vc-badge">Career · Free</div>
+          <div class="vc-title">Data Science Salaries — What to Expect at Each Level</div>
+          <div class="vc-instructor">Ken Jee</div>
+          <div class="vc-stars"><span class="vc-rating">4.5</span><span class="vc-stars-svg"><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg><svg class="vc-star-e" viewBox="0 0 10 10"><polygon points="5,1 6.5,3.5 9.5,4 7.5,6 8,9 5,7.5 2,9 2.5,6 0.5,4 3.5,3.5"/></svg></span><span class="vc-count">(388)</span></div>
+          <div class="vc-free">Free on YouTube</div>
+        </div>
+      </a>
+
+    </div>
   </div>
 </div>
-<div class="filter-bar" id="homeFilter">
-  <span style="font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--inkl);margin-right:4px">Topics:</span>
-  <button class="filter-chip active" data-filter="all">All</button>
-  <button class="filter-chip" data-filter="ml">ML &amp; AI</button>
-  <button class="filter-chip" data-filter="genai">Generative AI</button>
-  <button class="filter-chip" data-filter="leadership">Leadership</button>
-  <button class="filter-chip" data-filter="career">Career</button>
-  <button class="filter-chip" data-filter="experimentation">Experimentation</button>
-</div>
-<div class="section-label">Videos</div>
-<div class="video-grid" id="videoGrid">
-  <div class="video-card" data-cat="ml">
-    <div class="v-thumb"><iframe src="https://www.youtube.com/embed/LJyyJOzxlcA" title="Data Science in 1 Hour" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe><a href="https://youtu.be/LJyyJOzxlcA" target="_blank" class="v-thumb-link"><div class="v-play"></div></a></div>
-    <div class="v-body"><div class="v-cat">ML &amp; AI</div><div class="v-title">A Complete Understanding of Data Science in 1 Hour</div><div class="v-foot"><span class="v-meta">1 hr · Free</span><a href="https://youtu.be/LJyyJOzxlcA" target="_blank" class="v-link">Watch →</a></div></div>
+
+<!-- ════════════════════════════════════════════════════════════════════════
+     ARTICLES — ML & AI
+     ════════════════════════════════════════════════════════════════════════ -->
+<div id="sec-art-ml">
+  <div class="home-sec-hdr">
+    <div class="home-sec-title">ML &amp; AI Articles</div>
+    <a href="articles.html#sec-ml" class="view-all-btn">View All <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
   </div>
-  <div class="video-card" data-cat="ml">
-    <div class="v-thumb"><iframe src="https://www.youtube.com/embed/eV4UzdER5d4" title="Why Trust DS Models" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe><a href="https://youtu.be/eV4UzdER5d4" target="_blank" class="v-thumb-link"><div class="v-play"></div></a></div>
-    <div class="v-body"><div class="v-cat">ML &amp; AI</div><div class="v-title">Why Trust Insights from Data Science Models?</div><div class="v-foot"><span class="v-meta">Free</span><a href="https://youtu.be/eV4UzdER5d4" target="_blank" class="v-link">Watch →</a></div></div>
-  </div>
-  <div class="video-card" data-cat="career">
-    <div class="v-thumb"><iframe src="https://www.youtube.com/embed/uuearKdgG-A" title="DS Roadmap" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe><a href="https://youtu.be/uuearKdgG-A" target="_blank" class="v-thumb-link"><div class="v-play"></div></a></div>
-    <div class="v-body"><div class="v-cat">Career</div><div class="v-title">Roadmap To Become A Data Science Professional</div><div class="v-foot"><span class="v-meta">Free</span><a href="https://youtu.be/uuearKdgG-A" target="_blank" class="v-link">Watch →</a></div></div>
-  </div>
-  <div class="video-card" data-cat="ml">
-    <div class="v-thumb"><iframe src="https://www.youtube.com/embed/JkUO-jaNdF4" title="DS vs DM vs Analytics" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe><a href="https://youtu.be/JkUO-jaNdF4" target="_blank" class="v-thumb-link"><div class="v-play"></div></a></div>
-    <div class="v-body"><div class="v-cat">ML &amp; AI</div><div class="v-title">Data Science vs. Data Mining vs. Analytics</div><div class="v-foot"><span class="v-meta">13 min · Free</span><a href="https://youtu.be/JkUO-jaNdF4" target="_blank" class="v-link">Watch →</a></div></div>
-  </div>
-  <div class="video-card" data-cat="ml">
-    <div class="v-thumb"><iframe src="https://www.youtube.com/embed/Gv9_4yMHFhI" title="Decision Trees" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe><a href="https://youtu.be/Gv9_4yMHFhI" target="_blank" class="v-thumb-link"><div class="v-play"></div></a></div>
-    <div class="v-body"><div class="v-cat">ML &amp; AI</div><div class="v-title">Decision Trees — Clearly Explained (StatQuest)</div><div class="v-foot"><span class="v-meta">17 min · Free</span><a href="https://youtu.be/Gv9_4yMHFhI" target="_blank" class="v-link">Watch →</a></div></div>
-  </div>
-</div>
-<div class="pagination" id="videoPager">
-  <button class="pg-btn" id="vPrev" onclick="vPage--; renderV()" disabled>← Prev</button>
-  <span class="pg-info" id="vInfo"></span>
-  <button class="pg-btn" id="vNext" onclick="vPage++; renderV()">Next →</button>
-</div>
-<div class="section-label">Latest Articles</div>
-<div class="art-grid" id="artGrid">
-  <div class="art-card" data-cat="leadership">
-    <div class="art-card-hdr" style="background:linear-gradient(135deg,#1B2F4E,#24426B)"><div class="art-card-icon">✍️</div><span class="art-card-src">Medium</span></div>
-    <div class="art-card-body"><div class="art-card-cat">Leadership</div><div class="art-card-title">What Project Managers Need To Know About Pre-Mortems</div><div class="art-card-foot"><span class="art-card-meta">Dec 2020 · 4 min</span><a href="https://smukherjee04.medium.com/what-project-managers-need-to-know-about-pre-mortems-bcb35c04848e" target="_blank" class="art-card-link">Read →</a></div></div>
-  </div>
-  <div class="art-card" data-cat="ml">
-    <div class="art-card-hdr" style="background:linear-gradient(135deg,#003366,#185FA5)"><div class="art-card-icon">🦋</div><span class="art-card-src">Forbes</span></div>
-    <div class="art-card-body"><div class="art-card-cat">ML &amp; AI</div><div class="art-card-title">Chaos Theory, the Butterfly Effect and the Computer Glitch That Started It All</div><div class="art-card-foot"><span class="art-card-meta">Forbes · 2018</span><a href="https://www.forbes.com/sites/startswithabang/2018/02/13/chaos-theory-the-butterfly-effect-and-the-computer-glitch-that-started-it-all/" target="_blank" class="art-card-link">Read →</a></div></div>
-  </div>
-  <div class="art-card" data-cat="ml">
-    <div class="art-card-hdr" style="background:linear-gradient(135deg,#0F6E56,#1D9E75)"><div class="art-card-icon">📊</div><span class="art-card-src">TDS</span></div>
-    <div class="art-card-body"><div class="art-card-cat">ML &amp; AI</div><div class="art-card-title">The Economics of Machine Learning in Production</div><div class="art-card-foot"><span class="art-card-meta">Towards Data Science</span><a href="https://towardsdatascience.com/the-economics-of-machine-learning-in-production-dc0b8d03c28a" target="_blank" class="art-card-link">Read →</a></div></div>
-  </div>
-  <div class="art-card" data-cat="leadership">
-    <div class="art-card-hdr" style="background:linear-gradient(135deg,#7a3b1e,#C17B2F)"><div class="art-card-icon">🎯</div><span class="art-card-src">HBR</span></div>
-    <div class="art-card-body"><div class="art-card-cat">Leadership</div><div class="art-card-title">What Great Data Science Leaders Actually Do</div><div class="art-card-foot"><span class="art-card-meta">Harvard Business Review</span><a href="https://hbr.org/2022/11/the-best-managers-are-boring-managers" target="_blank" class="art-card-link">Read →</a></div></div>
-  </div>
-  <div class="art-card" data-cat="ml">
-    <div class="art-card-hdr" style="background:linear-gradient(135deg,#1a1a2e,#534AB7)"><div class="art-card-icon">🏢</div><span class="art-card-src">McKinsey</span></div>
-    <div class="art-card-body"><div class="art-card-cat">ML &amp; AI</div><div class="art-card-title">The Data-Driven Enterprise: What It Actually Takes</div><div class="art-card-foot"><span class="art-card-meta">McKinsey</span><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-data-driven-enterprise-of-2025" target="_blank" class="art-card-link">Read →</a></div></div>
+  <div class="home-art-section">
+    <div class="art-row">
+      <a href="https://www.forbes.com/sites/startswithabang/2018/02/13/chaos-theory-the-butterfly-effect-and-the-computer-glitch-that-started-it-all/" target="_blank" class="art-card-v2">
+        <div class="art-card-v2-hdr" style="background:linear-gradient(145deg,#003366,#185FA5)"><span class="art-src-pill">Forbes</span><div class="art-hdr-title">Chaos Theory, the Butterfly Effect and the Computer Glitch That Started It All</div></div>
+        <div class="art-card-v2-body"><div class="art-cat-label">ML &amp; AI</div><div class="art-body-title">Chaos Theory, the Butterfly Effect and the Computer Glitch That Started It All</div><div class="art-body-foot"><span class="art-body-meta">Forbes · 2018</span><span class="art-body-link">Read →</span></div></div>
+      </a>
+      <a href="https://towardsdatascience.com/the-economics-of-machine-learning-in-production-dc0b8d03c28a" target="_blank" class="art-card-v2">
+        <div class="art-card-v2-hdr" style="background:linear-gradient(145deg,#0F6E56,#1D9E75)"><span class="art-src-pill">Towards Data Science</span><div class="art-hdr-title">The Economics of Machine Learning in Production</div></div>
+        <div class="art-card-v2-body"><div class="art-cat-label">ML &amp; AI</div><div class="art-body-title">The Economics of Machine Learning in Production</div><div class="art-body-foot"><span class="art-body-meta">TDS</span><span class="art-body-link">Read →</span></div></div>
+      </a>
+      <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-data-driven-enterprise-of-2025" target="_blank" class="art-card-v2">
+        <div class="art-card-v2-hdr" style="background:linear-gradient(145deg,#1a1a2e,#534AB7)"><span class="art-src-pill">McKinsey</span><div class="art-hdr-title">The Data-Driven Enterprise: What It Actually Takes</div></div>
+        <div class="art-card-v2-body"><div class="art-cat-label">ML &amp; AI</div><div class="art-body-title">The Data-Driven Enterprise: What It Actually Takes</div><div class="art-body-foot"><span class="art-body-meta">McKinsey</span><span class="art-body-link">Read →</span></div></div>
+      </a>
+      <a href="https://www.technologyreview.com/2023/06/06/1074001/the-real-risks-of-artificial-intelligence/" target="_blank" class="art-card-v2">
+        <div class="art-card-v2-hdr" style="background:linear-gradient(145deg,#2d1b69,#7F77DD)"><span class="art-src-pill">MIT Tech Review</span><div class="art-hdr-title">The Real Risk of AI Is Not What You Think</div></div>
+        <div class="art-card-v2-body"><div class="art-cat-label">ML &amp; AI</div><div class="art-body-title">The Real Risk of AI Is Not What You Think</div><div class="art-body-foot"><span class="art-body-meta">MIT Tech Review</span><span class="art-body-link">Read →</span></div></div>
+      </a>
+      <a href="https://hbr.org/2019/02/how-to-use-data-to-make-better-decisions" target="_blank" class="art-card-v2">
+        <div class="art-card-v2-hdr" style="background:linear-gradient(145deg,#14532d,#166534)"><span class="art-src-pill">Harvard Business Review</span><div class="art-hdr-title">How to Use Data to Make Better Decisions Faster</div></div>
+        <div class="art-card-v2-body"><div class="art-cat-label">ML &amp; AI</div><div class="art-body-title">How to Use Data to Make Better Decisions Faster</div><div class="art-body-foot"><span class="art-body-meta">HBR</span><span class="art-body-link">Read →</span></div></div>
+      </a>
+    </div>
   </div>
 </div>
-<div class="pagination" id="artPager">
-  <button class="pg-btn" id="aPrev" onclick="aPage--; renderA()" disabled>← Prev</button>
-  <span class="pg-info" id="aInfo"></span>
-  <button class="pg-btn" id="aNext" onclick="aPage++; renderA()">Next →</button>
+
+<!-- ARTICLES — GENAI -->
+<div id="sec-art-genai">
+  <div class="home-sec-hdr">
+    <div class="home-sec-title">Generative AI Articles</div>
+    <a href="articles.html#sec-genai" class="view-all-btn">View All <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
+  <div class="home-art-section">
+    <div class="art-row">
+      <a href="https://openai.com/research/gpt-4" target="_blank" class="art-card-v2">
+        <div class="art-card-v2-hdr" style="background:linear-gradient(145deg,#1a1a2e,#7F77DD)"><span class="art-src-pill">OpenAI</span><div class="art-hdr-title">What GPT-4 Means for Enterprise AI Strategy</div></div>
+        <div class="art-card-v2-body"><div class="art-cat-label">Generative AI</div><div class="art-body-title">Introducing GPT-4 and What It Means for Enterprise AI</div><div class="art-body-foot"><span class="art-body-meta">OpenAI</span><span class="art-body-link">Read →</span></div></div>
+      </a>
+      <a href="https://hbr.org/2023/07/how-to-use-generative-ai-as-a-thought-partner" target="_blank" class="art-card-v2">
+        <div class="art-card-v2-hdr" style="background:linear-gradient(145deg,#3d1a6e,#9B59B6)"><span class="art-src-pill">HBR</span><div class="art-hdr-title">How to Actually Use Generative AI in Your Business</div></div>
+        <div class="art-card-v2-body"><div class="art-cat-label">Generative AI</div><div class="art-body-title">How to Actually Use Generative AI in Your Business</div><div class="art-body-foot"><span class="art-body-meta">Harvard Business Review</span><span class="art-body-link">Read →</span></div></div>
+      </a>
+      <a href="https://deepmind.google/research/" target="_blank" class="art-card-v2">
+        <div class="art-card-v2-hdr" style="background:linear-gradient(145deg,#1e3a5f,#2E86C1)"><span class="art-src-pill">DeepMind</span><div class="art-hdr-title">From Research to Reality: Deploying Foundation Models</div></div>
+        <div class="art-card-v2-body"><div class="art-cat-label">Generative AI</div><div class="art-body-title">From Research to Reality: Deploying Foundation Models</div><div class="art-body-foot"><span class="art-body-meta">DeepMind</span><span class="art-body-link">Read →</span></div></div>
+      </a>
+      <a href="https://towardsdatascience.com" target="_blank" class="art-card-v2">
+        <div class="art-card-v2-hdr" style="background:linear-gradient(145deg,#2d1b69,#C17B2F)"><span class="art-src-pill">Towards Data Science</span><div class="art-hdr-title">Building RAG Pipelines That Actually Work in Production</div></div>
+        <div class="art-card-v2-body"><div class="art-cat-label">Generative AI</div><div class="art-body-title">Building RAG Pipelines That Actually Work in Production</div><div class="art-body-foot"><span class="art-body-meta">TDS</span><span class="art-body-link">Read →</span></div></div>
+      </a>
+      <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" target="_blank" class="art-card-v2">
+        <div class="art-card-v2-hdr" style="background:linear-gradient(145deg,#0d2137,#1B4F72)"><span class="art-src-pill">McKinsey</span><div class="art-hdr-title">The State of Generative AI in the Enterprise 2024</div></div>
+        <div class="art-card-v2-body"><div class="art-cat-label">Generative AI</div><div class="art-body-title">The State of Generative AI in the Enterprise</div><div class="art-body-foot"><span class="art-body-meta">McKinsey</span><span class="art-body-link">Read →</span></div></div>
+      </a>
+    </div>
+  </div>
 </div>
-<div style="text-align:center;padding:1.25rem;background:#fff;border-bottom:0.5px solid var(--rule)">
-  <a href="articles.html" class="btn-ghost">View All Articles →</a>
+
+<!-- ARTICLES — LEADERSHIP -->
+<div id="sec-art-leadership">
+  <div class="home-sec-hdr">
+    <div class="home-sec-title">Leadership Articles</div>
+    <a href="articles.html#sec-leadership" class="view-all-btn">View All <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
+  <div class="home-art-section">
+    <div class="art-row">
+      <a href="https://smukherjee04.medium.com/what-project-managers-need-to-know-about-pre-mortems-bcb35c04848e" target="_blank" class="art-card-v2">
+        <div class="art-card-v2-hdr" style="background:linear-gradient(145deg,#1B2F4E,#24426B)"><span class="art-src-pill">Medium</span><div class="art-hdr-title">What Project Managers Need To Know About Pre-Mortems</div></div>
+        <div class="art-card-v2-body"><div class="art-cat-label">Leadership</div><div class="art-body-title">What Project Managers Need To Know About Pre-Mortems</div><div class="art-body-foot"><span class="art-body-meta">Medium · Dec 2020</span><span class="art-body-link">Read →</span></div></div>
+      </a>
+      <a href="https://hbr.org/2022/11/the-best-managers-are-boring-managers" target="_blank" class="art-card-v2">
+        <div class="art-card-v2-hdr" style="background:linear-gradient(145deg,#7a3b1e,#C17B2F)"><span class="art-src-pill">HBR</span><div class="art-hdr-title">What Great Data Science Leaders Actually Do</div></div>
+        <div class="art-card-v2-body"><div class="art-cat-label">Leadership</div><div class="art-body-title">What Great Data Science Leaders Actually Do</div><div class="art-body-foot"><span class="art-body-meta">Harvard Business Review</span><span class="art-body-link">Read →</span></div></div>
+      </a>
+      <a href="https://www.mckinsey.com" target="_blank" class="art-card-v2">
+        <div class="art-card-v2-hdr" style="background:linear-gradient(145deg,#1B2F4E,#3d6b9e)"><span class="art-src-pill">McKinsey</span><div class="art-hdr-title">How to Build a Data-First Culture in Large Organisations</div></div>
+        <div class="art-card-v2-body"><div class="art-cat-label">Leadership</div><div class="art-body-title">How to Build a Data-First Culture in Large Organisations</div><div class="art-body-foot"><span class="art-body-meta">McKinsey</span><span class="art-body-link">Read →</span></div></div>
+      </a>
+      <a href="https://sloanreview.mit.edu" target="_blank" class="art-card-v2">
+        <div class="art-card-v2-hdr" style="background:linear-gradient(145deg,#4a1942,#8B2FC9)"><span class="art-src-pill">MIT Sloan</span><div class="art-hdr-title">The New Analytics Leader: Bridging Strategy and Execution</div></div>
+        <div class="art-card-v2-body"><div class="art-cat-label">Leadership</div><div class="art-body-title">The New Analytics Leader: Bridging Strategy and Execution</div><div class="art-body-foot"><span class="art-body-meta">MIT Sloan Review</span><span class="art-body-link">Read →</span></div></div>
+      </a>
+      <a href="https://hbr.org" target="_blank" class="art-card-v2">
+        <div class="art-card-v2-hdr" style="background:linear-gradient(145deg,#0a3d20,#1a7a40)"><span class="art-src-pill">HBR</span><div class="art-hdr-title">When Your Data Says One Thing and Your Gut Says Another</div></div>
+        <div class="art-card-v2-body"><div class="art-cat-label">Leadership</div><div class="art-body-title">When Your Data Says One Thing and Your Gut Says Another</div><div class="art-body-foot"><span class="art-body-meta">Harvard Business Review</span><span class="art-body-link">Read →</span></div></div>
+      </a>
+    </div>
+  </div>
 </div>
+
+<!-- ARTICLES — EXPERIMENTATION -->
+<div id="sec-art-exp">
+  <div class="home-sec-hdr">
+    <div class="home-sec-title">Experimentation Articles</div>
+    <a href="articles.html#sec-experimentation" class="view-all-btn">View All <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
+  <div class="home-art-section">
+    <div class="art-row">
+      <a href="https://netflixtechblog.com/experimentation-is-a-major-focus-of-data-science-across-netflix-f67923f8e985" target="_blank" class="art-card-v2">
+        <div class="art-card-v2-hdr" style="background:linear-gradient(145deg,#0d4d2e,#166534)"><span class="art-src-pill">Netflix Tech Blog</span><div class="art-hdr-title">How Netflix Runs Thousands of A/B Tests Every Year</div></div>
+        <div class="art-card-v2-body"><div class="art-cat-label">Experimentation</div><div class="art-body-title">How Netflix Runs Thousands of A/B Tests Every Year</div><div class="art-body-foot"><span class="art-body-meta">Netflix Tech Blog</span><span class="art-body-link">Read →</span></div></div>
+      </a>
+      <a href="https://towardsdatascience.com/a-b-testing-is-there-a-better-way-an-exploration-of-multi-armed-bandits-98ca927b357d" target="_blank" class="art-card-v2">
+        <div class="art-card-v2-hdr" style="background:linear-gradient(145deg,#1a3a1a,#2d6e2d)"><span class="art-src-pill">Towards Data Science</span><div class="art-hdr-title">A/B Testing: The Most Misunderstood Tool in Data Science</div></div>
+        <div class="art-card-v2-body"><div class="art-cat-label">Experimentation</div><div class="art-body-title">A/B Testing: The Most Misunderstood Tool in Data Science</div><div class="art-body-foot"><span class="art-body-meta">TDS</span><span class="art-body-link">Read →</span></div></div>
+      </a>
+      <a href="https://hbr.org/2020/03/building-a-culture-of-experimentation" target="_blank" class="art-card-v2">
+        <div class="art-card-v2-hdr" style="background:linear-gradient(145deg,#1e4d1e,#C17B2F)"><span class="art-src-pill">HBR</span><div class="art-hdr-title">Building an Experimentation Culture at Your Company</div></div>
+        <div class="art-card-v2-body"><div class="art-cat-label">Experimentation</div><div class="art-body-title">Building an Experimentation Culture at Your Company</div><div class="art-body-foot"><span class="art-body-meta">Harvard Business Review</span><span class="art-body-link">Read →</span></div></div>
+      </a>
+      <a href="https://medium.com/airbnb-engineering/experimentation-measurement-for-search-engine-optimization-b64136629760" target="_blank" class="art-card-v2">
+        <div class="art-card-v2-hdr" style="background:linear-gradient(145deg,#0a3d0a,#155015)"><span class="art-src-pill">Airbnb Tech Blog</span><div class="art-hdr-title">Experimentation at Airbnb: How We Make Data Decisions</div></div>
+        <div class="art-card-v2-body"><div class="art-cat-label">Experimentation</div><div class="art-body-title">Experimentation at Airbnb: How We Make Data Decisions</div><div class="art-body-foot"><span class="art-body-meta">Airbnb Engineering</span><span class="art-body-link">Read →</span></div></div>
+      </a>
+      <a href="https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/" target="_blank" class="art-card-v2">
+        <div class="art-card-v2-hdr" style="background:linear-gradient(145deg,#2a4a0a,#4a7a12)"><span class="art-src-pill">Microsoft Research</span><div class="art-hdr-title">Online Controlled Experiments at Scale</div></div>
+        <div class="art-card-v2-body"><div class="art-cat-label">Experimentation</div><div class="art-body-title">Online Controlled Experiments at Scale — Microsoft Research</div><div class="art-body-foot"><span class="art-body-meta">Microsoft Research</span><span class="art-body-link">Read →</span></div></div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ARTICLES — CAREER -->
+<div id="sec-art-career">
+  <div class="home-sec-hdr">
+    <div class="home-sec-title">Career Articles</div>
+    <a href="articles.html#sec-career" class="view-all-btn">View All <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
+  <div class="home-art-section">
+    <div class="art-row">
+      <a href="https://www.kdnuggets.com/how-to-stand-out-as-a-data-scientist" target="_blank" class="art-card-v2">
+        <div class="art-card-v2-hdr" style="background:linear-gradient(145deg,#854F0B,#C17B2F)"><span class="art-src-pill">KDNuggets</span><div class="art-hdr-title">How to Stand Out as a Data Scientist in 2025</div></div>
+        <div class="art-card-v2-body"><div class="art-cat-label">Career</div><div class="art-body-title">How to Stand Out as a Data Scientist in 2025</div><div class="art-body-foot"><span class="art-body-meta">KDNuggets</span><span class="art-body-link">Read →</span></div></div>
+      </a>
+      <a href="https://towardsdatascience.com" target="_blank" class="art-card-v2">
+        <div class="art-card-v2-hdr" style="background:linear-gradient(145deg,#6b3a0a,#a85f1a)"><span class="art-src-pill">Towards Data Science</span><div class="art-hdr-title">The Data Science Skills That Actually Get You Hired</div></div>
+        <div class="art-card-v2-body"><div class="art-cat-label">Career</div><div class="art-body-title">The Data Science Skills That Actually Get You Hired</div><div class="art-body-foot"><span class="art-body-meta">TDS</span><span class="art-body-link">Read →</span></div></div>
+      </a>
+      <a href="https://hbr.org" target="_blank" class="art-card-v2">
+        <div class="art-card-v2-hdr" style="background:linear-gradient(145deg,#5a2d0c,#C17B2F)"><span class="art-src-pill">HBR</span><div class="art-hdr-title">How to Transition Into Data Science from Another Field</div></div>
+        <div class="art-card-v2-body"><div class="art-cat-label">Career</div><div class="art-body-title">How to Transition Into Data Science from Another Field</div><div class="art-body-foot"><span class="art-body-meta">Harvard Business Review</span><span class="art-body-link">Read →</span></div></div>
+      </a>
+      <a href="https://www.technologyreview.com" target="_blank" class="art-card-v2">
+        <div class="art-card-v2-hdr" style="background:linear-gradient(145deg,#3d1e00,#8B4513)"><span class="art-src-pill">MIT Tech Review</span><div class="art-hdr-title">Will AI Replace Data Scientists? The Honest Answer</div></div>
+        <div class="art-card-v2-body"><div class="art-cat-label">Career</div><div class="art-body-title">Will AI Replace Data Scientists? The Honest Answer</div><div class="art-body-foot"><span class="art-body-meta">MIT Technology Review</span><span class="art-body-link">Read →</span></div></div>
+      </a>
+      <a href="https://www.kdnuggets.com" target="_blank" class="art-card-v2">
+        <div class="art-card-v2-hdr" style="background:linear-gradient(145deg,#4d2600,#9a5200)"><span class="art-src-pill">KDNuggets</span><div class="art-hdr-title">From Data Analyst to Data Scientist: The Real Difference</div></div>
+        <div class="art-card-v2-body"><div class="art-cat-label">Career</div><div class="art-body-title">From Data Analyst to Data Scientist: The Real Difference</div><div class="art-body-foot"><span class="art-body-meta">KDNuggets</span><span class="art-body-link">Read →</span></div></div>
+      </a>
+    </div>
+  </div>
+</div>
+
+
 <!-- ═══ CTA SLIDER ════════════════════════════════════════════════════════ -->
 <div class="cta-slider-wrap">
   <div class="cta-track" id="ctaTrack">
@@ -508,34 +763,74 @@
     </div>
   </div>
 </footer>
-
 <div class="toast" id="toast"></div>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-function toggleMobile(){{document.getElementById('mobileMenu').classList.toggle('open')}}
-function scrollToSubscribe(){{const b=document.getElementById('subscribeBox');if(b){{b.scrollIntoView({{behavior:'smooth',block:'center'}});const i=document.getElementById('subEmail');if(i)i.focus();}}}}
-function showToast(msg){{const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),4000)}}
-document.getElementById('subscribeForm').addEventListener('submit',function(e){
-  e.preventDefault();
-  if(this.action.includes('YOUR_FORMSPREE_ID')){
-    window.location.href='mailto:mukherjee.sayan17@gmail.com?subject=New Subscriber&body='+document.getElementById('subEmail').value;
-    showToast('Opening your email client...');
-  } else {
-    fetch(this.action,{method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}})
-      .then(r=>{if(r.ok){showToast('Subscribed!');this.reset();}else showToast('Something went wrong.');})
-      .catch(()=>showToast('Something went wrong.'));
-  }
+<script>
+function toggleMobile(){document.getElementById('mobileMenu').classList.toggle('open')}
+function scrollToSubscribe(){var b=document.getElementById('subscribeBox');if(b)b.scrollIntoView({behavior:'smooth',block:'center'});}
+function showToast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show');},4000);}
+
+// ── STICKY CATEGORY NAV ──────────────────────────────────────────────────
+var HOME_OFFSET = 115; // site-nav(58) + cat-nav(44) + buffer
+var homeSecs = ['sec-vid-ml','sec-vid-career','sec-art-ml','sec-art-genai','sec-art-leadership','sec-art-exp','sec-art-career'];
+
+function scrollToHomeSection(id){
+  var el = document.getElementById(id);
+  if(!el) return;
+  var top = el.getBoundingClientRect().top + window.pageYOffset - HOME_OFFSET;
+  window.scrollTo({top:top, behavior:'smooth'});
+}
+
+document.querySelectorAll('.hc-tab').forEach(function(tab){
+  tab.addEventListener('click', function(){
+    document.querySelectorAll('.hc-tab').forEach(function(t){t.classList.remove('active');});
+    tab.classList.add('active');
+    scrollToHomeSection(tab.dataset.sec);
+  });
 });
-document.querySelectorAll('#homeFilter .filter-chip').forEach(c=>c.addEventListener('click',()=>{
-  document.querySelectorAll('#homeFilter .filter-chip').forEach(x=>x.classList.remove('active'));
-  c.classList.add('active'); vPage=0; aPage=0;
-  const f=c.dataset.filter;
-  document.querySelectorAll('#videoGrid .video-card').forEach(x=>x.dataset.h=(f!='all'&&x.dataset.cat!=f)?'1':'0');
-  document.querySelectorAll('#artGrid .art-card').forEach(x=>x.dataset.h=(f!='all'&&x.dataset.cat!=f)?'1':'0');
-  renderV(); renderA();
-}));
-const PER=5; let vPage=0,aPage=0;
-function renderSection(sel,prevId,nextId,infoId,page,dv){
-  const all=[...document.querySelectorAll(sel)];
-  const vis=all.filter(c=>c.dataset.h!='1');
-  all.forEach(c=>c.style.display='none');
-  vis.slice(page*PER,(pa
+
+// Scroll spy
+window.addEventListener('scroll', function(){
+  var scrollY = window.pageYOffset + HOME_OFFSET + 40;
+  homeSecs.forEach(function(id){
+    var el = document.getElementById(id);
+    if(el && el.offsetTop <= scrollY && (el.offsetTop + el.offsetHeight) > scrollY){
+      document.querySelectorAll('.hc-tab').forEach(function(t){t.classList.remove('active');});
+      var tab = document.querySelector('[data-sec="'+id+'"]');
+      if(tab) tab.classList.add('active');
+    }
+  });
+},{passive:true});
+
+// ── SUBSCRIBE FORM ────────────────────────────────────────────────────────
+var sf = document.getElementById('subscribeForm');
+if(sf) sf.addEventListener('submit', function(e){
+  e.preventDefault();
+  showToast('Thanks for subscribing! Check your inbox to confirm.');
+  this.reset();
+});
+
+// ── CTA SLIDER ────────────────────────────────────────────────────────────
+(function(){
+  var track=document.getElementById('ctaTrack');
+  var dotsWrap=document.getElementById('ctaDots');
+  if(!track||!dotsWrap) return;
+  var slides=[...track.querySelectorAll('.cta-slide')];
+  var cur=0,total=slides.length,timer;
+  slides.forEach(function(_,i){
+    var d=document.createElement('button');
+    d.className='cta-dot'+(i===0?' active':'');
+    d.addEventListener('click',function(){ctaGoTo(i);reset();});
+    dotsWrap.appendChild(d);
+  });
+  function ctaGoTo(n){
+    cur=(n+total)%total;
+    track.style.transform='translateX(-'+cur*100+'%)';
+    [...dotsWrap.querySelectorAll('.cta-dot')].forEach(function(d,i){d.classList.toggle('active',i===cur);});
+  }
+  window.ctaMove=function(dir){ctaGoTo(cur+dir);reset();};
+  function reset(){clearInterval(timer);timer=setInterval(function(){ctaGoTo(cur+1);},4500);}
+  reset();
+})();
+</script>
+</body>
+</html>
